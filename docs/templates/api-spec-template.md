@@ -1,0 +1,11 @@
+# [API-ID] API 명세서
+- 작성자: M5 / 연동 검토: M3
+- API 이름/목적:
+- HTTP Method 및 URL:
+- 인증 방식/권한:
+- Request Headers / Body 예시:
+- Response 200/201 예시:
+- 오류 400/401/403/404/500:
+- DB 접근 및 트랜잭션:
+- 외부 연동(FastAPI/LLM) 및 타임아웃:
+- 테스트 ID / 변경 이력:
