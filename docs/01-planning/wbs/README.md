@@ -32,6 +32,7 @@ WBS는 계획과 작업 순서, **Issue 본문은 현재 상태**입니다. WBS�
 | ID·Issue | 주담당·협업 | 기간 | 핵심 완료 조건 |
 |---|---|---|---|
 | [COMMON-01 #6](https://github.com/infra-security-team/ott-security-project/issues/6) | PM 취합·PL 기술 통합·전원 결정 | 10/19~23 | 범위·주소·자원·계약·비용·시험 기준선 |
+| [COMMON-02 #7](https://github.com/infra-security-team/ott-security-project/issues/7) · 4망 통합 | M1 + 각 망 담당·M2 | 10/26~28 | 허용·금지·반환 경로 및 양쪽 설정·로그 대조 |
 | [COMMON-03 #8](https://github.com/infra-security-team/ott-security-project/issues/8) · OTT·AI 앱 개발·배포 통합 | M5 앱 코드 / M3 배포·DB | 10/19~11/06 | 정상·실패 입력의 실제 결과. 모의 응답은 최종 AI 동작 증거가 아님. |
 | [COMMON-04 #9](https://github.com/infra-security-team/ott-security-project/issues/9) · 중앙 로그·센서 통합 | M2 / 전원 원본 로그 제공 | 10/26~11/06 | 해당 서버 담당이 원본과 중앙 로그를 대조. 수집 누락·지연·탐지 한계를 기록. |
 | [COMMON-05 #10](https://github.com/infra-security-team/ott-security-project/issues/10) · DB 복제·S3 백업·격리 복원 | M4 / M3 | 10/26~11/10 | 복제 상태만으로 복원 성공 판정 금지. 시작/종료 시각·명령 결과·데이터 대조 및 목표 충족 여부. |
@@ -39,7 +40,6 @@ WBS는 계획과 작업 순서, **Issue 본문은 현재 상태**입니다. WBS�
 | [COMMON-07 #12](https://github.com/infra-security-team/ott-security-project/issues/12) · AWS 캐나다 웹·한국 API 연동 | M5 / M3·M1 | 10/21~11/06 | 실제 브라우저 요청/응답과 배포 설정. 로컬 실행만으로 AWS 연동 완료 처리하지 않음. |
 | [COMMON-08 #13](https://github.com/infra-security-team/ott-security-project/issues/13) · 최종 결과보고·리허설·11/16 발표 | 전원 / PM 일정 취합·PL 기술 검토 | 11/09~11/16 | 5인 기여와 실제 근거 연결. 발표 시간·제출 형식·제출 시각은 10/19 확인. 11/14~15는 선택 완충일, 필수 근무일 아님. |
 
-[COMMON-02 #7 · 4망 통합](https://github.com/infra-security-team/ott-security-project/issues/7): M1 + 각 망 담당, 10/26~28. 정상·금지 경로와 반환 경로를 확인합니다.
 
 ## 일정이 밀릴 때
 - 당일 Issue에 막힌 이유·영향받는 작업·지원 요청·다음 행동을 남깁니다. PM은 다음 근무일까지 담당·해결 시점을 조정합니다.
