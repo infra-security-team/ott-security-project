@@ -1,8 +1,7 @@
 # 01 · 기획·일정 관리
-- `project-plan/`: 승인된 프로젝트 기획/수행 계획서
-- `wbs/`: WBS 사용 가이드 및 GitHub Issues/Projects 연계 자료
-- `team-roles/`: M1~M5 역할·RACI·협업 인터페이스
-- `archive/`: 이전 기획안(v0.1 등)과 피드백 원문·변경 근거
+- [계획서](project-plan/README.md): 프로젝트의 목표·범위·설계·완료 기준. 현재 v0.2 팀 검토안.
+- [역할](team-roles/README.md): 5명 각자의 첫 작업·산출물·검토자.
+- [WBS](wbs/README.md): 주차·선행 관계·완료 조건. 실제 진행 상태는 Issue.
+- [아카이브](archive/README.md): 과거 제안·피드백. 승인 전 내용을 확정안으로 표시하지 않습니다.
 
-**현재 상태:** 2026-10-16 킥오프. 강사 피드백 반영 초안은 팀 논의 전이므로 '확정본'이라 표기하지 않습니다.
-참고: [기획서 템플릿](../templates/project-plan-template.md), [WBS 템플릿](../templates/wbs-task-template.md).
+시작 방법·실습 기록·포트폴리오 작성법은 계획서와 분리합니다. [시작 안내](../START_HERE.md) · [가이드](../guides/README.md)

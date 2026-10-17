@@ -1,63 +1,45 @@
-# OTT Infrastructure & Security Consulting (가칭)
+# OTT Infrastructure & Security Consulting
+> 한국·캐나다 OTT 인프라 구축 및 보안 컨설팅 · 5인 / 4주 / 가상 고객사 격리 실습  
+> **현재: 설계 준비.** 계획서 v0.2는 팀 검토안이며 실제 구축·보안 시험 완료를 뜻하지 않습니다. 프로젝트·고객사 명칭은 가칭입니다.
 
-> **문서 상태:** 프로젝트 설계 중 · 2026-10-16 킥오프 이후 강사 피드백을 반영하는 단계
->
-> **Organization `infra-security-team`, Repository `ott-security-project`는 임시 이름입니다.** 회사/고객사 브랜드명은 팀 회의에서 확정한 뒤 변경합니다.
+## 처음 왔다면 여기부터
+**[① 시작 안내](docs/START_HERE.md) → 아래에서 내 역할 선택 → 내 시작 Issue 열기**
 
-## 프로젝트 개요
-
-한국과 캐나다에서 서비스를 제공하는 **가상 OTT 고객사**를 대상으로, 가상의 인프라·보안 컨설팅 조직이 4개 주요 망의 취약한 초기 환경(AS-IS)을 설계·재현하고, 진단·개선·검증(TO-BE)을 수행하는 **4주 팀 프로젝트**입니다. 최종 발표까지 포함합니다.
-
-- **AS-IS:** 실습을 위해 의도적으로 재현한 취약하거나 미흡한 초기 구성. 실제 고객사 침해 사실이 아닙니다.
-- **TO-BE:** 개선 대상 구성에 보안·가용성·복구 대책을 적용한 목표 상태.
-- **주요 목표:** 4망 VLAN/VPN, 한국·캐나다 OTT 서비스, 망별 보안 검증, 인프라 운영, 백업·복원. AWS·vSphere·Kubernetes는 강사 피드백에 따라 구현 범위와 장비 가능성을 구체화합니다.
-
-## 팀 및 담당 영역
-
-| ID | 담당 | 주요 업무 |
+| 담당 | 역할·다음 작업 | 지금 시작할 Issue |
 |---|---|---|
-| M1 | 유용수 | 본사 네트워크·VPN·라우팅·이중화 |
-| M2 | 윤서영 | 본사 보안·Wazuh 등 중앙 관제·보안 공통 기준 |
-| M3 | 홍은서 (PL) | 서비스망, Linux·MySQL 서버, Docker/K8s 배포, LB·APP 이중화 |
-| M4 | 박진혁 | 백업·DR망, 복제·백업·복원·AWS 원격 백업 검토 |
-| M5 | 유은혜 (PM) | 캐나다망·VPN 및 React/Spring Boot/MySQL 연동 코드/FastAPI·LLM 개발 |
+| M1 유용수 | [본사 네트워크](docs/01-planning/team-roles/m1.md) | [#1 · W1 설계 준비](https://github.com/infra-security-team/ott-security-project/issues/1) |
+| M2 윤서영 | [본사 보안·중앙 관제](docs/01-planning/team-roles/m2.md) | [#2 · W1 설계 준비](https://github.com/infra-security-team/ott-security-project/issues/2) |
+| M3 홍은서 | [한국 서비스 인프라 · PL](docs/01-planning/team-roles/m3.md) | [#3 · W1 설계 준비](https://github.com/infra-security-team/ott-security-project/issues/3) |
+| M4 박진혁 | [백업·DR](docs/01-planning/team-roles/m4.md) | [#4 · W1 설계 준비](https://github.com/infra-security-team/ott-security-project/issues/4) |
+| M5 유은혜 | [캐나다망·OTT/AI 개발 · PM](docs/01-planning/team-roles/m5.md) | [#5 · W1 설계 준비](https://github.com/infra-security-team/ott-security-project/issues/5) |
 
-**모든 구성원**은 담당 영역의 AS-IS 구축 → 위험 진단 → TO-BE 보안 적용 → 동일 조건 재검증을 직접 기록합니다. M2는 전체 보안을 대신 수행하지 않고 중앙 보안 기준·관제를 총괄합니다.
+**매일:** 내 Issue의 다음 미체크 항목 확인 → 실습하며 Notion 기록 → 설정·공식 결과를 GitHub에 저장 → Issue에 결과 링크와 다음 행동 기록.  
+**막히면:** 기다리지 말고 Issue에 `막힘 / 시도 / 필요한 도움`을 남깁니다. [작성 예시](docs/examples/README.md)
 
-M5는 **전체 애플리케이션 코드**를 담당하고 M3는 **서버/DB 실행 인프라 및 배포**를 담당합니다. 통합 배포 검증은 M3·M5 공동 수행합니다.
+## 프로젝트 흐름
+시나리오 설계 → AS-IS 구축·정상 기능 확인 → 공격 재현·증거 확보 → 개선안 작성 → TO-BE 적용 → 동일 조건 재시험·정상 기능 확인 → 결과보고·발표.
 
-> 위 세부 기술 배치는 **팀 협의용 제안안**이며, 아직 확정된 작업 결과가 아닙니다.
+[단계별 시작·완료 기준](docs/PROJECT_FLOW.md) · [4주 WBS](docs/01-planning/wbs/README.md)  
+보안 개선의 결과는 차단·탐지·정상 기능을 나누어 판정합니다. 공격 실패 한 번으로 전체 안전성을 단정하지 않습니다.
 
-## 프로젝트 운영 링크
-
-| 자료 | 위치 |
+## 필요한 자료 바로 찾기
+| 찾는 것 | 바로가기 |
 |---|---|
-| [문서 작성 표준](docs/DOCUMENTATION_GUIDE.md) | 문서 상태, 파일명, 보안 유의사항, 작성·검토 규칙 |
-| [기획·계획·WBS](docs/01-planning/README.md) | 기획 버전, 범위, 일정, 담당 |
-| [회의록·결정 로그](docs/02-meetings/README.md) | 회의 확정/제안 사항 구분 |
-| [AS-IS·TO-BE 아키텍처](docs/03-architecture/README.md) | 전체/망별 구성도 |
-| [보안 컨설팅](docs/04-security/README.md) | 취약점 분석·개선·증빙 |
-| [개발 설계](docs/05-development/README.md) | Class Diagram·ERD·API 명세 |
-| [통합 테스트](docs/06-testing/README.md) | 케이스별 테스트 결과 |
-| [결과 보고](docs/07-reports/README.md) | 컨설팅 결과 및 최종 발표 |
-| [문서 템플릿](docs/templates/README.md) | 새 문서 생성 시 복제 |
-| [망별 인프라 설정](infrastructure/README.md) | 버전 관리 가능한 설정·스크립트 |
-| [Notion 기술세부내역서](docs/DOCUMENTATION_GUIDE.md#notion-기술세부내역서) | 팀 Notion 링크는 개설 후 등록 |
-| GitHub Issues / Projects | 업무 분담·담당·마감·완료 증빙 (후속 설정) |
+| GitHub에서 어디를 눌러 작성하는지 | [실행·작성 가이드](docs/WORK_GUIDE.md) |
+| 파일을 어디에 넣는지 | [전체 폴더 지도](docs/FOLDER_GUIDE.md) |
+| 계획서 / 포트폴리오 안내 | [계획서 PDF](docs/01-planning/project-plan/README.md) / [별도 가이드](docs/guides/README.md) |
+| Notion / 팀 계정 / 실제 일정 | [공용 링크 등록부](docs/TEAM_LINKS.md) |
+| 월요일 설명 순서·확인 항목 | [오리엔테이션 진행안](docs/02-meetings/monday-orientation.md) |
+| 문서 양식·작성 품질 | [템플릿](docs/templates/README.md) / [문서 표준](docs/DOCUMENTATION_GUIDE.md) |
+| 설계 / 보안 / 테스트 / 최종보고 | [설계](docs/03-architecture/README.md) / [보안](docs/04-security/README.md) / [테스트](docs/06-testing/README.md) / [결과](docs/07-reports/README.md) |
+| 코드·인프라 설정 | [인프라](infrastructure/README.md) / [React](frontend/README.md) / [Spring](backend/README.md) / [AI](ai-service/README.md) |
 
-## 팀 협업 기준
+## 협업 원칙
+- **Issue가 최신 작업 상태의 기준입니다.** WBS는 순서·담당·완료 기준을 정하는 계획표입니다. 별도 일일 보고표를 만들지 않습니다.
+- 체크리스트는 작업자가 갱신합니다. 주요 산출물은 연동 담당자의 검토 후 완료 처리합니다. PM이 모든 기술 작업을 승인하는 구조가 아닙니다.
+- M1~M5 모두 자기 영역의 설계·구축·보안 개선·검증을 담당합니다. M2는 공통 관제, M3는 기술 통합, M5는 일정 조율을 맡습니다.
+- 앱 코드는 M5, 서버·DB 실행 환경과 배포는 M3가 담당합니다. 통합 검증은 함께 수행합니다.
+- 비밀번호·VPN 키·API 키·실제 개인정보는 저장소에 올리지 않습니다. 취약 환경은 승인된 격리 랩에서만 운영합니다.
+- GitHub Projects 보드는 아직 구성하지 않았습니다. 현재는 아래 Issue 목록과 본문 상태만 사용합니다.
 
-1. **계획/제안과 확정된 결정, 실제 구축 및 테스트 결과를 구분**합니다.
-2. 각 작업을 GitHub Issue로 추적하고, Notion의 상세 기술서와 연결합니다.
-3. 소스코드·설정은 GitHub에, 실행 화면·실습 과정·트러블슈팅은 Notion에 상세 기록합니다.
-4. 구성 변경 시 설계도와 기술서를 함께 수정합니다.
-5. 팀원 실명 공개 범위, IP·계정·키·토큰·비밀번호·로그 내 개인정보는 외부 공개 전 별도 검토합니다. **실제 비밀값은 커밋하지 않습니다.**
-
-## 현재 단계
-
-- [x] 2026-10-16 팀 구성, PL/PM 지정, OTT 인프라·보안 컨설팅 주제 설정
-- [x] 강사 피드백 수령: AWS 구체화, 보안 솔루션 보강, vSphere/Kubernetes 검토
-- [ ] 팀원별 최종 구축 범위·실제 장비 자원 확정
-- [ ] 기획서 v0.1/v0.2 원본 업로드 및 v1.0 확정
-- [ ] GitHub Issues/Projects 및 Notion 기술서 공간 연동
-- [ ] 실제 구축·검증 시작
+[전체 열린 작업](https://github.com/infra-security-team/ott-security-project/issues) · [공통 착수 준비 #6](https://github.com/infra-security-team/ott-security-project/issues/6) · [기존 킥오프 기록](docs/02-meetings/2026-10-16-kickoff.md)
