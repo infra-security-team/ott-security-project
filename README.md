@@ -15,6 +15,13 @@
 **프로젝트를 살펴보는 분:** [계획서 PDF](docs/01-planning/project-plan/StreamBridge_Project_Plan_v0.2.pdf) · [팀 역할](docs/01-planning/team-roles/README.md) · [작업 현황](https://github.com/infra-security-team/ott-security-project/issues)  
 계획된 기술과 실제 구현·시험 결과를 구분하며, 검증 자료는 진행에 따라 추가합니다.
 
+## 발표 일정
+**2026-11-16 발표** · 10/19 착수 일정안 → 10/23 설계 → 10/30 개선 전 증거 → 11/06 개선·연동 → 11/11 검증 → 11/13 리허설.
+
+[날짜·후속 Issue가 연결된 WBS](docs/01-planning/wbs/README.md) · [월요일 확정할 사항](docs/01-planning/readiness.md) · [PM·PL 업무](docs/01-planning/team-roles/pm-pl.md)
+
+중간 마감일은 10/19 팀 검토안입니다. 모든 작업은 착수 전이며 Issue 등록 수는 수행 성과를 뜻하지 않습니다.
+
 ## 팀원 시작 안내
 **[① 시작 안내](docs/START_HERE.md) → 아래에서 내 역할 선택 → 내 시작 Issue 열기**
 
