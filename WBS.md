@@ -13,7 +13,7 @@
 | **10/21 수 오전** | 도면·장비 명세 통합 검토 | 구축 가능한 AS-IS 설계 기준선 및 자원·비용 검토 |
 | **10/21 수 오후~23 금** | 승인된 망부터 AS-IS 구축 착수 | 각 담당 첫 장비 기동·기본 IP/게이트웨이 통신 증거 |
 | **10/26~28** | 4망 VPN·서비스 기반 통합 | 허용/차단 경로·반환 라우트, Docker/K8s 기본 구동, 로컬 OTT 최소 기능 |
-| **10/29~30** | M1·M2·M4 AS-IS 공격, M3·M5 앱 배포 통합 | 격리 시험 **3건** 로그·원인, **10/30 실제 OTT 배포 환경** 정상 동작 |
+| **10/29~30** | M1·M2·M4 AS-IS 공격, M3·M5 정상 서비스 배포·시험 준비 | 격리 시험 **3건** 로그·원인, **10/30 실제 OTT 배포 환경** 정상 동작 |
 | **11/02 월** | M3·M5 AS-IS 공격·시험 결과 취합 | 격리 시험 총 **5건**·개선 대상·정상 기능 비교 기준 |
 | **11/03~06** | TO-BE 적용·AI/클라우드/DR 통합 | 11/03 개선안 확정, 11/06 한영 SRT/VTT·CloudFront/API·S3 복원 1차 |
 | **11/09~10** | 동일 조건 재공격·장애·복구 시험 | 5명 개선 전후 비교, APP 장애·DB 복원·정상 기능 검증 |
@@ -61,7 +61,7 @@
 |---|---|---|---|
 | [#6](https://github.com/infra-security-team/ott-security-project/issues/6) | 전체 설계 기준선·강사 피드백·4망 연결 검토 | M5(PM)·M3(PL)·전원 | 10/19~23 |
 | [#7](https://github.com/infra-security-team/ott-security-project/issues/7) | 4망 Site-to-Site VPN·정상/차단 경로 통합 | M1·각 망 담당 | 10/26~28 |
-| [#8](https://github.com/infra-security-team/ott-security-project/issues/8) | React/Spring/MySQL/FastAPI 개발·배포·한영 자막 | M5 코드·M3 배포 | 10/22~11/06 |
+| [#8](https://github.com/infra-security-team/ott-security-project/issues/8) | React/Spring/MySQL/FastAPI 설계·개발·배포·한영 자막 | M5 코드·M3 배포 | 10/19~11/06 |
 | [#9](https://github.com/infra-security-team/ott-security-project/issues/9) | Wazuh/Suricata 중앙 로그·각 망 수집 연동 | M2 총괄·전원 로그 제공 | 10/26~11/06 |
 | [#10](https://github.com/infra-security-team/ott-security-project/issues/10) | MySQL Replica·백업·S3·격리 복원 | M4·M3 | 10/26~11/10 |
 | [#11](https://github.com/infra-security-team/ott-security-project/issues/11) | APP 2 Pod 분산·복구/Worker 장애 검증 | M3·M5 | 11/02~10 |
