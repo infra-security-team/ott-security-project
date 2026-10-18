@@ -12,8 +12,9 @@
 2. [01 · draw.io 도면 작성 규칙과 체크리스트](01-drawio-diagram-guide.md) — 10/19~21 설계 기준, VMware/Docker/K8s·AWS 위치 표시
 3. 담당별 설계 체크리스트: [M1 본사 네트워크](m1-hq-network.md) / [M2 보안·관제](m2-hq-security.md) / [M3 한국 서비스망](m3-service-network.md) / [M4 백업·DR](m4-backup-dr.md) / [M5 캐나다·AWS 연동](m5-canada-cloud.md)
 4. [02 · 5인 보안 구성·중앙 관제 연동 책임표](02-security-deployment-matrix.md) — 각 망 방화벽·에이전트·로그·시험과 M2 관제 총괄의 구분
-5. [막힐 때 확인하는 공통 점검·증거 템플릿](troubleshooting.md) — 필요한 로그·질문·협업 요청
-6. [팀 WBS](../../WBS.md) · [GitHub Projects](https://github.com/orgs/infra-security-team/projects/4) · [전체 설계도 합의 위치](../architecture.md)
+5. **[03 · 계획서 v0.2 34쪽 ↔ 기술·일정·담당 누락 대조표](03-v02-plan-crosscheck.md)** — 기본/선택 기술, v0.2 페이지별 근거, WBS 날짜 차이 및 M3·M5 병목
+6. [막힐 때 확인하는 공통 점검·증거 템플릿](troubleshooting.md) — 필요한 로그·질문·협업 요청
+7. [팀 WBS](../../WBS.md) · [GitHub Projects](https://github.com/orgs/infra-security-team/projects/4) · [전체 설계도 합의 위치](../architecture.md)
 
 ## 운영 원칙
 - 모든 항목을 별도 VM으로 만들지 않습니다. VyOS 1대가 라우팅·DHCP·NAT·방화벽·VPN을 **함께** 수행할 수 있고, 클라우드에서는 AWS 관리형 서비스를 이용할 수 있습니다.
