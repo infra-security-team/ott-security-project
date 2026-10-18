@@ -5,14 +5,15 @@
 ## 이 폴더의 목적
 팀원이 자기 망을 처음 설계할 때 **무슨 장비/서비스/클라이언트가 필요한지, 어떤 프로그램을 사용하고 어떻게 연결·확인할지** 빠르게 찾는 공간입니다. 실행 명령, 실제 IP, 오류·스크린샷 및 시험 증거는 개인 Notion 기술서에 기록합니다.
 
-**19일 목표는 AS-IS 구성도와 자원 목록 초안 작성입니다.** 이날 4망 구축 완료를 요구하지 않습니다. 20일 오전에 AS-IS 초안을 리뷰하고 보안정책/TO-BE 방향을 합의합니다. 이후 격리된 AS-IS를 구축해 정상 경로를 확인하고, 공격 결과가 나온 후에만 개선안을 최종 확정/적용합니다.
+**10/19~21 오전까지 3일 안에 AS-IS 구성도·자원 목록·하이브리드/컨테이너/보안 배치안을 완성하는 것이 목표입니다.** 19일 강사 v0.2 피드백을 반영하고, 20일 AS-IS와 TO-BE 방향을 함께 검토합니다. **21일 오후부터 실제 AS-IS 구축에 착수하고 늦어도 22일 시작**합니다. 설계 변경이 필요한 부분만 유보하며, 승인된 독립 구역부터 구축합니다. 실제 공격 재현 뒤 TO-BE 정책을 최종 확정/적용합니다.
 
 ## 순서대로 열기
 1. [00 · 하이브리드 전체 배치·공통 설계 결정](00-hybrid-architecture.md) — 온프레미스 vs AWS, VM·서비스/장비 수량의 구분
-2. [01 · draw.io 도면 작성 규칙과 체크리스트](01-drawio-diagram-guide.md) — 무엇을 그려야 하는지, 저장·검토 기준
+2. [01 · draw.io 도면 작성 규칙과 체크리스트](01-drawio-diagram-guide.md) — 10/19~21 설계 기준, VMware/Docker/K8s·AWS 위치 표시
 3. 담당별 설계 체크리스트: [M1 본사 네트워크](m1-hq-network.md) / [M2 보안·관제](m2-hq-security.md) / [M3 한국 서비스망](m3-service-network.md) / [M4 백업·DR](m4-backup-dr.md) / [M5 캐나다·AWS 연동](m5-canada-cloud.md)
-4. [막힐 때 확인하는 공통 점검·증거 템플릿](troubleshooting.md) — 필요한 로그·질문·협업 요청
-5. [팀 WBS](../../WBS.md) · [GitHub Projects](https://github.com/orgs/infra-security-team/projects/4) · [전체 설계도 합의 위치](../architecture.md)
+4. [02 · 5인 보안 구성·중앙 관제 연동 책임표](02-security-deployment-matrix.md) — 각 망 방화벽·에이전트·로그·시험과 M2 관제 총괄의 구분
+5. [막힐 때 확인하는 공통 점검·증거 템플릿](troubleshooting.md) — 필요한 로그·질문·협업 요청
+6. [팀 WBS](../../WBS.md) · [GitHub Projects](https://github.com/orgs/infra-security-team/projects/4) · [전체 설계도 합의 위치](../architecture.md)
 
 ## 운영 원칙
 - 모든 항목을 별도 VM으로 만들지 않습니다. VyOS 1대가 라우팅·DHCP·NAT·방화벽·VPN을 **함께** 수행할 수 있고, 클라우드에서는 AWS 관리형 서비스를 이용할 수 있습니다.
