@@ -2,15 +2,15 @@
 
 **상태:** 팀 검토 및 설계 준비 · **발표:** 2026-11-16
 
-## 팀 작업 경로
+## 팀 작업 순서
 
-| 순서 | 열 곳 | 확인·작성 내용 |
+| 순서 | 확인할 곳 | 할 일 |
 |---|---|---|
-| 1 | [WBS](WBS.md) | 이번 주 목표·담당·기한, 해당 Issue 번호 확인 |
-| 2 | [내 Issue](https://github.com/infra-security-team/ott-security-project/issues) | 오늘 할 작업과 완료 기준 확인 |
-| 3 | 개인 Notion 기술서 | 설계, 실습 과정, 명령어·설정 코드, 오류, 보안 시험, 화면과 결과 기록 |
-| 4 | 같은 Issue | 퇴근 전 진행 요약·Notion 링크·막힌 점·다음 작업 댓글 작성 |
-| 5 | PM 확인 | 매일 기록·일정·지원 요청 확인. 기술 결과는 PL·연동 담당자와 검토 |
+| 1 | [WBS](WBS.md) | 내 이름의 행에서 이번 단계와 기한 확인 |
+| 2 | WBS에 적힌 내 Issue 번호 | 번호를 눌러 작업 항목과 완료 기준 확인 |
+| 3 | 내 Notion 기술서 | 설계·명령어·설정 코드·오류·시험 과정과 결과 기록 |
+| 4 | 같은 Issue의 댓글 | 퇴근 전 오늘 한 일·Notion 링크·막힌 점·다음 작업 작성 |
+| 5 | PM 확인 | PM이 댓글을 보고 진행 상황과 필요한 지원 확인 |
 
 **한 줄 규칙:** WBS는 일정, Issue는 진행 현황, Notion은 실제 기술세부내역서.
 매일 WBS를 수정하거나 GitHub에 인프라·보안 설정 파일을 만들 필요 없음.
@@ -47,14 +47,14 @@ PM은 각 댓글에 `확인: 일정·기록 확인 / 지원 사항: ...`처럼 �
 - 인프라·보안 명령과 코드도 Notion 기술서에 기록하고, 마지막에 코드 포함 최종 문서로 취합.
 - 개발 중인 앱 코드는 GitHub 세 폴더에서 관리. Issue에는 해당 코드 변경 링크만 간단히 연결.
 
-## 담당
+### 첫 작업 바로가기
 
-| 담당 | 주요 범위 | 첫 Issue |
-|---|---|---|
-| M1 유용수 | 본사 네트워크·VPN | [#1](https://github.com/infra-security-team/ott-security-project/issues/1) |
-| M2 윤서영 | 보안·로그·관제 | [#2](https://github.com/infra-security-team/ott-security-project/issues/2) |
-| M3 홍은서(PL) | 서비스망·서버·앱 배포 | [#3](https://github.com/infra-security-team/ott-security-project/issues/3) |
-| M4 박진혁 | 백업·복원·DR | [#4](https://github.com/infra-security-team/ott-security-project/issues/4) |
-| M5 유은혜(PM) | 캐나다망·OTT/AI 앱 개발 | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) |
+| 담당 | 첫 Issue |
+|---|---|
+| 유용수 | [#1 · 본사 네트워크](https://github.com/infra-security-team/ott-security-project/issues/1) |
+| 윤서영 | [#2 · 보안·로그](https://github.com/infra-security-team/ott-security-project/issues/2) |
+| 홍은서 | [#3 · 서비스망·서버](https://github.com/infra-security-team/ott-security-project/issues/3) |
+| 박진혁 | [#4 · 백업·복원](https://github.com/infra-security-team/ott-security-project/issues/4) |
+| 유은혜 | [#5 · 캐나다망·앱](https://github.com/infra-security-team/ott-security-project/issues/5) |
 
-세부 역할과 일정은 계획서와 WBS의 팀 검토안 기준. 확정·변경 사항은 회의록에 기록.
+첫 Issue가 끝나면 WBS에서 다음 단계의 Issue 번호를 클릭합니다.
