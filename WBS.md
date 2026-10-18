@@ -47,7 +47,7 @@
 | M4 박진혁 | DR망·백업/복제·복원 목표 설계<br>**10/19~23 · [#4](https://github.com/infra-security-team/ott-security-project/issues/4)** | 백업 접근용 격리 환경·테스트 파일/권한·첫 백업 준비 (복원 합격 아님)<br>**10/26~28 · [#29](https://github.com/infra-security-team/ott-security-project/issues/29)** | S04 테스트 백업 비인가 접근 재현<br>**10/29~30 · [#30](https://github.com/infra-security-team/ott-security-project/issues/30)** | 백업 접근 제어 개선·복원 준비 협업<br>**11/03~06 · [#31](https://github.com/infra-security-team/ott-security-project/issues/31)** | S04 재시험·#10 실제 복구 결과 대조<br>**11/09~10 · [#32](https://github.com/infra-security-team/ott-security-project/issues/32)** | 백업/복원 증거·RPO/RTO·시연 정리<br>**11/11~13 · [#33](https://github.com/infra-security-team/ott-security-project/issues/33)** |
 | M5 유은혜 (PM) | 캐나다 VLAN/VPN 설계 + 앱 ERD·API 계약 초안<br>**10/19~23 · [#5](https://github.com/infra-security-team/ott-security-project/issues/5)** | 캐나다 VLAN·VPN·정상 경로 구축 전담; 앱 기능 완성과 구별<br>**10/26~28 · [#34](https://github.com/infra-security-team/ott-security-project/issues/34)** | S05 VPN 경유 한국 DB 접근 재현<br>**10/29~11/02 · [#35](https://github.com/infra-security-team/ott-security-project/issues/35)** | DB 직접 접근 제한·캐나다 정책 개선; 앱 개발 병행<br>**11/03~06 · [#36](https://github.com/infra-security-team/ott-security-project/issues/36)** | S05 재시험·OTT/API 정상 접근 확인<br>**11/09~10 · [#37](https://github.com/infra-security-team/ott-security-project/issues/37)** | 캐나다/앱/PM 일정·결과·시연 정리<br>**11/11~13 · [#38](https://github.com/infra-security-team/ott-security-project/issues/38)** |
 
-**선행 순서:** 10/19 강사 피드백·도면 초안 → 10/20 도면/정책 초안 합의 → **10/21 오전 설계 기준선·오후 AS-IS 구축 착수**(늦어도 10/22) → 설계 기준선([#6](https://github.com/infra-security-team/ott-security-project/issues/6)) → AS-IS 구축/정상 기능(-02) → 승인 시험·근거(-03) → 11/03 개선 기준선/적용(-04) → 동일 입력 재시험(-05) → 결과(-06). 각 개인 WBS ID와 Issue 번호는 유지한다.
+**선행 순서:** 10/19 강사 피드백·도면 초안 → 10/20 도면/정책 초안 합의 → **10/21 오전 설계 기준선·오후 AS-IS 구축 착수**(늦어도 10/22) → 공통 기준선([#6](https://github.com/infra-security-team/ott-security-project/issues/6)) 확인·AS-IS 구축/정상 기능(-02) → 승인 시험·근거(-03) → 11/03 개선 기준선/적용(-04) → 동일 입력 재시험(-05) → 결과(-06). 각 개인 WBS ID와 Issue 번호는 유지한다.
 
 ## 4. 중복 업무를 제거하는 담당 경계와 개발 일정
 
@@ -55,7 +55,7 @@
 - **M3 운영:** 한국 서비스망/DB 실행 환경, vSphere·K8s 가능 범위 검토, M5 코드 수령/배포·서비스 가용성 검증, PL 기술 통합. **M3에게 앱 기능 구현을 전가하지 않는다.**
 - **M4 백업:** 10/28은 백업 파일/시험 계정/격리 복원 환경 *준비*. 실제 별도 DB 복원과 앱 조회 검증은 공동 [#10](https://github.com/infra-security-team/ott-security-project/issues/10)에서 11/04~10 수행한다. 복제 연결만으로 복원 성공 판정 금지.
 - **M5 VPN 집중:** 10/26~28 캐나다 직원/관리 VLAN·라우팅·VPN 정상/비인가 경로 우선. 이 기간에 *로컬 OTT 전체 기능 완료*를 개인 [#34](https://github.com/infra-security-team/ott-security-project/issues/34)의 완료 기준으로 요구하지 않는다.
-- **M3 K8s 난이도:** 10/23 장비 자원·노드·관리 포트 6443 실험 가능 여부를 판단한다. 실제 K8s가 구성되지 않으면 S03 시험 대상을 팀 기술 승인으로 조정하고, 가상의 K8s 포트 검증을 완료라고 쓰지 않는다. APP 자동 재시작과 전체 HA는 구분한다.
+- **M3 K8s 난이도:** **10/19~20 도면에 Docker/K8s 노드·서비스/이미지 경로·클러스터 관리망을 우선 배치**, 10/21 오전 장비 자원·노드·관리 포트 6443 실험 가능 여부를 검토한다. 21일 오후부터 구축을 단계적으로 시작한다. 실제 K8s가 구성되지 않으면 S03 시험 대상을 팀 기술 승인으로 조정하고, 가상의 K8s 포트 검증을 완료라고 쓰지 않는다. APP 자동 재시작과 전체 HA는 구분한다.
 
 | 날짜 | M5 앱 개발 (별도 [#8](https://github.com/infra-security-team/ott-security-project/issues/8)의 실행 기준) | M3 인계·배포/공동 검증 |
 |---|---|---|
