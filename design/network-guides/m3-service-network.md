@@ -1,0 +1,45 @@
+# M3 홍은서 (PL) · 한국 OTT 서비스망·DB·앱 배포
+
+**Issue:** [설계 #3](https://github.com/infra-security-team/ott-security-project/issues/3) · [AS-IS #24](https://github.com/infra-security-team/ott-security-project/issues/24) · [앱/AI 통합 #8](https://github.com/infra-security-team/ott-security-project/issues/8)
+
+**역할 경계:** M5가 React/Spring Boot/FastAPI 앱 코드를 개발·GitHub 등록. **M3는 앱 구현이 아니라 서버/DB 환경 구성·코드 수령·Docker/K8s 배포·서비스 운영·검증**을 수행합니다.
+
+## 사용할 프로그램과 서비스
+- 도면: diagrams.net / 가상화: 학원 VMware Workstation·vSphere/ESXi 사용 가능 범위 확인
+- OS: Linux / 웹 진입: Nginx 등 프록시·로드밸런서 / APP: Java 런타임·Spring Boot, Python 런타임·FastAPI
+- DB: MySQL / 배포: Docker, Kubernetes(가능성 검토·승인된 자원 범위 내)
+- 테스트: curl/HTTP 클라이언트, 브라우저, MySQL 클라이언트, 네트워크/서버 로그
+- 공개 고객 웹 AWS 진입점은 **M5와 협의**하며, 한국 서비스망의 내부 웹/프록시와 역할이 겹치지 않게 구성.
+
+## 장비·기능 명세 (VM 개수는 확인 전 예시)
+| 논리 자산·구역 | 시작 수량 | 역할 | 필수/조건 |
+|---|---:|---|---|
+| KR-VyOS (망 경계) | 1 VM | DMZ/APP/DATA 라우팅·방화벽·VPN 본사 연동 | 해당 기능을 이미 공용 L3/방화벽이 담당한다면 중복 VM 검토 |
+| KR-WEB (DMZ) | 1 VM/컨테이너 호스트 | Nginx 리버스 프록시, HTTPS/API 진입 경로 | 고객 진입점과 내부 앱 관리 포트 구분 |
+| KR-APP (APP) | 1 VM/컨테이너 호스트 | Spring Boot·필요 시 FastAPI 기동 | 개발/운영 역할 분리. 처음부터 여러 APP VM 필수 아님 |
+| KR-DB (DATA) | 1 VM | MySQL Primary, DB 인증·접근 제한 | DB는 직원/외부·캐나다 단말에서 일반적으로 직접 접근 금지 |
+| KR-Test-Client | 조건부 1 | API·관리 포트·정상 재생 요청 검증 | M5·M1 관리/시험 클라이언트로 대체 가능하면 생략 |
+| Kubernetes Control Plane/Worker | 조건부 1+1 이상 | 컨테이너 오케스트레이션·장애/배포 시험 | 가용 RAM/CPU·강사 필수 기준 확인 후, 기존 APP와 **대체/증설** 관계 표시 |
+| 추가 APP·로드밸런서 | 조건부 | APP 다중 인스턴스·분산·장애 시험 | 전체 시스템 HA와 구분. 별도 VM 없이 다중 Pod 가능 조건 확인 |
+| DNS/DHCP/NTP | 제공자 확인 | 서비스 주소 조회/시간 동기화 | 서버는 고정 IP 권장, 별도 DHCP 서버 VM 강제 불필요 |
+
+## 망도면에서 필수 표시
+- DMZ / APP / DATA 구역과 각 VLAN ID·게이트웨이·방화벽 정책 방향.
+- 고객 공개 HTTPS 경로: **AWS 웹 → 한국 API 진입점 → Spring → MySQL**; 내부 관리 경로와 다르게 표시.
+- APP ↔ DB MySQL(3306 기본 포트, 최종 확인) 및 백업/복제 M4와의 허용 경로.
+- M1 본사 VPN 허브와 라우팅/정책 경계, M2 Wazuh/Suricata 수집 지점.
+- AS-IS 격리 시험 S03: 관리 포트 과다 노출의 실제 대상·정상 기능과 보안 검증 조건. K8s 6443을 예로 들더라도 **실제 클러스터가 있어야** 해당 공격 재현 가능.
+- TO-BE 초안: 허용된 관리 구역만 관리 포트 접속, 고객 공개 경로의 정상 서비스 유지.
+- APP 이중화·Pod 재시작·Worker 장애/복구는 서로 다른 시험으로 분리.
+
+## 일정과 완료 기준
+- **10/19:** 도면 1차·필요 서버/가상 스위치/자원 목록, M5와 API URL·DB 버전·환경 변수·실행 방법 필요사항 정리. **실제 설치 완료 요구 없음.**
+- **10/20:** 설계 검토 및 TO-BE 초안. K8s/vSphere 접근·RAM/CPU와 S03 실제 대상 가능 여부 결정.
+- **10/21~23:** 실행 기반 준비(기본 VM/네트워크/DB 환경), M5 앱 골격 최초 인계 가능 상태를 확인. *전체 앱 정상 완료와 구별.*
+- **10/26~28:** DMZ/APP/DATA 경로·기본 서버 통신과 정상 관리자 접근 시험.
+- **10/29~11/03:** 개선 전 S03 결과/원인 확보 후 TO-BE 적용안 합의, 앱 배포 경로의 첫 정상 요청.
+- **11/04~06:** AI 자막 연동·서비스 배포·로그/시간초과 검증(연동 결과를 실제로 확인한 만큼만 보고).
+- **11/09~10:** S03 재시험·Pod/Worker 범위 내 승인 장애 시험 및 정상 기능/복구 결과.
+
+## 실패 시 점검 포인트
+클라이언트 DNS→HTTPS/프록시→Spring API→DB 인증을 **한 단계씩** 확인합니다. NIC/포트그룹, 보안 ACL, 바인드 주소, 방화벽, CORS·TLS, DB 권한, 컨테이너 포트·Pod Service 연결, 환경 변수의 '값 존재 여부'(비밀값 공개 금지)를 서로 분리해 봅니다. [공통 진단 템플릿](troubleshooting.md)에 실제 결과 기록.
