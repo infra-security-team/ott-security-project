@@ -29,7 +29,7 @@
 |---|---|---|
 | 본사 M1 | VyOS 허브 1, 직원 클라이언트 1, 관리자 클라이언트 1 | 3개 역할; 관리자 PC는 다른 망의 검증 때 재사용 가능 |
 | 보안 M2 | Bastion 1, SSH 시험 대상 1, Wazuh 1, 공격 Linux 1 | 4개 역할; Suricata 관찰 센서는 자원/트래픽 미러링 확인 시 추가 |
-| 서비스 M3 | VyOS/경계 1, 웹 진입/LB 1, MySQL DB 1, **K8s CP 1 + Worker 2 제안(앱 실행 위치)** | v0.2 APP Spring Pod 2개 분산 목표. **이전 APP VM 1역할은 K8s Worker와 중복 계수하지 않음**, 실제 호스트 자원 확인 |
+| 서비스 M3 | VyOS/경계 1, 웹 진입/LB 1, MySQL DB 1, **K8s CP 1 + Worker 2 제안(앱 실행 위치)** | v0.2 APP Spring Pod 2개 분산 목표. **APP 실행 역할은 Kubernetes Worker와 중복 산정하지 않음**, 실제 호스트 자원 확인 |
 | DR M4 | VyOS/경계 1, 백업 서버 1, **DB Replica 1 계획** | **v0.2 DB 복제는 기본안**. 실제 임시 Restore DB 환경은 격리 시험 시 추가/재사용 여부 협의 |
 | 캐나다 M5 | VyOS 1, 직원 클라이언트 1, 관리자 클라이언트 1 | 3개 역할; 추가 웹 진입 VM은 AWS 웹 구성과 중복 시 불필요 |
 
