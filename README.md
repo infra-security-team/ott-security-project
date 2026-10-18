@@ -23,7 +23,7 @@
 | 현재 계획서 | [v0.2 PDF](plans/project-plan-v0.2.pdf) | 팀 검토안. 확정본 아님 |
 | 이전 계획서 | [v0.1 PDF](plans/project-plan-v0.1.pdf) | 변경 전 자료 |
 | WBS | [WBS](WBS.md) | 공동 설계 검토·업무명·기간·Issue |
-| Projects | [팀 업무 보드](https://github.com/orgs/infra-security-team/projects/4) | 현재 상태와 담당자 |
+| Projects | [팀 업무 보드](https://github.com/orgs/infra-security-team/projects/4/views/2) | 현재 상태와 담당자 |
 | 회의록 | [meetings](meetings/README.md) | 실제 회의 내용과 결정 |
 | 계획 설계 | [design](design/README.md) | 전체 구성도, Class Diagram, ERD 등의 팀 합의 자료 |
 | **망별 설치·장비 안내** | **[network-guides](design/network-guides/README.md)** | **M1~M5 VM·Docker/K8s·AWS·보안 구성/중앙관제 연결, draw.io 도면·막힘 해결 안내** |
