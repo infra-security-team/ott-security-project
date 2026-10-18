@@ -1,5 +1,23 @@
-# 폴더 지도 · 무엇을 어디에 저장하나
-[처음 화면](../README.md) · [작업 작성법](WORK_GUIDE.md)
+# 파일은 어디에 넣나요?
+[처음 화면](../README.md) · [작성 방법](WORK_GUIDE.md)
+
+처음에는 **내 Notion 기술서, 내 작업 Issue, 내 파일 폴더**만 찾으면 됩니다.
+Notion에는 코드·설명·결과까지 기록하며, 나중에 팀 최종 문서로 합칩니다.
+
+| 이름 | 실제 설정·스크립트 파일 위치 |
+|---|---|
+| 유용수 | [infrastructure/m1-hq-network](../infrastructure/m1-hq-network/README.md) |
+| 윤서영 | [infrastructure/m2-hq-security](../infrastructure/m2-hq-security/README.md) |
+| 홍은서 | [infrastructure/m3-service](../infrastructure/m3-service/README.md) |
+| 박진혁 | [infrastructure/m4-backup-dr](../infrastructure/m4-backup-dr/README.md) |
+| 유은혜 | [infrastructure/m5-canada](../infrastructure/m5-canada/README.md) |
+
+앱 코드는 [화면 frontend](../frontend/README.md), [서버 backend](../backend/README.md), [AI ai-service](../ai-service/README.md)에 둡니다.
+설계 초안은 Notion에서 작성할 수 있습니다. 단계 검토 때 필요한 공통 구성도·결과 요약은 아래 상세 위치에 저장하고 상세 기술서를 연결합니다.
+실제 DB 백업·VM 이미지·비밀번호·키는 공개 저장소에 넣지 않습니다.
+
+<details>
+<summary>설계·보안·시험·최종보고 등 전체 폴더가 필요할 때 펼치세요</summary>
 
 ## 지금 만들려는 파일로 찾기
 | 만들 것 | 위치·예시 |
@@ -74,3 +92,5 @@
 ## 파일을 추가할 때
 담당 ID·시험 ID로 이름을 붙이고 문서 첫머리에 상태·담당·관련 Issue를 적습니다. 여러 사람이 쓰는 하나의 공통 파일은 PR로 변경을 합칩니다.
 정식 결과에는 **환경·시각·기대/실제·판정·증거 URL**이 필요합니다. 실험하지 않은 내용은 계획 또는 예시로 표시합니다.
+
+</details>
