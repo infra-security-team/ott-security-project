@@ -8,7 +8,7 @@
 - 망도: draw.io / 가상화: 학원 VMware/vSphere / 라우터: VyOS
 - 지사 클라이언트: Ubuntu/Linux 또는 Windows VM
 - VPN 검증: VyOS 인터페이스/라우팅/IPsec 상태, ping/tracepath, tcpdump, 서비스 포트 응답
-- AWS: IAM 최소 권한, S3+CloudFront 기반 HTTPS 정적 웹 검토(실제 계정 서비스 가능 여부 확인), 필요한 경우 EC2 대안(비용 승인 전 생성 금지), 로그/비용 확인
+- AWS: **v0.2 기본 제안은 캐나다 리전 S3 일반 비공개 버킷(React 빌드)+CloudFront HTTPS 및 OAC**, IAM 최소 권한·리전/권한/비용/인증서/API 공개 가능성 확인. 별도 백업 S3는 M4 담당. 필요 시 EC2 대안은 승인 후 검토(비용 승인 전 생성 금지).
 - 앱 개발: React, Spring Boot, MySQL 연동 코드, FastAPI·음성 인식·번역, 한영 SRT/VTT 생성; 배포·DB 실행 환경은 **M3 담당**
 
 ## 구성 요소와 수량 구분
@@ -18,7 +18,7 @@
 | CA-Employee-PC | 1 VM | 직원망 DHCP/서비스 접근 및 S05 승인 공격 출발지 | 직원 PC를 여러 대 둘 필요 없음 |
 | CA-Admin-PC | 1 VM | 관리망 승인 통신 시험 | 본사 관리망 Bastion 정책과 연결 확인 |
 | CA-Web-Entry | 조건부 1 VM | 현지 사설 프록시/진입망 기능을 실제로 요구하는 경우 | AWS 공개 웹과 중복이면 설치 안 함 |
-| AWS 웹 배포 | 관리형 서비스 조합 | 공개 고객 HTML/JS·정적 영상 자산, HTTPS | S3 버킷 비공개·CloudFront 가능 여부 검토. VM 필수 아님 |
+| AWS 웹 배포 | **S3 비공개 일반 버킷(캐나다 리전)+CloudFront+OAC 계획** | React 빌드/정적 리소스와 HTTPS | **v0.2 25쪽 제안**; 계정/비용/TLS/DNS 제약 시 승인 대체. S3 웹사이트 엔드포인트와 OAC 혼용 금지. CloudFront는 글로벌 CDN이므로 캐나다 내 데이터 처리 보장 뜻 아님 |
 | AWS EC2 | 조건부 0~n | 서버 실행이 실제 필요한 경우에만 | 비용·권한·Region·보안그룹·종료 계획 확인 |
 | AI/STT/LLM | 한국 APP 실행/외부 API | FastAPI와 실제 인식/번역·자막 생성 | 서비스 배치와 키 관리·시간 정보·비용 확인 |
 
@@ -29,7 +29,7 @@
 4. **AS-IS S05 격리 시험:** 캐나다 직원 → VPN → 한국 MySQL 직접 접근. 격리된 실습 DB에만 허용하고 인터넷 공개 금지. 포트 연결만으로 DB 인증 성공을 단정하지 않음.
 5. **TO-BE 방향:** 직원 VLAN→한국 DB 직접 경로 차단, 정상 웹→API→DB 경로 유지.
 6. **AWS 영역 별도:** 공개 웹(HTTPS) → 한국 API, 백업은 M4→S3. 인터넷 공개 경로와 **내부 VPN 터널**을 구분해 표시.
-7. CloudFront/S3 리소스가 실제 가능한지, TLS 도메인·CORS·API 공개 URL과 비용 상한을 **미확정**으로 표시.
+7. **캐나다 리전 S3 일반 비공개 버킷 → CloudFront(OAC) → HTTPS**, 한국 API 공개 종단/TLS·CORS·브라우저 경로와 M4 별도 S3 백업 경로를 표시. 가능 여부/비용/리전은 **미확정**으로 표시.
 
 ## M5가 과부하되지 않도록 순서를 분리
 | 시점 | 캐나다망·보안 | 앱·AWS |
