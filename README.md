@@ -25,7 +25,7 @@
 | 회의록 | [meetings](meetings/README.md) | 실제 회의 내용과 결정 |
 | 계획 설계 | [design](design/README.md) | 전체 구성도, Class Diagram, ERD 등의 팀 합의 자료 |
 | 앱 코드 | [frontend](frontend/README.md) · [backend](backend/README.md) · [ai-service](ai-service/README.md) | M5 개발, M3 등 연동 팀원이 내려받을 원본 |
-| 팀 Notion 템플릿 | **링크 등록 대기** | PM이 공개 템플릿을 만든 뒤 실제 접근 확인 후 연결 |
+| 팀 Notion 템플릿 | [개인별 인프라·보안 기록서 복제하기](https://app.notion.com/p/3fd1b198732a81cf9c44fb58dfcb8567?pvs=204) | 팀원마다 한 번 복제해 본인 페이지에 구축·설정·검증 내용을 기록 |
 
 ## 매일 Issue 댓글 예시
 
