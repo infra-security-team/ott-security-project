@@ -14,7 +14,7 @@
 
 **관리 기준:** WBS는 계획과 마감일, Projects Status는 최신 진행 상황, Issue는 작업·일일 기록·검토 링크, Notion은 인프라/보안 설정과 시험 근거. 본문에 남아 있는 옛 '상태: 할 일'은 진행 상태 기준으로 사용하지 않음.
 
-**공동 의사결정:** 10/21 AS-IS 기본망 검토 → 10/23 보안정책·TO-BE 초안 및 구축 기준선 → 11/02 시험 결과 공유 → 11/03 오전 TO-BE 최종 적용안 확정. [WBS](WBS.md) 및 [공동 Issue #6](https://github.com/infra-security-team/ott-security-project/issues/6) 참고. 날짜는 팀 검토 예정안.
+**공동 의사결정:** **10/19 AS-IS 도면·장비 목록 작성(설치 완료 요구 없음)** → **10/20 AS-IS 도면 검토·보안정책·TO-BE 방향 초안 합의** → 10/21~23 기본 환경 준비/구축 착수 및 10/23 기준선 재검토 → 11/02 시험 결과 공유 → 11/03 오전 TO-BE 최종 적용안 확정. [WBS](WBS.md) 및 [공동 Issue #6](https://github.com/infra-security-team/ott-security-project/issues/6) 참고. 날짜는 팀 검토 예정안.
 
 ## 프로젝트 자료
 
@@ -26,8 +26,17 @@
 | Projects | [팀 업무 보드](https://github.com/orgs/infra-security-team/projects/4) | 현재 상태와 담당자 |
 | 회의록 | [meetings](meetings/README.md) | 실제 회의 내용과 결정 |
 | 계획 설계 | [design](design/README.md) | 전체 구성도, Class Diagram, ERD 등의 팀 합의 자료 |
+| **망별 설치·장비 안내** | **[network-guides](design/network-guides/README.md)** | **M1~M5 장비·서버·PC·VPN/DHCP/NAT·AWS 배치, draw.io 도면/막힘 해결 안내** |
 | 앱 코드 | [frontend](frontend/README.md) · [backend](backend/README.md) · [ai-service](ai-service/README.md) | M5 개발, M3 등 연동 팀원이 내려받을 원본 |
 | 팀 Notion 템플릿 | [개인별 인프라·보안 기록서 복제하기](https://app.notion.com/p/3fd1b198732a81cf9c44fb58dfcb8567?pvs=204) | 팀원마다 한 번 복제해 본인 페이지에 구축·설정·검증 내용을 기록 |
+
+## 10/19 설계도 준비 완료 기준
+
+- 개인 담당 망의 draw.io AS-IS 논리도 + VM/서버/클라이언트/클라우드 목록 초안
+- 정상 통신·보안 시험 출발지/대상 및 본사 VPN 허브 연결 요청 정리
+- 확정되지 않은 IP·장비·AWS 자원은 **미확정**으로 표시하고 10/20 회의 질문 목록 작성
+- 도면 원본(\`.drawio\`)과 PNG를 개인 Notion에 기록, 팀 합의된 구조는 design에 연결
+- 10/19는 **망 실제 구축 완료를 요구하지 않음**, 실습·검증 결과를 만들어 쓰지 않음
 
 ## 매일 Issue 댓글 예시
 
