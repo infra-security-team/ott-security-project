@@ -68,7 +68,7 @@
 
 | 공동 Issue | 담당·협업 | 계획 기간 | 확인할 산출물·완료 기준 |
 |---|---|---|---|
-| [#6](https://github.com/infra-security-team/ott-security-project/issues/6) | M5 취합·M3 PL 통합·전원 결정 | 10/19~23 | 공동 기준선: 10/19 범위 합의 → 10/21 AS-IS 검토 → 10/23 보안정책·TO-BE 초안/구축 기준 |
+| [#6](https://github.com/infra-security-team/ott-security-project/issues/6) | M5 취합·M3 PL 통합·전원 결정 | 10/19~23 | 공동 기준선: 10/19 도면/장비 명세 초안 → **10/20 AS-IS·보안 정책/TO-BE 방향 검토** → 10/23 기초 구축 조건 재검토 |
 | [#7](https://github.com/infra-security-team/ott-security-project/issues/7) | M1 주담당 / M3·M4·M5 협력, M2 관리 경로 확인 | 10/26~28 | 4개 망 VPN·라우팅·허용/금지 통신 검증 |
 | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) | M5 코드 / M3 서버·DB·배포 | 10/19~11/06 | OTT 앱 개발·실행/배포 통합: 10/23 골격, 10/30 로컬 최소 기능, 11/03 배포 연결, 11/06 실제 AI 한영 자막 |
 | [#9](https://github.com/infra-security-team/ott-security-project/issues/9) | M2 주담당 / 각 망 담당 로그 제공 | 10/26~11/06 | 중앙 로그·센서 통합: 원본과 수집 결과·가시성 확인 |
@@ -83,9 +83,9 @@
 
 | 날짜 | PM이 확인할 사실 / 지연 시 행동 |
 |---|---|
-| 10/19 | 5명 Issue/Projects 접근·Write 권한, Notion 링크/공유, 장비 사양과 AWS 계정·비용 범위, 11/16 발표 시간/제출 규칙 |
-| 10/21 | 4망 AS-IS 초안·대역 중복/연동 의존성, ERD·Class·API 초안·DB 계약 리뷰 |
-| 10/23 | 정책·TO-BE **초안** 공동 검토, K8s/실행 자원, 4망 구축 시작 기준선 승인·미확정 항목의 책임자/기한 |
+| 10/19 | 5명 Issue/Projects 접근·Notion 공유, **각 담당 draw.io AS-IS 논리도와 장비/PC/AWS 자산 명세 초안**, 학원 장비 자원·발표 조건. **구축 완료 요구 없음** |
+| 10/20~21 | **10/20** AS-IS 도면 공동 검토·보안/TO-BE 초안 결정, **10/21** 대역/VPN·K8s 자원 확인 및 M5 ERD·Class·API·DB 계약 초안 리뷰 |
+| 10/23 | 20일 정책·TO-BE **초안**을 구축 가능하게 보완; K8s/실행 자원과 4망 기본 환경 준비 결과/미완료, 다음 주 VPN 통합 착수 조건 재점검 |
 | 10/28 | 각 망 정상/비인가 통신·반환 경로·로그, 테스트 백업 파일/격리 환경 **준비**, M5 VPN 확인 |
 | 10/30 | 승인 실험 최소 3건 실제 증거 + 앱 **로컬** 최소 기능; 미실행은 미수행으로 표기 |
 | 11/02 | 공격 5건 재현 목표와 미완료 원인, 기술팀의 개선 우선순위 합의 |
