@@ -1,28 +1,13 @@
-# Secrets & local environment
+# Local secrets and builds
 .env
 .env.*
 !.env.example
+**/node_modules/
+**/target/
+**/build/
+**/.venv/
+**/__pycache__/
 *.pem
 *.key
 *.p12
-*.pfx
-id_rsa*
-secrets.yaml
-**/secrets/
-**/.terraform/
-*.tfstate
-*.tfstate.*
-# App build
-node_modules/
-dist/
-build/
-target/
-.gradle/
-__pycache__/
-.venv/
-venv/
-*.pyc
-# OS / IDE
-.DS_Store
-.idea/
-.vscode/
+*.jks
