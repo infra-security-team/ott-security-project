@@ -14,7 +14,7 @@
 
 **관리 기준:** WBS는 계획과 마감일, Projects Status는 최신 진행 상황, Issue는 작업·일일 기록·검토 링크, Notion은 인프라/보안 설정과 시험 근거. 본문에 남아 있는 옛 '상태: 할 일'은 진행 상태 기준으로 사용하지 않음.
 
-**공동 의사결정:** **10/19 AS-IS 도면·장비 목록 작성(설치 완료 요구 없음)** → **10/20 AS-IS 도면 검토·보안정책·TO-BE 방향 초안 합의** → 10/21~23 기본 환경 준비/구축 착수 및 10/23 기준선 재검토 → 11/02 시험 결과 공유 → 11/03 오전 TO-BE 최종 적용안 확정. [WBS](WBS.md) 및 [공동 Issue #6](https://github.com/infra-security-team/ott-security-project/issues/6) 참고. 날짜는 팀 검토 예정안.
+**공동 의사결정:** **10/19 강사 v0.2 검토 + 4망·AWS·Docker/K8s·보안 배치 도면 착수** → **10/20 AS-IS/TO-BE·보안정책 공동 검토** → **10/21 오전 도면 기준선 완료·오후 AS-IS 구축 착수(늦어도 10/22)** → 10/23 실제 구축 진도 확인 → 11/02 공격 결과 공유 → 11/03 오전 TO-BE 최종 적용안 확정. [WBS](WBS.md) 및 [공동 Issue #6](https://github.com/infra-security-team/ott-security-project/issues/6) 참고. 날짜는 팀 검토 예정안.
 
 ## 프로젝트 자료
 
@@ -26,17 +26,17 @@
 | Projects | [팀 업무 보드](https://github.com/orgs/infra-security-team/projects/4) | 현재 상태와 담당자 |
 | 회의록 | [meetings](meetings/README.md) | 실제 회의 내용과 결정 |
 | 계획 설계 | [design](design/README.md) | 전체 구성도, Class Diagram, ERD 등의 팀 합의 자료 |
-| **망별 설치·장비 안내** | **[network-guides](design/network-guides/README.md)** | **M1~M5 장비·서버·PC·VPN/DHCP/NAT·AWS 배치, draw.io 도면/막힘 해결 안내** |
+| **망별 설치·장비 안내** | **[network-guides](design/network-guides/README.md)** | **M1~M5 VM·Docker/K8s·AWS·보안 구성/중앙관제 연결, draw.io 도면·막힘 해결 안내** |
 | 앱 코드 | [frontend](frontend/README.md) · [backend](backend/README.md) · [ai-service](ai-service/README.md) | M5 개발, M3 등 연동 팀원이 내려받을 원본 |
 | 팀 Notion 템플릿 | [개인별 인프라·보안 기록서 복제하기](https://app.notion.com/p/3fd1b198732a81cf9c44fb58dfcb8567?pvs=204) | 팀원마다 한 번 복제해 본인 페이지에 구축·설정·검증 내용을 기록 |
 
-## 10/19 설계도 준비 완료 기준
+## 첫 주 도면·구축 착수 기준
 
-- 개인 담당 망의 draw.io AS-IS 논리도 + VM/서버/클라이언트/클라우드 목록 초안
-- 정상 통신·보안 시험 출발지/대상 및 본사 VPN 허브 연결 요청 정리
-- 확정되지 않은 IP·장비·AWS 자원은 **미확정**으로 표시하고 10/20 회의 질문 목록 작성
-- 도면 원본(`.drawio`)과 PNG를 개인 Notion에 기록, 팀 합의된 구조는 design에 연결
-- 10/19는 **망 실제 구축 완료를 요구하지 않음**, 실습·검증 결과를 만들어 쓰지 않음
+- **10/19:** 강사 피드백과 함께 4망·AWS 공개/백업 경로, VMware·Docker·Kubernetes, M2 중앙 관제/각 망 보안 구성의 **설계 초안** 작성. 첫날 완성 강제 안 함.
+- **10/20:** 5명 공동 리뷰. VLAN/IP·VPN·경계 방화벽·정상/시험 경로·Docker 이미지/컨테이너 실행 위치·K8s 노드/서비스·AWS 비용/권한을 도면에서 검토.
+- **10/21 오전:** 각 담당 draw.io 원본과 PNG, 장비/서버·클라이언트/클라우드 자산 목록, 미확정 사항의 담당·기한을 통합 검토해 **구축 가능한 설계 기준선** 마련.
+- **10/21 오후~23:** 확정된 영역부터 VM·네트워크·서버·컨테이너 기반을 실제 구축. 늦어도 10/22에는 실습 착수하고 10/23 첫 통신·설정/오류 증거를 남김.
+- 강사 피드백 때문에 변경할 항목은 **계획 수정/미확정**으로 기록; 승인된 부분만 구축. 공격 시험·TO-BE 적용 결과는 실제 재현 전까지 완료로 기록하지 않음.
 
 ## 매일 Issue 댓글 예시
 
