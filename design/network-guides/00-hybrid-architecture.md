@@ -12,11 +12,13 @@
 | 영역 | 1차 기본 배치 | AWS 활용/관계 | 주담당·협업 |
 |---|---|---|---|
 | 한국 본사 직원/관리/보안 구역 | 학원 VMware·vSphere, VyOS VPN 허브, 관리/시험 서버 | 공개 서비스가 아닌 내부 관리·허용 경로 | M1 네트워크 + M2 보안 |
-| 한국 서비스 DMZ/APP/DATA | 가상 네트워크, Nginx, Spring Boot, MySQL, 선택적 K8s | 캐나다/외부 고객 HTTPS 웹에서 API 요청 연결; 보안정책·CORS/TLS 검사 | M3 인프라·배포 + M5 앱 코드 |
+| 한국 서비스 DMZ/APP/DATA | 가상 네트워크, Nginx, **Docker 이미지/컨테이너 배포 경로, Kubernetes Control Plane·Worker·Service/Ingress 설계**, Spring Boot, MySQL | 캐나다/외부 고객 HTTPS 웹에서 API 요청 연결; 보안정책·CORS/TLS 검사 | M3 인프라·배포 + M5 앱 코드 |
 | 백업/DR | 별도 VLAN/VPN, 백업 서버, DB 복원 시험 격리환경 | S3에 원격 백업 사본 (버킷 비공개, 권한 최소화) | M4 + M3 |
 | 캐나다 지사 직원/관리 | 격리된 실습 VMware/VyOS, 본사 IPsec Site-to-Site VPN | '캐나다 지사' 논리망과 AWS 물리 Region은 별개 | M5 + M1 |
 | 캐나다/외부 공개 웹 | 기본적으로 클라우드의 HTTPS 정적 웹/콘텐츠 경로를 우선 검토 | S3(비공개 원본)+CloudFront 등 또는 비용/권한 허용 시 다른 구성 | M5 + M3 |
 | 음성 인식·번역 | FastAPI 앱 서버에서 호출/처리 | 외부 API 사용 시 네트워크·키·비용·타임스탬프 확인 | M5 + M3 |
+
+**Docker/Kubernetes 설계는 W1부터 필수 검토 대상**입니다. Docker 이미지 생성/보관·단독 실행 호스트와 Kubernetes 노드/Pod·Service·Ingress 및 관리 접근을 처음부터 그림에 넣습니다. 단, 실제 노드 수·설치 방식·완료 목표는 자원과 강사 피드백 후 확정하며 10/19 설치 완료를 요구하지 않습니다. 각 망 방화벽·로그 연계는 [보안 설치 책임표](02-security-deployment-matrix.md)로 검토합니다.
 
 **확정 전 질문:** 학원 VMware 호스트 CPU/RAM/스토리지, vSphere와 VMware Workstation 네트워크 공유 범위, 가상 스위치 VLAN/트렁크 지원, 인터넷/NAT 가능 경로, AWS 계정 허용 서비스·Region·비용 제한.
 
@@ -27,7 +29,7 @@
 |---|---|---|
 | 본사 M1 | VyOS 허브 1, 직원 클라이언트 1, 관리자 클라이언트 1 | 3개 역할; 관리자 PC는 다른 망의 검증 때 재사용 가능 |
 | 보안 M2 | Bastion 1, SSH 시험 대상 1, Wazuh 1, 공격 Linux 1 | 4개 역할; Suricata 관찰 센서는 자원/트래픽 미러링 확인 시 추가 |
-| 서비스 M3 | VyOS/경계 1, 웹 진입 1, APP 1, DB 1 | 4개 역할; 컨테이너·K8s는 대체/확장 배치로 검토 |
+| 서비스 M3 | VyOS/경계 1, 웹 진입 1, APP 실행 호스트 1, DB 1 | 4개 역할; 컨테이너·K8s는 대체/확장 배치로 검토 |
 | DR M4 | VyOS/경계 1, 백업 서버 1 | 2개 역할; DB Replica/격리 복원 인스턴스는 검증 시점·자원 확인 후 할당 |
 | 캐나다 M5 | VyOS 1, 직원 클라이언트 1, 관리자 클라이언트 1 | 3개 역할; 추가 웹 진입 VM은 AWS 웹 구성과 중복 시 불필요 |
 
