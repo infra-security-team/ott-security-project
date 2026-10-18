@@ -48,11 +48,16 @@
 |  | 백업 권한·방화벽·저장소 접근 개선 | 11/03~06 | [#31](https://github.com/infra-security-team/ott-security-project/issues/31) |
 |  | S04 재시험·실제 DB 복원 결과 대조 | 11/09~10 | [#32](https://github.com/infra-security-team/ott-security-project/issues/32) |
 |  | DB 복제·백업·DR 증거·시연 | 11/11~13 | [#33](https://github.com/infra-security-team/ott-security-project/issues/33) |
-| **M5 유은혜 (PM)** | 캐나다 VLAN/VPN·AWS·S05·앱 구조 설계 | 10/19~23 | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) |
+| **M5 유은혜 (PM)** | **인프라·개발 병행 설계:** 캐나다 VLAN/VPN·S05 / OTT API·DB·AWS 경로 | 10/19~23 | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) · [#8](https://github.com/infra-security-team/ott-security-project/issues/8) |
 |  | 캐나다 VyOS·직원/관리 VLAN·VPN 구축 | 10/21 오후~10/28 | [#34](https://github.com/infra-security-team/ott-security-project/issues/34) |
+|  | **개발 병행:** ERD·Class/API·React/Spring/FastAPI 기본 골격 | **10/22~23** | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) · [#8](https://github.com/infra-security-team/ott-security-project/issues/8) |
+|  | **개발 병행:** 로컬 로그인·권한·목록·샘플 영상 / 캐나다 VPN 검증 | **10/26~28** | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) · [#34](https://github.com/infra-security-team/ott-security-project/issues/34) |
+|  | **개발 병행:** M3 AS-IS 최소 앱 배포·정상 기능 확인 / AWS 웹 경로 준비 | **10/29~30** | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) · [#12](https://github.com/infra-security-team/ott-security-project/issues/12) |
 |  | S05 캐나다 직원→한국 DB 직접 접근 재현 | 11/02 | [#35](https://github.com/infra-security-team/ott-security-project/issues/35) |
 |  | 캐나다 DB 접근 제한·VPN 정책 개선 | 11/03~06 | [#36](https://github.com/infra-security-team/ott-security-project/issues/36) |
+|  | **개발·인프라 병행:** 실제 STT·한영 SRT/VTT·React 표시, AWS HTTPS/API / S05 TO-BE | **11/03~06** | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) · [#12](https://github.com/infra-security-team/ott-security-project/issues/12) · [#36](https://github.com/infra-security-team/ott-security-project/issues/36) |
 |  | S05 재시험·정상 OTT/API 접근 확인 | 11/09~10 | [#37](https://github.com/infra-security-team/ott-security-project/issues/37) |
+|  | **검증 병행:** 캐나다 보안 재시험 + OTT/AI 정상 요청 회귀 검증 | **11/09~10** | [#37](https://github.com/infra-security-team/ott-security-project/issues/37) · [#8](https://github.com/infra-security-team/ott-security-project/issues/8) |
 |  | 캐나다/앱/PM 결과 취합·시연 | 11/11~13 | [#38](https://github.com/infra-security-team/ott-security-project/issues/38) |
 
 ## 3. 공동 통합 업무
@@ -67,6 +72,8 @@
 | [#11](https://github.com/infra-security-team/ott-security-project/issues/11) | APP 2 Pod 분산·복구/Worker 장애 검증 | M3·M5 | 11/02~10 |
 | [#12](https://github.com/infra-security-team/ott-security-project/issues/12) | 캐나다 S3·CloudFront(OAC)·한국 API HTTPS | M5·M3 | 10/21~11/06 |
 | [#13](https://github.com/infra-security-team/ott-security-project/issues/13) | 최종 보고서·발표자료·5인 리허설·발표 | 전원 | 11/09~16 |
+
+**M5 병행 일정:** 캐나다 인프라(#5·#34~#38)와 개발(#8·#12)을 동일 기간 병행. 각 Issue는 다른 성과물 기준으로 검증하며, VPN 정상·앱 정상·AI 완료를 하나의 완료 상태로 합산하지 않음.
 
 **앱·인프라 연계 일정:** 10/22~23 M5 ERD·Class/API 계약·개발 골격 착수 → 10/28 로컬 로그인·권한·목록·샘플 영상 → **10/30 M3 AS-IS 배포 환경** 기본 기능 확인 → 11/06 실제 STT·한영 번역·SRT/VTT·React 재생 검증. **코드 개발 M5 / 서버·DB·Docker/K8s 배포 M3**.
 
