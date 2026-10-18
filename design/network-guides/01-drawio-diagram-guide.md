@@ -14,7 +14,7 @@
 4. **표시할 정보:** VLAN ID, CIDR/IP 대역, 기본 게이트웨이, 물리/가상 NIC·스위치 또는 포트그룹 명칭(미확정 시 TBD), DHCP/고정 IP, 정상 통신 목적지·포트·프로토콜.
 5. **전후 시나리오:** AS-IS에서 의도적으로 허용하는 실험 경로(격리!), 정상 사용자 경로, 운영·관리 경로를 색과 범례로 구분.
 6. **컨테이너·클러스터:** Docker 빌드/이미지 저장소/실행 호스트와 Kubernetes Control Plane·Worker·Service/Ingress/관리 포트·네트워크 경계를 구분. K8s가 Docker Engine을 반드시 사용하는 것은 아님.
-7. **클라우드:** AWS 영역을 별도 경계로 분리하고 AWS가 접속하는 경로(공개 HTTPS / 백업→S3)를 표시. EC2·S3·CloudFront는 서로 다른 서비스.
+7. **클라우드/클라이언트:** 사용자 브라우저→CloudFront(비공개 S3 정적 React), **브라우저→별도 승인 HTTPS API→한국 Spring/DB**, M4 백업→별도 S3를 그립니다. CloudFront에서 API 프록시를 쓰는 안은 실제 API 원본·TLS/접근통제 가능 조건을 검토한 경우만 표시합니다. EC2·S3·CloudFront는 서로 다른 서비스입니다.
 8. **각 망 보안·관제:** 경계 방화벽·접근통제·로그 에이전트/센서와 M2 중앙 Wazuh/Suricata가 실제 어떤 통신/로그를 받는지 표시. 동일 서버를 모든 망에 중복 생성하지 않음.
 9. **미확정값:** 'TBD / 결정 담당 / 확정 예정일'로 남김. 실제 IP를 임의로 확정하지 않음.
 
@@ -22,7 +22,8 @@
 | 논리 ID | 담당 | 구역/VLAN | 실행 위치 | VM 또는 관리형 서비스 | OS/버전 | NIC/연결 구간 | IP/DHCP | 대상·프로토콜/포트 | 검증 |
 |---|---|---|---|---|---|---|---|---|---|
 | HQ-R1 | M1 | 본사 경계 | 학원 VMware (예정) | VyOS VM 1 | TBD | WAN/직원/관리(예정) | TBD | VPN 보호 대역(합의 전) | '미수행' |
-| AWS-WEB | M5 | 공개 진입 | AWS (선정 전) | S3+CloudFront 검토 | 해당 없음 | HTTPS 경로 | DNS TBD | 한국 API로 HTTPS | '미수행' |
+| AWS-WEB | M5 | 공개 웹 | AWS (검토 중) | 비공개 S3 + CloudFront/OAC | 해당 없음 | 브라우저 HTTPS | DNS TBD | React 정적 파일 응답 (API 연결과 별개) | '미수행' |
+| API-ENTRY | M3·M5 | 공개 API 진입 | 실행 위치 TBD | HTTPS API Gateway/프록시 방식 TBD | TBD | 브라우저→API→Spring | TLS/DNS TBD | 인증·CORS·정상 API 응답; 시험망과 격리 | '미수행' |
 
 **기능별 별도 장비를 억지로 세지 마세요.** VyOS VM 1대가 해당 구조의 DHCP·라우팅·NAT·방화벽·VPN 등을 담당할 수 있습니다. 센서·복제/복원·K8s 추가 VM은 자원 승인 후 결정합니다.
 
