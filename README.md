@@ -1,19 +1,20 @@
 # OTT 인프라·보안 팀 프로젝트
 
-**상태:** 팀 검토 및 설계 준비 · **발표:** 2026-11-16
+**상태:** 팀 검토 및 설계 준비 · **발표:** 2026-11-16 · WBS 수정 검토안
 
-## 팀 작업 순서
+## 팀원 첫 시작 및 매일 작업 순서
 
-| 순서 | 확인할 곳 | 할 일 |
+| 순서 | 위치 | 할 일 |
 |---|---|---|
-| 1 | [WBS](WBS.md) | 내 이름의 행에서 이번 단계와 기한 확인 |
-| 2 | WBS에 적힌 내 Issue 번호 | 번호를 눌러 작업 항목과 완료 기준 확인 |
-| 3 | 내 Notion 기술서 | 설계·명령어·설정 코드·오류·시험 과정과 결과 기록 |
-| 4 | 같은 Issue의 댓글 | 퇴근 전 오늘 한 일·Notion 링크·막힌 점·다음 작업 작성 |
-| 5 | PM 확인 | PM이 댓글을 보고 진행 상황과 필요한 지원 확인 |
+| 1 | [WBS](WBS.md) | 자기 업무명·기간·Issue와 선행 작업 확인 |
+| 2 | [Projects 보드](https://github.com/orgs/infra-security-team/projects/4) | Status 변경: Todo / In progress / Blocked / In review / Done |
+| 3 | [Notion 팀 기술서 양식](https://app.notion.com/p/3fd1b198732a81cf9c44fb58dfcb8567?pvs=204) | 한 번 복제 → 이름을 'M1 유용수 — 본사 네트워크 구축·보안 기록' 형식으로 수정 → 팀/PM과 공유 → 첫 Issue의 '개인 Notion 기술서'에 링크 입력. 같은 페이지에 이후 기록 누적 |
+| 4 | 자기 Issue | 완료한 체크박스만 체크. 퇴근 전 '오늘 한 일 / Notion 링크 / 막힌 점 / 다음 작업' 댓글 |
+| 5 | 검토자 및 PM | 관련 담당·PL이 기술 결과를 검토; PM은 일정/지원 점검. 검토 후 Close 및 Projects Done 확인 |
 
-**한 줄 규칙:** WBS는 일정, Issue는 진행 현황, Notion은 실제 기술세부내역서.
-매일 WBS를 수정하거나 GitHub에 인프라·보안 설정 파일을 만들 필요 없음.
+**관리 기준:** WBS는 계획과 마감일, Projects Status는 최신 진행 상황, Issue는 작업·일일 기록·검토 링크, Notion은 인프라/보안 설정과 시험 근거. 본문에 남아 있는 옛 '상태: 할 일'은 진행 상태 기준으로 사용하지 않음.
+
+**공동 의사결정:** 10/21 AS-IS 기본망 검토 → 10/23 보안정책·TO-BE 초안 및 구축 기준선 → 11/02 시험 결과 공유 → 11/03 오전 TO-BE 최종 적용안 확정. [WBS](WBS.md) 및 [공동 Issue #6](https://github.com/infra-security-team/ott-security-project/issues/6) 참고. 날짜는 팀 검토 예정안.
 
 ## 프로젝트 자료
 
@@ -21,7 +22,8 @@
 |---|---|---|
 | 현재 계획서 | [v0.2 PDF](plans/project-plan-v0.2.pdf) | 팀 검토안. 확정본 아님 |
 | 이전 계획서 | [v0.1 PDF](plans/project-plan-v0.1.pdf) | 변경 전 자료 |
-| WBS | [WBS](WBS.md) | 주차·담당·작업 번호 |
+| WBS | [WBS](WBS.md) | 공동 설계 검토·업무명·기간·Issue |
+| Projects | [팀 업무 보드](https://github.com/orgs/infra-security-team/projects/4) | 현재 상태와 담당자 |
 | 회의록 | [meetings](meetings/README.md) | 실제 회의 내용과 결정 |
 | 계획 설계 | [design](design/README.md) | 전체 구성도, Class Diagram, ERD 등의 팀 합의 자료 |
 | 앱 코드 | [frontend](frontend/README.md) · [backend](backend/README.md) · [ai-service](ai-service/README.md) | M5 개발, M3 등 연동 팀원이 내려받을 원본 |
