@@ -1,5 +1,5 @@
 # WBS / Issue 작업 양식
-[작성 방법](../WORK_GUIDE.md)
+[작성 방법](../../guide/WORK.md)
 아래 항목을 New issue의 팀 작업 양식에서 작성합니다. 상태는 Issue에만 갱신합니다.
 
 ## 담당·상태

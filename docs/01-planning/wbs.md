@@ -1,5 +1,5 @@
 # 발표일까지의 WBS · 2026-10-19~11-16
-[처음 시작](../../START_HERE.md) · [역할 목록](../team-roles/README.md) · [PM·PL 운영](../team-roles/pm-pl.md)
+[처음 시작](../../guide/START.md) · [역할 목록](team-roles/README.md) · [PM·PL 운영](team-roles/pm-pl.md)
 
 **발표일은 2026-11-16입니다.** 10/19 월요일 착수와 아래 내부 마감일은 그에 맞춘 운영 일정안이며, 10/19 팀 검토 후 #6에 합의 내용을 남깁니다. 이미 합의·완료했다고 표시한 일정이 아닙니다.
 
@@ -49,6 +49,6 @@ WBS는 계획과 작업 순서, **Issue 본문은 현재 상태**입니다. WBS�
 - 11/06 이후 새로운 기능을 추가하기보다 필수 검증과 결함 수정에 집중합니다. 실패 결과도 실제 근거와 제약을 보고합니다.
 
 ## 운영 자료
-[착수 확인표](../readiness.md) · [시험 기준표](../../06-testing/test-matrix.md) · [최종 산출물](../../07-reports/final-delivery.md)
+[착수 확인표](readiness.md) · [시험 기준표](../06-testing/test-matrix.md) · [최종 산출물](../07-reports/final-delivery.md)
 
 PDF v0.2의 W1~W4는 상대 주차입니다. 구체 날짜와 실행 작업 연결은 이 WBS를 참고하며, 최종 팀 승인 시 일정 변경·승인 기록을 함께 남깁니다.

@@ -1,7 +1,11 @@
-# 01 · 기획·일정 관리
-- [계획서](project-plan/README.md): 프로젝트의 목표·범위·설계·완료 기준. 현재 v0.2 팀 검토안.
-- [역할](team-roles/README.md): 5명 각자의 첫 작업·산출물·검토자.
-- [WBS](wbs/README.md): 주차·선행 관계·완료 조건. 실제 진행 상태는 Issue.
-- [아카이브](archive/README.md): 과거 제안·피드백. 승인 전 내용을 확정안으로 표시하지 않습니다.
+# 01 · 계획·일정·역할
 
-시작 방법·실습 기록·포트폴리오 작성법은 계획서와 분리합니다. [시작 안내](../START_HERE.md) · [가이드](../guides/README.md)
+| 파일 | 작성·확인 내용 | 담당 |
+|---|---|---|
+| [계획서](project-plan.md) | 목표·범위·전제·승인 상태와 PDF | PM·PL·전원 검토 |
+| [일정표](wbs.md) | 주별 마감, 담당별 작업 번호, 선행 조건 | PM 취합·전원 확인 |
+| [역할표](team-roles/README.md) | 개인 담당 영역, 첫 작업, 협업 상대 | 전원 |
+| [착수 확인표](readiness.md) | 계정·장비·자원·미결정 사항 | PM·PL·전원 |
+| [이전 안건](archive.md) | 초기 제안·강사 피드백·변경 이유 | PM |
+
+**현재 계획서 v0.2:** 팀 검토안. 승인 후 승인일과 기준 버전을 [계획서](project-plan.md)에 등록. 진행 상태는 [작업 페이지](https://github.com/infra-security-team/ott-security-project/issues)에서 관리; 일정표에 매일 체크하지 않음.

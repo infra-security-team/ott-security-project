@@ -1,5 +1,9 @@
-# 02 · 회의록 및 의사결정
-- 회의록: 날짜 `YYYY-MM-DD-subject.md` 형식
-- 결정 기록: `decision-log/`에 `ADR-001-title.md` 형식
-- **확정 / 제안 / 미해결을 반드시 구분**합니다.
-- 템플릿: [회의록](../templates/meeting-template.md) · [ADR](../templates/decision-record-template.md)
+# 02 · 회의·결정 기록
+
+| 파일 | 기록 내용 |
+|---|---|
+| [10/16 첫 회의](2026-10-16-kickoff.md) | 논의한 주제·역할·미결정 사항. 현재 팀 확인 전 초안 |
+| [10/19 진행안](monday-orientation.md) | 설명 순서·확인할 화면. 개최 결과와 별개 |
+| [결정 기록](decision-log.md) | 선택한 방법·선택 이유·영향·재검토 조건 |
+
+**새 회의록 위치:** 이 폴더의 `YYYY-MM-DD-주제.md`. [회의록 양식](../templates/meeting-template.md) 사용. 확정된 결정, 제안, 미해결을 구분하고 담당자·기한·연결된 작업 번호 표시.

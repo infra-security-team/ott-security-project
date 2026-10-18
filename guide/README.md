@@ -1,33 +1,29 @@
-# 팀 안내서
+# 팀 작업 안내
 
-여기에서 필요한 항목을 골라 누르세요. **처음에는 1번만 따라 하면 됩니다.** 나머지 자료는 작업이 해당 단계에 왔을 때 열면 됩니다.
+**시작 위치:** 담당 [첫 작업](../README.md#담당과-첫-작업) 확인 → [시작 순서](START.md) → 실습·Notion 기록 → 작업 페이지 갱신.
 
-## 시작하기
+## 안내 항목
 
-1. [처음 시작하는 순서](../docs/START_HERE.md) — 저장소에 들어온 뒤 첫날 할 일
-2. [매일 작업하는 방법](../docs/WORK_GUIDE.md) — 작업 페이지 확인, Notion 기록, GitHub 공유 순서
-3. [프로젝트 진행 순서](../docs/PROJECT_FLOW.md) — 문제 확인부터 개선 후 재시험까지
-4. [내 역할 찾기](../docs/01-planning/team-roles/README.md) — 팀원별 담당 범위
+| 필요한 내용 | 열어 볼 문서 | 확인 내용 |
+|---|---|---|
+| 처음 시작 | [시작 순서](START.md) | 첫 작업, 기술서 준비, 하루 마감 |
+| 매일 기록 | [작업·작성 방법](WORK.md) | Notion·GitHub·작업 페이지에 적을 내용 |
+| 진행 단계 | [프로젝트 흐름](FLOW.md) | 설계→구축→재현→개선→재시험 |
+| 자료 저장 | [폴더와 파일 위치](FOLDERS.md) | 파일 종류별 저장 위치와 예 |
+| 최종 문서 | [상세 기술서·보고서](WRITING.md) | 개인 기록과 팀 제출 문서 구성 |
+| 작성 예시 | [작업 기록 예시](EXAMPLES.md) | 상태·파일·시험 근거의 실제 작성 형태 |
+| 공용 주소 | [팀 링크](LINKS.md) | Notion·실습 환경 주소 등록 현황 |
 
-## 필요할 때 보기
+## 프로젝트 운영 자료
 
-- [전체 일정표](../docs/01-planning/wbs/README.md) — 할 일과 목표 날짜
-- [작업 페이지 작성 예시](https://github.com/infra-security-team/ott-security-project/issues/new/choose) — 진행 상황과 결과 링크 적기
-- [Notion·GitHub에 무엇을 적는지](../docs/DOCUMENTATION_GUIDE.md) — 상세 기록과 팀 파일의 차이
-- [폴더 안내](../docs/FOLDER_GUIDE.md) — 각 폴더에 들어갈 자료
-- [PM과 PL의 역할](../docs/01-planning/team-roles/pm-pl.md) — 일정 조율과 기술 연결 점검
-- [계획서 PDF](../docs/01-planning/project-plan/README.md) — 프로젝트 범위와 목표
-- [회의 기록](../docs/02-meetings/README.md) — 회의 내용과 결정 사항
-- [최종 보고·발표 준비](../docs/07-reports/final-delivery.md)
-
-## 폴더는 이렇게 생각하세요
-
-| 폴더 | 여기에 두는 것 |
+| 자료 | 쓰임 |
 |---|---|
-| `guide/` | 지금 보고 있는 안내서 |
-| `docs/` | 계획, 일정, 역할, 설계, 보안 시험, 보고서 같은 설명 문서 |
-| `infrastructure/` | 네트워크와 서버를 만드는 설정·구성 자료 |
-| `frontend/`, `backend/`, `ai-service/` | 화면, 서버 기능, AI 기능의 코드 |
-| `.github/` | 작업·보안 요청을 등록할 때 자동으로 보이는 양식 |
+| [일정표](../docs/01-planning/wbs.md) | 담당별 작업 순서와 목표 날짜 |
+| [역할표](../docs/01-planning/team-roles/README.md) | 개인 담당 범위와 협업 상대 |
+| [계획서](../docs/01-planning/project-plan.md) | 목표·범위·전제·승인 상태 |
+| [PM·PL 역할](../docs/01-planning/team-roles/pm-pl.md) | 일정 조율과 기술 연결 확인 |
+| [착수 확인표](../docs/01-planning/readiness.md) | 계정·장비·자원·팀 합의 필요 항목 |
 
-폴더를 전부 외울 필요는 없습니다. 시작할 때는 이 안내서와 내 작업 페이지를 열고, 실제 파일을 만들 때 담당 폴더 안내를 확인하면 됩니다.
+**용어:** 작업 페이지(Issue) = 해야 할 일 한 건의 기록. WBS = 전체 작업 일정표. 산출물 = 만든 파일이나 문서. 증거 = 실제 동작을 확인한 로그·화면·시험 결과. AS-IS/TO-BE = 개선 전/후 상태.
+
+기술 문서·실제 코드의 위치: [프로젝트 문서 목록](../docs/README.md).

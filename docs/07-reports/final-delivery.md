@@ -1,5 +1,5 @@
 # 최종 산출물·발표 준비
-[최종 작업 #13](https://github.com/infra-security-team/ott-security-project/issues/13) · [WBS](../01-planning/wbs/README.md)
+[최종 작업 #13](https://github.com/infra-security-team/ott-security-project/issues/13) · [WBS](../01-planning/wbs.md)
 
 현재는 준비 목록이며 실제 결과·제출 완료를 뜻하지 않습니다. 발표 **2026-11-16**. 제출 시각·형식·발표 시간은 PM이 10/19 확인합니다.
 
@@ -22,4 +22,4 @@
 개인 Notion 기술서를 원본으로 합칩니다. 공통 개요·전체 구성 → 5명 영역별 상세 설계/구축/개선/시험 → 전체 통합 시험 → 결론·한계·기여 → 긴 코드 부록 순서입니다.
 각 작성자가 코드·설정·설명·증거를 준비하고, PL은 연결의 정확성, PM은 목차·누락·일정을 확인합니다. Notion 전체를 별도 Markdown 문서로 다시 쓰지 않습니다. 위 개인 results 파일은 요약과 원본 링크를 담습니다.
 제출 직전 문서 속 코드와 GitHub 파일의 일치, 그림·코드 잘림, 링크 접근, 비밀값 제거를 확인합니다. 코드 포함 요구는 링크만으로 대체하지 않습니다.
-[공통 작성 기준](../DOCUMENTATION_GUIDE.md) · [개인 양식](../templates/technical-detail-template.md)
+[공통 작성 기준](../../guide/WRITING.md) · [개인 양식](../templates/technical-detail-template.md)

@@ -5,7 +5,7 @@
 ## 시작과 기록
 - [내 역할·단계별 작업](../../docs/01-planning/team-roles/m2.md)
 - [시작 Issue #2](https://github.com/infra-security-team/ott-security-project/issues/2)
-- [Notion·공용 링크](../../docs/TEAM_LINKS.md)
+- [Notion·공용 링크](../../guide/LINKS.md)
 
 ## 이 폴더에 저장할 것
 재현에 필요한 설정 원본·스크립트·적용/복구 설명을 저장합니다. 예: `configs/`, `scripts/`는 실제 파일이 생길 때 생성합니다.

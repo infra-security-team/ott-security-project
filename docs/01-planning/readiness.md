@@ -1,5 +1,5 @@
 # 10/19 착수 확인표
-[공동 준비 Issue #6](https://github.com/infra-security-team/ott-security-project/issues/6) · [WBS](wbs/README.md)
+[공동 준비 Issue #6](https://github.com/infra-security-team/ott-security-project/issues/6) · [WBS](wbs.md)
 
 2026-10-17 점검 기준. 아래는 아직 실제 확인·합의가 필요한 항목입니다. 체크는 Issue #6에서 관리하고, 이 문서는 확인 대상과 책임을 안내합니다.
 

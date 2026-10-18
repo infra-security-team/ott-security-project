@@ -1,15 +1,15 @@
 # 시험 기준표 · 아직 미수행
-[WBS](../01-planning/wbs/README.md) · [시험 양식](../templates/test-case-template.md)
+[WBS](../01-planning/wbs.md) · [시험 양식](../templates/test-case-template.md)
 
 모든 행의 현재 상태는 **미수행**입니다. 아래는 합격을 주장하는 표가 아니라 시험 설계 기준입니다. 실제 주소·버전·계정 역할·입력·시각·로그·판정을 결과 파일에 기록합니다.
 
 | 시험 | 담당·검토 | 확인할 결과 | 정상 기능·판정 주의 | 결과 위치 |
 |---|---|---|---|---|
-| S01 직원망→관리 SSH | M1 / M2 | 개선 전 접근 범위와 개선 후 정책·로그 비교 | 승인 Bastion 경로 유지, timeout만으로 차단 판정 금지 | docs/04-security/validation/s01-m1.md |
-| S02 반복 SSH 인증 실패 | M2 / 대상 서버 담당 | 원본 인증 실패와 중앙 경보 일치 | 정상 관리자 로그인 유지, 탐지와 차단 구분 | docs/04-security/validation/s02-m2.md |
-| S03 DMZ→K8s6443 | M3 / M2·M5 | 관리 포트 노출과 제한 후 결과 | 정상 API·승인 관리 유지, 연결을 인증 우회로 표현 금지 | docs/04-security/validation/s03-m3.md |
-| S04 테스트 백업 읽기 | M4 / M3·M2 | 비인가 계정 읽기와 권한 개선 비교 | 승인 계정 복원 가능, 테스트 데이터만 사용 | docs/04-security/validation/s04-m4.md |
-| S05 캐나다 직원→MySQL | M5 / M1·M3 | VPN 경유 DB 직접 접근 전후 | 정상 웹·API 유지, 연결과 데이터 조회 구분 | docs/04-security/validation/s05-m5.md |
+| S01 직원망→관리 SSH | M1 / M2 | 개선 전 접근 범위와 개선 후 정책·로그 비교 | 승인 Bastion 경로 유지, timeout만으로 차단 판정 금지 | docs/04-security/s01-m1-validation.md |
+| S02 반복 SSH 인증 실패 | M2 / 대상 서버 담당 | 원본 인증 실패와 중앙 경보 일치 | 정상 관리자 로그인 유지, 탐지와 차단 구분 | docs/04-security/s02-m2-validation.md |
+| S03 DMZ→K8s6443 | M3 / M2·M5 | 관리 포트 노출과 제한 후 결과 | 정상 API·승인 관리 유지, 연결을 인증 우회로 표현 금지 | docs/04-security/s03-m3-validation.md |
+| S04 테스트 백업 읽기 | M4 / M3·M2 | 비인가 계정 읽기와 권한 개선 비교 | 승인 계정 복원 가능, 테스트 데이터만 사용 | docs/04-security/s04-m4-validation.md |
+| S05 캐나다 직원→MySQL | M5 / M1·M3 | VPN 경유 DB 직접 접근 전후 | 정상 웹·API 유지, 연결과 데이터 조회 구분 | docs/04-security/s05-m5-validation.md |
 | 4망 통신 | M1 / 상대 망 | 허용·금지·반환 경로 | #7, 양쪽 설정·로그 대조 | test-network-001.md |
 | OTT·AI | M5 / M3 | 로그인·권한·목록·재생·실제 한영 자막 | #8, mock 제외·실패 입력 확인 | test-app-ai-001.md |
 | 로그·관제 | M2 / 전원 | 시간·원본·수집·경보 연결 | #9, 센서 미관찰 구간 명시 | test-monitoring-001.md |
