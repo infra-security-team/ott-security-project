@@ -106,7 +106,7 @@
 ## 7. 문서/상태 단일 기준 및 팀원 시작 순서
 
 1. **WBS:** 계획상 작업·담당·기한 및 선행 의존성. 매일 완료율을 중복 입력하지 않는다.
-2. **GitHub Projects:** 현재 진행 상태 `Todo → In progress → Blocked / In review → Done`와 일정 확인. Issue 본문에 과거 `상태: 할 일` 문구가 남아 있으면 *더 이상 최신 상태로 사용하지 않는다*. 팀 검토 후 관련 Issue 안내를 정리한다.
+2. **GitHub Projects:** 현재 진행 상태 `Todo → In progress → Blocked / In review → Done` 관리. **Project의 Start/Target date 필드와 WBS 날짜는 자동 동기화되지 않으므로, 수동 입력·검증 전에는 WBS를 계획 날짜의 기준으로 사용한다.** Issue 본문에 과거 `상태: 할 일` 문구가 남아 있으면 *더 이상 최신 상태로 사용하지 않는다*. 팀 검토 후 관련 Issue 안내를 정리한다.
 3. **GitHub Issue:** 작업 체크박스, 일일 댓글(진행·Notion URL·막힘·다음 행동), 기술 검토 링크. Close는 실제 검토 근거 확인 후 수행한다.
 4. **Notion 개인 기술서:** 팀 공용 [양식](https://app.notion.com/p/3fd1b198732a81cf9c44fb58dfcb8567?pvs=204)을 **한 번 복제** → `M1 유용수 — 본사 네트워크 구축·보안 기록`처럼 본인 이름/분야로 변경 → 팀원/PM에게 공유 → 첫 Issue의 '개인 Notion 기술서'에 해당 링크 연결 → 이후 동일 개인 페이지에 실습·설정·로그·재현·개선·재시험 누적 기록. **공유 링크가 있다는 사실만으로 타인의 열람 가능을 확정하지 않는다.**
 5. **GitHub 저장소 파일:** 계획·WBS·설계 합의·회의록·최종 요약·**앱 원본 코드**(frontend/backend/ai-service). 상세 인프라 명령·시험 로그는 Notion. 공개 파일/노션에 암호·VPN PSK·API 키 등 비밀값 저장 금지.
