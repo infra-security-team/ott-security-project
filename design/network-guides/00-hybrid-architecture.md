@@ -12,7 +12,7 @@
 | 영역 | 1차 기본 배치 | AWS 활용/관계 | 주담당·협업 |
 |---|---|---|---|
 | 한국 본사 직원/관리/보안 구역 | 학원 VMware·vSphere, VyOS VPN 허브, 관리/시험 서버 | 공개 서비스가 아닌 내부 관리·허용 경로 | M1 네트워크 + M2 보안 |
-| 한국 서비스 DMZ/APP/DATA | 가상 네트워크, Nginx, **Docker 이미지/컨테이너 배포 경로, Kubernetes Control Plane·Worker·Service/Ingress 설계**, Spring Boot, MySQL | 캐나다/외부 고객 HTTPS 웹에서 API 요청 연결; 보안정책·CORS/TLS 검사 | M3 인프라·배포 + M5 앱 코드 |
+| 한국 서비스 DMZ/APP/DATA | 가상 네트워크, Nginx, **Docker 이미지/컨테이너 배포 경로, Kubernetes Control Plane·Worker·Service/Ingress 설계**, Spring Boot, MySQL | 사용자 브라우저의 HTTPS API 요청을 **별도 승인된 한국 API 진입점**에서 수신; CORS/TLS·경계 ACL 검사 | M3 인프라·배포 + M5 앱 코드 |
 | 백업/DR | 별도 VLAN/VPN, 백업 서버, **DB Replica 계획**, 격리 복원 시험 환경 | **별도 비공개 S3 백업 사본** (암호화·최소 권한) | M4 + M3 |
 | 캐나다 지사 직원/관리 | 격리된 실습 VMware/VyOS, 본사 IPsec Site-to-Site VPN | '캐나다 지사' 논리망과 AWS 물리 Region은 별개 | M5 + M1 |
 | 캐나다/외부 공개 웹 | 공개 OTT 정적 프론트엔드용 클라우드 HTTPS 진입(캐나다 지사 VPN과 별도) | **v0.2: 캐나다 리전 S3 일반 비공개 버킷 + CloudFront HTTPS + OAC** 기본안. 사용 권한·가격·TLS/API 경로 확인 후 실행 | M5 + M3 |
@@ -33,7 +33,7 @@
 | DR M4 | VyOS/경계 1, 백업 서버 1, **DB Replica 1 계획** | **v0.2 DB 복제는 기본안**. 실제 임시 Restore DB 환경은 격리 시험 시 추가/재사용 여부 협의 |
 | 캐나다 M5 | VyOS 1, 직원 클라이언트 1, 관리자 클라이언트 1 | 3개 역할; 추가 웹 진입 VM은 AWS 웹 구성과 중복 시 불필요 |
 
-**기존 16~17 VM 단순 합산은 폐기합니다.** v0.2 기본 Kubernetes 노드 1+2, M4 DB Replica를 반영하면 기존 단순 VM 합계는 부정확합니다. 10/19~21 자원표에서 물리/가상 호스트·K8s 노드·Docker 실행 호스트·DB Replica·임시 Restore DB를 **중복 없이** 산정하고, 실측 CPU/RAM/스토리지/라이선스에 따라 실제 수량을 확정합니다. 별도 VM 없이 Pod 2개만으로 노드 이중화를 충족했다고 표현하지 않습니다.
+**가상 자산 수량 산정:** Kubernetes Control Plane 1+Worker 2, M4 DB Replica 및 각 망 VyOS·시험 Client·웹/DB 자산을 논리 역할과 실제 VM 수로 나누어 계산합니다. 10/19~21 자원표에서 물리/가상 호스트·K8s 노드·Docker 실행 호스트·DB Replica·임시 Restore DB를 **중복 없이** 산정하고, 실측 CPU/RAM/스토리지/라이선스에 따라 실제 수량을 확정합니다. 별도 VM 없이 Pod 2개만으로 노드 이중화를 충족했다고 표현하지 않습니다.
 
 ### 기능 분류표: '장비'와 '기능'은 다름
 | 기능 | 누가/어디에 | 구현 시 주의 |
@@ -64,11 +64,24 @@
 ## 5. 전체 논리 연결을 도면으로 옮길 때
 1. 본사 VPN Hub를 중앙에 두고 서비스·DR·캐나다 망에 Site-to-Site VPN 선을 **각각** 표시합니다(실제 VPN 종단과 인증 방식은 미확정).
 2. 서비스망에서는 DMZ → APP → DATA 흐름과 서버별 관리 접근 경로를 다른 선으로 표현합니다.
-3. AWS는 '공개 HTTPS 웹 ↔ 한국 API'와 '백업 → S3'라는 **서로 다른 경로**로 그립니다. 경로를 섞거나 AWS가 곧 캐나다 지사 내부망인 것처럼 그리지 않습니다.
+3. **사용자 브라우저 → CloudFront(비공개 S3의 React 정적 파일)**, **사용자 브라우저 → 승인된 공개 HTTPS API 진입점 → 한국 서비스망 Spring → MySQL**, **M4 백업 → 별도 비공개 S3**를 구분해 그립니다. 정적 웹이 API 요청을 자동 전달하는 것으로 표시하지 않습니다. CloudFront의 API 프록시 경로(/api 등)를 사용할 경우에도 실제 접근 가능한 HTTPS API 원본과 인증/TLS·접근통제·보호 정책을 별도로 검토합니다.
 4. 화살표에는 출발지, 목적지, 용도, 프로토콜/포트, 허용/거부(AS-IS, TO-BE)를 표시합니다. 포트값은 실제 앱 계약과 실습 조건 후 확정합니다.
-5. 방화벽과 VPN은 같은 그림에서 표시하되, 'VPN 통과'와 'DB 직접 접근 허용'을 혼동하지 않습니다.
+5. 방화벽과 VPN은 같은 그림에서 표시하되, 'VPN 통과'와 'DB 직접 접근 허용'을 혼동하지 않습니다. **취약한 AS-IS 시험 서버는 인터넷에 공개하지 않으며**, 공개 고객 API와 시험용 DB/관리 경로를 분리합니다.
 
-## 6. 회의에서 반드시 결정할 항목
+## 6. 10/21 오전 장비·프로그램 구성 확정에 필요한 입력
+
+| 확인 대상 | 기재할 실제 값(미확정은 TBD) | 담당 |
+|---|---|---|
+| 실습 호스트 | VMware Workstation/vSphere 버전, CPU·RAM·디스크 여유, 네트워크 포트그룹/VMnet·VLAN 지원 | M1·M3·전원 |
+| 각 망 VM/클라이언트 | 장비명·OS·vCPU/RAM·NIC·가상 스위치·역할, 공용 재사용 자산 | 각 망 담당 |
+| 주소·VPN | VLAN/CIDR·게이트웨이·WAN/Transit·IPsec 피어/보호 대역·NAT 예외 | M1 취합·각 망 승인 |
+| K8s/Docker | CP/Worker 실제 노드·자원, Pod/Service CIDR·CNI, 이미지 저장소, Service/LB 경로 | M3·M5 |
+| AWS 공개 웹·API | 리전·S3/CloudFront/OAC 권한, 공개 HTTPS API 진입점/원본 주소·TLS·CORS·비용·외부 공개 시험 격리 | M5·M3 |
+| S3 백업·보안 관제 | 백업 저장 공간/IAM 및 Wazuh/Suricata 수집·관찰 경로/에이전트 자원 | M4·M2·각 담당 |
+
+실제 값이 확인되기 전에는 장비 수·노드 수·IP를 확정 처리하지 않으며, 담당자·결정 기한을 함께 기록합니다.
+
+## 7. 회의에서 반드시 결정할 항목
 - 각 망 책임자/작업 시간, 실제 자원과 VM 상한.
 - VPN 종단(물리/가상 NIC), VPN 보호 대역, 라우팅/반환 경로·NAT 예외.
 - 공개 웹/HTTPS/API, 클라우드 서비스 이용 방식과 예상 청구 비용.
