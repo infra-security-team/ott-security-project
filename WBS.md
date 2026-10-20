@@ -2,7 +2,10 @@
 
 Team Blocks · 2026.10.19–11.16 · 발표 11/16 · 10/20 개정
 
-[업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2) · [토폴로지](design/토폴로지/README.md) · [회의록](meetings/2026-10-20-design-decisions.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf)
+[업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2) · [Topology](design/토폴로지/README.md) · [회의록](meetings/2026-10-20-design-decisions.md) · [기존 계획서 v0.3](plans/project-plan-v0.3.pdf)
+
+
+[팀원별 Notion 기술서](README.md#팀원별-기술서) · [Issue 댓글 작성 방법](README.md#issue-진행-댓글-작성)
 
 현재: AS-IS 설계. 기존 목표 10/20 → 현재 10/21 오전 완료 예상(팀 확인 전). 도면·연결 확인 후 10/21 구축을 시작합니다. AS-IS 제출 단계에는 TO-BE 도면을 포함하지 않습니다.
 
@@ -51,7 +54,7 @@ PM은 도면 제출/예상 변경을 취합하고, PL은 망 간 연결·가상�
 | D4 게시판·OTT 배포 | 10/29–10/30 | M1/M2 게시판·M3 OTT 정상 요청 확인, 공격 시험용 앱 기준 확보 | M1/M2 게시판·M3 OTT·M5 지원 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
 | D5 Store 최소 기능·AWS | 10/29–11/06 | 10/30 상품 조회·모의 주문의 최소 구현/배포 가용성 판정, 11/06 ALB–EKS–RDS 정상 연동 목표 | M5 코드·AWS | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
 | D6 CI/CD | 준비 10/28–10/30, 한국 11/04 · Store 11/05, 통합 11/06 | Actions 빌드/검사·이미지/배포 Git → Argo CD 배포, 버전·되돌리기 증거. S3 정적 배포 별도 | M5 workflow·M3 K8s 대상·M5 EKS 대상 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-| D7 AI 자막·웹 연동 | 11/02–11/04, 통합11/06 | 11/03 짧은 영상 실제 음성인식·한영 SRT/VTT, 11/04 배포 웹 자막 재생, 11/06 오류·비용 확인 | M5 코드·M3 실행 환경 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+| D7 AI 자막·웹 연동 | 11/02–11/04, 통합 11/06 | 11/03 짧은 영상 실제 음성인식·한영 SRT/VTT, 11/04 배포 웹 자막 재생, 11/06 오류·비용 확인 | M5 코드·M3 실행 환경 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
 | D8 앱 회귀·배포 복구 | 11/09–11/10 | 보안 개선 뒤 게시판·OTT·Store·AI 정상 요청·배포 되돌리기·Store RDS 격리 복원 확인 | M5 앱 확인·각 배포 담당 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
 
 개발 일정 점검: M5는 지사망·코드·AI·AWS·PM을 병행하므로 위 목표를 전부 독립된 전일 작업으로 계산하지 않습니다. 10/23 최소 기능/Store 공수·예산, 10/28 로컬 기능, 10/30 기본 배포를 점검합니다. 지연 시 어떤 기능·시험이 영향을 받는지 기록하고 팀이 지원·범위·일정을 결정합니다. 실물 코드·진척 미확인 상태에서 전체 개발의 기한 달성을 보장하지 않습니다.
@@ -89,6 +92,7 @@ PM은 도면 제출/예상 변경을 취합하고, PL은 망 간 연결·가상�
 | 점검일 | 확인·기록할 결과 | 미충족 시 처리·담당 |
 |---|---|---|
 | 10/21–10/23 | [#6 착수 판정표](https://github.com/team-blocks-lab/otter-shield/issues/6) 기준 전체 주소·NIC 대응·라이선스·실제 자원 확인. GNS3 태그 전달·가상화/NIC·대표 동시 기동·설치 출구, 앱 명세·AI 짧은 개발 시험, AWS 권한/비용·API 공개 경로 | 각 담당 실측·PL 통합·PM 일정 취합. 미지원 구간의 대안/기한을 합의 |
+| 10/23 | 개정 계획서 검토본: 현재 범위·일정·AS-IS와 TO-BE의 변경 방향 | PM 취합·각 망 확인·PL 기술 검토·사용자 검토 후 PDF 공개. TO-BE 세부 도면은 공격 분석 후 11/03 확정 |
 | 10/28 | 시험용 SSH·관리 API·격리 Test DB·로그·망 간 왕복 준비 | 해당 공격이 가능한지 개별 판정. 앱 미인계와 기본망 미구축을 구분 |
 | 10/30 | 게시판/OTT 배포·Store 가용성·M1/M2/M4 공격 증거 | M5/M3·각 담당이 실제 남은 작업량 제시. 11/02 시험 영향 재계획 |
 | 11/03 | 취약점별 개선 근거·TO-BE 도면/정책·롤백 | 검토된 변경만 11/04부터 구현. AS-IS 증거 보존 |
