@@ -1,0 +1,293 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="페이지-1" id="OhFFugi2ibzTZtJ1DEy5">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=1;" value="M1 KOREA HQ | Yoo Yongsoo&#xa;GNS3 VyOS + VMware UTM | Target Topology - Deployment Not Yet Verified" vertex="1">
+          <mxGeometry height="60" width="1820" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="upstream" parent="1" style="ellipse;whiteSpace=wrap;html=0;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333333;fontSize=16;fontStyle=1;" value="Classroom Gateway&#xa;10.0.0.1/8" vertex="1">
+          <mxGeometry height="70" width="260" x="827" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="R1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#16324f;fontSize=15;fontStyle=1;" value="R1 | GNS3 Node&#xa;WAN: 10.9.0.1/8&#xa;UTM Link: 192.168.9.254/24&#xa;Default Gateway: 10.0.0.1" vertex="1">
+          <mxGeometry height="110" width="380" x="760" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="utm" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#5f2424;fontSize=15;fontStyle=1;" value="UTM1 | VMware&#xa;WAN: 192.168.9.1/24&#xa;Default Gateway: 192.168.9.254&#xa;VLAN Gateways / Firewall / VPN" vertex="1">
+          <mxGeometry height="110" width="420" x="735" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="platform-note" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontSize=13;" value="PLATFORM AND CONNECTION&#xa;&#xa;VyOS: GNS3 project node.&#xa;UTM: VMware virtual machine.&#xa;Switches: GNS3.&#xa;GNS3 version and execution server: TBD.&#xa;GNS3 - VMware integration and VMnet mapping: TBD.&#xa;Actual interface names and MAC mapping: TBD.&#xa;&#xa;Existing VMware VyOS: preserve its configuration.&#xa;Isolate the old router before activating the same IPs." vertex="1">
+          <mxGeometry height="240" width="620" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-note" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=16;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#574500;fontSize=13;" value="FIXED UTM GATEWAYS&#xa;&#xa;DMZ: 192.168.100.1/24&#xa;SERVER: 192.168.110.1/24&#xa;COMMON: 192.168.120.1/24&#xa;VLAN 10: 192.168.130.1/24&#xa;VLAN 20: 192.168.140.1/24&#xa;ADMIN / VLAN 30: 192.168.150.1/24&#xa;&#xa;Third staff department: VLAN and subnet TBD.&#xa;All inter-subnet routing passes through UTM1." vertex="1">
+          <mxGeometry height="240" width="620" x="1240" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="dmz-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=15;fillColor=#f0f6ff;strokeColor=#6c8ebf;fontColor=#16324f;fontSize=14;fontStyle=1;connectable=0;" value="DMZ | 192.168.100.0/24&#xa;UTM Dedicated Port / Untagged&#xa;Access VLAN Mapping: TBD" vertex="1">
+          <mxGeometry height="660" width="350" x="30" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="server-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=15;fillColor=#f0f9f0;strokeColor=#82b366;fontColor=#23482b;fontSize=14;fontStyle=1;connectable=0;" value="SERVER | 192.168.110.0/24&#xa;UTM Dedicated Port / Untagged&#xa;Access VLAN Mapping: TBD" vertex="1">
+          <mxGeometry height="660" width="480" x="400" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="lan-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=15;fillColor=#f6f0ff;strokeColor=#9673a6;fontColor=#49345a;fontSize=14;fontStyle=1;connectable=0;" value="STAFF AND COMMON SERVICES&#xa;UTM Single LAN Trunk&#xa;Staff VLANs 10 / 20 / TBD + Common VLAN TBD" vertex="1">
+          <mxGeometry height="660" width="630" x="900" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="admin-zone" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=15;fillColor=#fff0f4;strokeColor=#b5739d;fontColor=#652b49;fontSize=14;fontStyle=1;connectable=0;" value="ADMIN | 192.168.150.0/24&#xa;UTM Dedicated Port / Untagged&#xa;GNS3 Access VLAN 30" vertex="1">
+          <mxGeometry height="660" width="320" x="1550" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-dmz-core" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#16324f;fontStyle=1;" value="SW-DMZ-CORE" vertex="1">
+          <mxGeometry height="50" width="190" x="110" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-web" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#16324f;" value="SW-WEB" vertex="1">
+          <mxGeometry height="50" width="130" x="60" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-public" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#16324f;" value="SW-PUBLIC" vertex="1">
+          <mxGeometry height="50" width="130" x="220" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="web" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#6c8ebf;fontColor=#16324f;" value="WEB&#xa;192.168.100.2/24" vertex="1">
+          <mxGeometry height="65" width="130" x="60" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="dns" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#6c8ebf;fontColor=#16324f;" value="DNS&#xa;192.168.100.3/24" vertex="1">
+          <mxGeometry height="65" width="130" x="220" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="sftp" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#6c8ebf;fontColor=#16324f;" value="SFTP&#xa;IP: TBD" vertex="1">
+          <mxGeometry height="65" width="130" x="220" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-server-core" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#23482b;fontStyle=1;" value="SW-SERVER-CORE" vertex="1">
+          <mxGeometry height="50" width="210" x="535" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-app" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#23482b;" value="SW-APP" vertex="1">
+          <mxGeometry height="50" width="150" x="425" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-data" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#23482b;" value="SW-DATA" vertex="1">
+          <mxGeometry height="50" width="170" x="655" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="was" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#82b366;fontColor=#23482b;" value="WAS&#xa;192.168.110.3/24" vertex="1">
+          <mxGeometry height="65" width="150" x="425" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#82b366;fontColor=#23482b;" value="DB&#xa;192.168.110.2/24" vertex="1">
+          <mxGeometry height="65" width="130" x="595" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="backup" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#82b366;fontColor=#23482b;" value="Backup&#xa;192.168.110.4/24" vertex="1">
+          <mxGeometry height="65" width="130" x="735" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="log" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#82b366;fontColor=#23482b;" value="Log&#xa;192.168.110.5/24" vertex="1">
+          <mxGeometry height="65" width="130" x="595" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="nfs" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#82b366;fontColor=#23482b;" value="NFS&#xa;192.168.110.6/24" vertex="1">
+          <mxGeometry height="65" width="130" x="735" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-lan-core" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#49345a;fontStyle=1;" value="SW-LAN-CORE" vertex="1">
+          <mxGeometry height="50" width="210" x="1110" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-dept" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#49345a;" value="SW-DEPT&#xa;Trunk: VLAN 10 / 20 / Third Staff VLAN TBD" vertex="1">
+          <mxGeometry height="55" width="350" x="935" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-common" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#574500;" value="SW-COMMON&#xa;Access VLAN: TBD" vertex="1">
+          <mxGeometry height="55" width="180" x="1320" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="staff1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#9673a6;fontColor=#49345a;" value="Staff PC1 | VLAN 10&#xa;192.168.130.2/24" vertex="1">
+          <mxGeometry height="65" width="160" x="940" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="staff2" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#9673a6;fontColor=#49345a;" value="Staff PC2 | VLAN 10&#xa;192.168.130.3/24" vertex="1">
+          <mxGeometry height="65" width="160" x="1110" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="staff3" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#9673a6;fontColor=#49345a;" value="Staff PC3 | VLAN 20&#xa;192.168.140.2/24" vertex="1">
+          <mxGeometry height="65" width="160" x="940" y="1085" as="geometry" />
+        </mxCell>
+        <mxCell id="staff4" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#9673a6;fontColor=#49345a;" value="Staff PC4 | VLAN 20&#xa;192.168.140.3/24" vertex="1">
+          <mxGeometry height="65" width="160" x="1110" y="1085" as="geometry" />
+        </mxCell>
+        <mxCell id="staff5" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#9673a6;fontColor=#49345a;" value="Staff PC5&#xa;Third Department&#xa;VLAN / IP: TBD" vertex="1">
+          <mxGeometry height="65" width="160" x="940" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="staff6" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#9673a6;fontColor=#49345a;" value="Staff PC6&#xa;Third Department&#xa;VLAN / IP: TBD" vertex="1">
+          <mxGeometry height="65" width="160" x="1110" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="samba" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#d6b656;fontColor=#574500;" value="Samba&#xa;192.168.120.2/24" vertex="1">
+          <mxGeometry height="65" width="180" x="1320" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="dhcp" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#d6b656;fontColor=#574500;" value="DHCP&#xa;192.168.120.3/24" vertex="1">
+          <mxGeometry height="65" width="180" x="1320" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="sw-admin" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f8cecc;strokeColor=#b5739d;fontColor=#652b49;fontStyle=1;" value="SW-ADMIN&#xa;Access VLAN 30" vertex="1">
+          <mxGeometry height="55" width="220" x="1600" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="admin1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#b5739d;fontColor=#652b49;" value="Admin PC1 | VLAN 30&#xa;192.168.150.2/24" vertex="1">
+          <mxGeometry height="65" width="240" x="1590" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="admin2" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#b5739d;fontColor=#652b49;" value="Admin PC2 | VLAN 30&#xa;IP: TBD" vertex="1">
+          <mxGeometry height="65" width="240" x="1590" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="design-note" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=12;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontSize=12;" value="DESIGN AND MIGRATION NOTES&#xa;10 Servers / 6 Staff PCs / 2 Admin PCs / 10 Switches. Run only the VMs required for the current task.&#xa;Port labels describe roles; actual NIC names, VMnet assignments and GNS3 runtime are not confirmed.&#xa;Document VLAN references: DMZ 110 / SERVER 120 / COMMON 150. Final mapping to retained addressing is pending.&#xa;VMnet ID is not VLAN ID. Windows VMnet1 previously used 192.168.9.1; avoid a collision with UTM1.&#xa;M1 addresses remain unchanged. M3 readdressing and the M4 192.168.150.0/24 overlap require team coordination." vertex="1">
+          <mxGeometry height="140" width="1050" x="30" y="1300" as="geometry" />
+        </mxCell>
+        <mxCell id="policy-note" parent="1" style="rounded=1;whiteSpace=wrap;html=0;align=left;verticalAlign=top;spacing=12;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontSize=12;" value="ROUTING AND VALIDATION&#xa;VyOS routes HQ subnets via 192.168.9.1. UTM1 defaults via 192.168.9.254.&#xa;Internet SNAT and internal / VPN NAT exclusions are separate policies.&#xa;VPN endpoints: UTM1 - UTM5 for office access; UTM1 - UTM4 for management.&#xa;M2 remains independent. S01: HQ staff - UTM1 - VyOS1 - classroom LAN - VyOS2 - UTM2 - SSH test server.&#xa;Preserve baseline evidence before hardening. Diagram links do not prove connectivity." vertex="1">
+          <mxGeometry height="140" width="770" x="1100" y="1300" as="geometry" />
+        </mxCell>
+        <mxCell id="e01" edge="1" parent="1" source="upstream" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=none;html=0;strokeWidth=2;strokeColor=#6c8ebf;fontSize=12;labelBackgroundColor=#ffffff;" value="Classroom LAN | Physical NIC Integration TBD">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1070" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e02" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=none;html=0;strokeWidth=2;strokeColor=#6c8ebf;fontSize=12;labelBackgroundColor=#ffffff;" target="utm" value="192.168.9.0/24 | GNS3 - VMware Link TBD">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="465" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e03" edge="1" parent="1" source="utm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=none;html=0;strokeWidth=2;strokeColor=#6c8ebf;exitX=0.1;exitY=1;entryX=0;entryY=0.5;fontSize=12;labelBackgroundColor=#ffffff;" target="sw-dmz-core" value="DMZ Port | Untagged">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="782" y="560" />
+              <mxPoint x="45" y="560" />
+              <mxPoint x="45" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e04" edge="1" parent="1" source="utm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=none;html=0;strokeWidth=2;strokeColor=#82b366;exitX=0.35;exitY=1;entryX=0;entryY=0.5;fontSize=12;labelBackgroundColor=#ffffff;" target="sw-server-core" value="SERVER Port | Untagged">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="887" y="580" />
+              <mxPoint x="415" y="580" />
+              <mxPoint x="415" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e05" edge="1" parent="1" source="utm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=none;html=0;strokeWidth=2;strokeColor=#9673a6;exitX=0.65;exitY=1;entryX=0;entryY=0.5;fontSize=12;labelBackgroundColor=#ffffff;" target="sw-lan-core" value="LAN Port | Tagged Trunk">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1013" y="580" />
+              <mxPoint x="915" y="580" />
+              <mxPoint x="915" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e06" edge="1" parent="1" source="utm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=none;html=0;strokeWidth=2;strokeColor=#b5739d;exitX=0.9;exitY=1;entryX=1;entryY=0.5;fontSize=12;labelBackgroundColor=#ffffff;" target="sw-admin" value="ADMIN Port | Untagged">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1118" y="560" />
+              <mxPoint x="1855" y="560" />
+              <mxPoint x="1855" y="777.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e07" edge="1" parent="1" source="sw-dmz-core" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#6c8ebf;" target="sw-web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e08" edge="1" parent="1" source="sw-dmz-core" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#6c8ebf;" target="sw-public">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e09" edge="1" parent="1" source="sw-web" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#6c8ebf;" target="web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="sw-public" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#6c8ebf;" target="dns">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="sw-public" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#6c8ebf;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="sftp">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="905" />
+              <mxPoint x="365" y="1182.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="sw-server-core" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#82b366;" target="sw-app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="sw-server-core" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#82b366;" target="sw-data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="sw-app" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#82b366;" target="was">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="sw-data" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#82b366;" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="sw-data" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#82b366;" target="backup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="sw-data" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#82b366;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="log">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="585" y="905" />
+              <mxPoint x="585" y="1182.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="sw-data" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#82b366;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="nfs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="873" y="905" />
+              <mxPoint x="873" y="1182.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="sw-lan-core" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=0;strokeColor=#9673a6;labelBackgroundColor=#ffffff;fontSize=11;" target="sw-dept" value="Staff VLAN Trunk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="sw-lan-core" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=0;strokeColor=#d6b656;labelBackgroundColor=#ffffff;fontSize=11;" target="sw-common" value="Common VLAN Access">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="sw-dept" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#9673a6;" target="staff1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="sw-dept" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#9673a6;" target="staff2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="sw-dept" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#9673a6;exitX=0;exitY=0.6;entryX=0;entryY=0.5;" target="staff3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="925" y="913" />
+              <mxPoint x="925" y="1117.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="sw-dept" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#9673a6;exitX=1;exitY=0.6;entryX=1;entryY=0.5;" target="staff4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1295" y="913" />
+              <mxPoint x="1295" y="1117.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="sw-dept" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#9673a6;exitX=0;exitY=0.3;entryX=0;entryY=0.5;" target="staff5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="915" y="896.5" />
+              <mxPoint x="915" y="1212.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="sw-dept" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#9673a6;exitX=1;exitY=0.3;entryX=1;entryY=0.5;" target="staff6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1305" y="896.5" />
+              <mxPoint x="1305" y="1212.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="sw-common" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#d6b656;" target="samba">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="sw-common" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#d6b656;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="dhcp">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1515" y="907.5" />
+              <mxPoint x="1515" y="1182.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="sw-admin" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#b5739d;" target="admin1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" source="sw-admin" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;strokeColor=#b5739d;exitX=1;exitY=0.7;entryX=1;entryY=0.5;" target="admin2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1845" y="788.5" />
+              <mxPoint x="1845" y="1182.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
