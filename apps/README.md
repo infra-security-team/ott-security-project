@@ -8,9 +8,11 @@
 
 | 서비스 | 폴더 | 포함할 코드 | 배포 담당·범위 |
 |---|---|---|---|
-| M1 사내 게시판 | [m1-intranet](m1-intranet/README.md) | 사내 게시판 앱 | M1 본사 사내망 배포, M5 개발·연동 지원 |
+| M1·M2 사내 게시판 | [m1-intranet](m1-intranet/README.md) | 한국·독일 공통 게시판 앱 | M1 한국·M2 독일 배포, M5 개발·연동 지원 |
 | M3 OTT 메인 | [m3-ott](m3-ott/README.md) | React·Spring Boot·FastAPI/AI | M3 한국 앱·DB 배포, M5 코드·AWS 정적 웹 |
 | M5 Store | [m5-store](m5-store/README.md) | Store React·Spring Boot | M5 캐나다 AWS/EKS 배포 |
+
+게시판 코드는 기존 `m1-intranet` 폴더를 M1·M2가 공유합니다. 독일용 앱 사본은 만들지 않으며, 국가별 DB·계정·환경변수·DNS를 분리합니다. 폴더 이름의 M1은 기존 경로를 유지한 것입니다.
 
 ## 내려받은 뒤 확인할 위치
 
@@ -25,6 +27,6 @@
 
 서비스별 README에 실제 버전, 실행·빌드 명령, 환경변수 **이름**, DB 준비, 검증된 커밋·이미지 버전을 기록합니다. 비밀값은 등록하지 않습니다.
 
-M3·M5는 GitHub Actions + Argo CD 배포 계획을 사용합니다. CI 경로 조건·빌드 위치와 Argo CD 대상 앱을 서비스별로 분리하여, Store 변경이 한국 OTT 배포를 잘못 실행하지 않도록 설정·시험합니다. S3 정적 React 배포는 Kubernetes 배포와 구분합니다. M1 게시판의 배포 방식은 앱 실행 환경을 확인한 뒤 정합니다.
+M3·M5는 GitHub Actions + Argo CD 배포 계획을 사용합니다. CI 경로 조건·빌드 위치와 Argo CD 대상 앱을 서비스별로 분리하여, Store 변경이 한국 OTT 배포를 잘못 실행하지 않도록 설정·시험합니다. S3 정적 React 배포는 Kubernetes 배포와 구분합니다. M1·M2 게시판의 배포 방식은 앱 실행 환경을 확인한 뒤 정합니다.
 
 [프로젝트 첫 화면](../README.md)
