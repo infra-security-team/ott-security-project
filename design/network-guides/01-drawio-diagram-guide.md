@@ -2,6 +2,8 @@
 
 > **v1.2 우선 확인:** [최신 토폴로지·보안 연결·검증 범위](../architecture.md)를 먼저 읽으세요. 아래 상세 내용에는 이전 설계·제안이 남아 있을 수 있으며, 실제 배선·센서·관제 경로는 v1.2 및 팀 확정값과 대조합니다.
 
+**환경·버전 확인:** [장비별 명세와 확인 상태](../environment-baseline.md). 정확한 OS·제품 build·NIC·자원은 실제 설치 증거로 기록합니다.
+
 ## 사용할 프로그램과 파일 형태
 - **기본:** [diagrams.net 웹 편집기](https://app.diagrams.net) (무료). 저장 위치는 `Device` 또는 팀이 승인한 공동 저장소.
 - **내보내기:** 편집 원본 `M1-HQ-ASIS.drawio` + 회의·발표용 `M1-HQ-ASIS.png`.
@@ -23,7 +25,7 @@
 ### 2p. 자산·연결 목록(표)
 | 논리 ID | 담당 | 구역/VLAN | 실행 위치 | VM 또는 관리형 서비스 | OS/버전 | NIC/연결 구간 | IP/DHCP | 대상·프로토콜/포트 | 검증 |
 |---|---|---|---|---|---|---|---|---|---|
-| HQ-R1 | M1 | 본사 경계 | 학원 VMware (예정) | VyOS VM 1 | TBD | WAN/직원/관리(예정) | TBD | VPN 보호 대역(합의 전) | '미수행' |
+| M1-R1 | M1 | 상위 연결 | GNS3 VM 내부 | 라우터 노드 1 | 이미지·정확 버전 미선정 | 교실/T1 | 팀 주소표 | 정적 경로·인터넷 NAT | 미수행 |
 | AWS-WEB | M5 | 공개 웹 | AWS (검토 중) | 비공개 S3 + CloudFront/OAC | 해당 없음 | 브라우저 HTTPS | DNS TBD | React 정적 파일 응답 (API 연결과 별개) | '미수행' |
 | API-ENTRY | M3·M5 | 공개 API 진입 | 실행 위치 TBD | HTTPS API Gateway/프록시 방식 TBD | TBD | 브라우저→API→Spring | TLS/DNS TBD | 인증·CORS·정상 API 응답; 시험망과 격리 | '미수행' |
 

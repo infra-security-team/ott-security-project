@@ -19,7 +19,7 @@
 7. [팀 WBS](../../WBS.md) · [GitHub Projects](https://github.com/orgs/team-blocks-lab/projects/4) · [전체 설계도 합의 위치](../architecture.md)
 
 ## 운영 원칙
-- 모든 항목을 별도 VM으로 만들지 않습니다. VyOS 1대가 라우팅·DHCP·NAT·방화벽·VPN을 **함께** 수행할 수 있고, 클라우드에서는 AWS 관리형 서비스를 이용할 수 있습니다.
+- VM·Pod·VIP·관리형 서비스를 구분합니다. 현재 설계는 R1/R2/R3 상위 라우팅과 UTM1~5 경계 정책·VPN을 분리합니다. 정확한 자산 수·실행 환경·제품 버전 상태는 [장비 명세](../environment-baseline.md)를 기준으로 대조합니다.
 - 'VM = 온프레미스'가 아닙니다. VMware의 VM과 AWS EC2 가상 서버는 배치·관리 경계가 다릅니다.
 - **필수/조건부/미확정**을 구분합니다. 서비스용 PC·복원 시험 노드·Kubernetes 추가 노드·AWS EC2는 필요성/비용 확인 후 수량을 정합니다.
 - VPN, 방화벽, VLAN, IDS/IPS, NAT는 목적이 다릅니다. VPN이 연결돼도 필요한 통신만 허용하는 접근통제가 별도로 필요합니다.

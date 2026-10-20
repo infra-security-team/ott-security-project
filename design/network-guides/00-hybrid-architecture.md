@@ -13,10 +13,10 @@
 
 | 영역 | 1차 기본 배치 | AWS 활용/관계 | 주담당·협업 |
 |---|---|---|---|
-| 한국 본사 직원/관리/보안 구역 | 학원 VMware·vSphere, VyOS VPN 허브, 관리/시험 서버 | 공개 서비스가 아닌 내부 관리·허용 경로 | M1 네트워크 + M2 보안 |
+| 한국 본사 직원/관리/보안 구역 | 학원 VMware·vSphere, UTM1(Sophos UTM 9) VPN 허브, 관리/시험 서버 | 공개 서비스가 아닌 내부 관리·허용 경로 | M1 네트워크 + M2 보안 |
 | 한국 서비스 DMZ/APP/DATA | 가상 네트워크, Nginx, **Docker 이미지/컨테이너 배포 경로, Kubernetes Control Plane·Worker·Service/Ingress 설계**, Spring Boot, MySQL | 사용자 브라우저의 HTTPS API 요청을 **별도 승인된 한국 API 진입점**에서 수신; CORS/TLS·경계 ACL 검사 | M3 인프라·배포 + M5 앱 코드 |
 | 백업/DR | 별도 VLAN/VPN, 백업 서버, **DB Replica 계획**, 격리 복원 시험 환경 | **별도 비공개 S3 백업 사본** (암호화·최소 권한) | M4 + M3 |
-| 캐나다 지사 직원/관리 | 격리된 실습 VMware/VyOS, 본사 IPsec Site-to-Site VPN | '캐나다 지사' 논리망과 AWS 물리 Region은 별개 | M5 + M1 |
+| 캐나다 지사 직원/관리 | 격리된 Workstation/UTM5, 본사 IPsec Site-to-Site VPN | '캐나다 지사' 논리망과 AWS 물리 Region은 별개 | M5 + M1 |
 | 캐나다/외부 공개 웹 | 공개 OTT 정적 프론트엔드용 클라우드 HTTPS 진입(캐나다 지사 VPN과 별도) | **v0.2: 캐나다 리전 S3 일반 비공개 버킷 + CloudFront HTTPS + OAC** 기본안. 사용 권한·가격·TLS/API 경로 확인 후 실행 | M5 + M3 |
 | 음성 인식·번역 | FastAPI 앱 서버에서 호출/처리 | 외부 API 사용 시 네트워크·키·비용·타임스탬프 확인 | M5 + M3 |
 
@@ -29,19 +29,19 @@
 
 | 망/담당 | 최소 예시 역할 수 | 수량 기준 |
 |---|---|---|
-| 본사 M1 | VyOS 허브 1, 직원 클라이언트 1, 관리자 클라이언트 1 | 3개 역할; 관리자 PC는 다른 망의 검증 때 재사용 가능 |
+| 본사 M1 | GNS3 R1·UTM1 각1, 서버10·직원6·관리2·L2 스위치10 | 포트폴리오 전체 자산 보존, 단계별 기동·실제 정상 기능 검증 |
 | 보안 M2 | Bastion 1, SSH 시험 대상 1, Wazuh 1, 공격 Linux 1 | 4개 역할; Suricata 관찰 센서는 자원/트래픽 미러링 확인 시 추가 |
 | 서비스 M3 | VyOS/경계 1, 웹 진입/LB 1, MySQL DB 1, **K8s CP 1 + Worker 2 제안(앱 실행 위치)** | v0.2 APP Spring Pod 2개 분산 목표. **APP 실행 역할은 Kubernetes Worker와 중복 산정하지 않음**, 실제 호스트 자원 확인 |
-| DR M4 | VyOS/경계 1, 백업 서버 1, **DB Replica 1 계획** | **v0.2 DB 복제는 기본안**. 실제 임시 Restore DB 환경은 격리 시험 시 추가/재사용 여부 협의 |
-| 캐나다 M5 | VyOS 1, 직원 클라이언트 1, 관리자 클라이언트 1 | 3개 역할; 추가 웹 진입 VM은 AWS 웹 구성과 중복 시 불필요 |
+| DR M4 | UTM4 1, 백업 서버 1, **DB Replica 1 계획** | **v0.2 DB 복제는 기본안**. 실제 임시 Restore DB 환경은 격리 시험 시 추가/재사용 여부 협의 |
+| 캐나다 M5 | UTM5 1, 운영2·콘텐츠2·관리1 | 사내 단말·업무 VPN과 AWS Store 구분 |
 
-**가상 자산 수량 산정:** Kubernetes Control Plane 1+Worker 2, M4 DB Replica 및 각 망 VyOS·시험 Client·웹/DB 자산을 논리 역할과 실제 VM 수로 나누어 계산합니다. 10/19~21 자원표에서 물리/가상 호스트·K8s 노드·Docker 실행 호스트·DB Replica·임시 Restore DB를 **중복 없이** 산정하고, 실측 CPU/RAM/스토리지/라이선스에 따라 실제 수량을 확정합니다. 별도 VM 없이 Pod 2개만으로 노드 이중화를 충족했다고 표현하지 않습니다.
+**가상 자산 수량 산정:** Kubernetes Control Plane 1+Worker 2, M4 DB Replica 및 각 망 경계 UTM·시험 Client·웹/DB 자산을 논리 역할과 실제 VM 수로 나누어 계산합니다. 10/19~21 자원표에서 물리/가상 호스트·K8s 노드·Docker 실행 호스트·DB Replica·임시 Restore DB를 **중복 없이** 산정하고, 실측 CPU/RAM/스토리지/라이선스에 따라 실제 수량을 확정합니다. 별도 VM 없이 Pod 2개만으로 노드 이중화를 충족했다고 표현하지 않습니다.
 
 ### 기능 분류표: '장비'와 '기능'은 다름
 | 기능 | 누가/어디에 | 구현 시 주의 |
 |---|---|---|
-| VLAN·게이트웨이·라우팅 | 각 망 VyOS 또는 검증된 L3 장비 | 망별 대역·가상 NIC·가상 스위치/포트 그룹 관계 확인 |
-| 방화벽 | 각 망 경계 VyOS | AS-IS/TO-BE별 허용·거부 규칙표, 정책 순서, 로그, 정상 경로 |
+| VLAN·게이트웨이·라우팅 | UTM1 VLAN GW·UTM2~5 NIC별 구역 GW | 망별 대역·가상 NIC·가상 스위치/포트 그룹 관계 확인 |
+| 방화벽 | 각 망 UTM(Sophos UTM 9) | AS-IS/TO-BE별 허용·거부 규칙표, 정책 순서, 로그, 정상 경로 |
 | DHCP | 본사/캐나다 직원 VLAN 우선 | 서버/관리 장비는 일반적으로 고정 IP, 중복 DHCP 서버 금지 |
 | DNS | 기존 DNS/라우터 전달 또는 필요한 기능 | DNS 서버를 무조건 VM으로 만들 필요 없음 |
 | NAT | 인터넷 출구에서만 필요한 경우 | IPsec 보호 대상에 불필요한 NAT 방지, 왕복 경로 확인 |

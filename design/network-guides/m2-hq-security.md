@@ -4,10 +4,12 @@
 
 **Issue:** [설계 #2](https://github.com/team-blocks-lab/otter-shield/issues/2) · [AS-IS #19](https://github.com/team-blocks-lab/otter-shield/issues/19) · [중앙 로그 통합 #9](https://github.com/team-blocks-lab/otter-shield/issues/9)
 
+**환경·버전 확인:** [장비별 명세와 확인 상태](../environment-baseline.md). 정확한 OS·제품 build·NIC·자원은 실제 설치 증거로 기록합니다.
+
 ## 사용할 프로그램·환경
 - **도면:** diagrams.net / **기본 서버:** Linux VM / **접근 관리:** SSH·Bastion
 - **관제:** Wazuh 서버/에이전트, 선택한 원본 로그 수집 방식
-- **패킷 탐지:** Suricata(장비·미러링/관찰 위치 확인 후)
+- **패킷 탐지:** Suricata: SOC 진입 독립 전달 쌍 2 NIC + 관리 1 NIC
 - **시험용:** 승인된 공격 Linux, 격리된 SSH 시험 서버, tcpdump / 저널/SSH 원본 로그
 - 설치 전 Wazuh·Suricata 최신 지원 OS/자원 요구사항 및 실제 센서가 VPN 암호화 트래픽을 어디서 볼 수 있는지 검토.
 
@@ -18,7 +20,7 @@
 | HQ-SSH-Test | 1 VM | 정상 SSH 및 반복 인증 실패 S02 시험 대상 | 별도 계정/격리 환경; 서비스 운영서버에 실험 금지 |
 | HQ-Wazuh | 1 VM 또는 조건부 분리 | 중앙 로그·경보 | RAM/디스크 요구량 확인. 기능과 가상머신 수 동일 아님 |
 | Attack-Linux | 1 VM | 승인된 제한 시험 출발지 | 격리 구역·허용 출발지/횟수/대상 명시 |
-| Suricata 센서 | **기본 구축 기능(배치 수 조건부)** | v0.2 중앙 네트워크 탐지 센서. 필요한 경계의 관찰 가능한 트래픽을 분석 | **기능 자체는 계획서 기본**. 센서 VM 수·배치 지점은 가상 스위치 미러링/가시성·자원 확인 후 정하고 미구현 시 강사 승인·제약 기록 |
+| Suricata 센서 | **1 VM·3 NIC** | v0.2 중앙 네트워크 탐지 센서. 필요한 경계의 관찰 가능한 트래픽을 분석 | **기능 자체는 계획서 기본**. 배치: UTM2→SOC-EDGE→센서→SOC. 캡처 NIC 무주소·관리 NIC만 주소, tap/ips 전달 검증 |
 | 에이전트/로그 제공자 | 서비스별 설치 | M1~M5 서버 원본 로그 수집 | 독립 VM을 망마다 추가하라는 뜻 아님 |
 
 ## 10/19 AS-IS 도면 체크

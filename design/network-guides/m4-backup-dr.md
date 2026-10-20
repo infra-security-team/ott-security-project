@@ -4,9 +4,11 @@
 
 **Issue:** [설계 #4](https://github.com/team-blocks-lab/otter-shield/issues/4) · [AS-IS #29](https://github.com/team-blocks-lab/otter-shield/issues/29) · [복원 통합 #10](https://github.com/team-blocks-lab/otter-shield/issues/10)
 
+**환경·버전 확인:** [장비별 명세와 확인 상태](../environment-baseline.md). 정확한 OS·제품 build·NIC·자원은 실제 설치 증거로 기록합니다.
+
 ## 사용할 프로그램·서비스
 - 도면: diagrams.net / 가상화: VMware/vSphere / 운영체제: Linux
-- 경계·VPN: VyOS 또는 팀이 합의한 라우팅/방화벽 장비
+- 경계·VPN: UTM4(Sophos UTM 9), 별도 VyOS 없음
 - DB 복제/백업·복원: MySQL (M3 서버의 버전/계정/권한 확인, 실습 데이터 사용)
 - 백업 전달: 승인된 Linux 파일/DB 백업 방식과 AWS S3 (AWS CLI 등 지원 버전/권한 확인)
 - 검증: MySQL 조회·백업 파일 무결성 체크섬·타임스탬프·복원 시작/끝 시간 로그
@@ -15,7 +17,7 @@
 ## 자산/역할 목록
 | 구성 | 시작 수량 | 용도 | 완료 구분 |
 |---|---:|---|---|
-| DR-VyOS | 1 VM | 독립 백업/복원 VLAN·방화벽·본사 VPN 종단 | 4망 통신 정책 검토 대상 |
+| UTM4(Sophos UTM 9) | 1 VM | 백업/복제 NIC 분리·방화벽·T14/T34 종단 | 4망 통신 정책 검토 대상 |
 | DR-Backup | 1 VM | 테스트 데이터 백업 파일 보관·S3 전송/회수 | 파일 존재 ≠ 실제 복원 성공 |
 | DR-DB-Replica | **기본 계획 1 VM** | 한국 MySQL Primary → Replica 복제 및 지연·중단 후 재개 검증 | **v0.2 필수 운영 기본안**. 자원·구성 변경은 강사/팀 승인 뒤 WBS와 함께 조정 |
 | DR-Restore-Test | 조건부 임시 1 VM/격리 인스턴스 | 운영 DB를 덮어쓰지 않고 백업 복원·조회 | 복원 시간·데이터 대조에 꼭 필요한 **격리 실행 환경**은 확보 |

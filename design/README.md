@@ -12,6 +12,7 @@
 |---|---|---|
 | [토폴로지 v1.2 공개 요약·30쪽 구성](architecture.md) | PL과 각 망 담당, 팀 설계 합의 때 | 본사·서비스·백업·캐나다망의 연결과 서비스 흐름. 계획/확정 구분 |
 | [S05 웹 IPS 시험 계약](scenarios/s05-web-ips.md) | M5·M3·M2·M1 | TLS 해제·APP 센서·고정 요청·전후 증거 |
+| [실행 환경·버전·장비 명세](environment-baseline.md) | 각 망 담당·검토자 | 장비별 실행 계층·OS/제품·버전 상태·기능·구축 증거 |
 | [Class Diagram](class-diagram.md) | M5, 앱 설계 또는 주요 코드 구조 확정 때 | 실제 주요 클래스의 책임과 관계 |
 | [ERD](erd.md) | M5와 M3, DB 구조 합의 때 | 테이블·기본키·외래키와 관계 |
 | **[AS-IS·하이브리드·보안 구축 가이드](network-guides/README.md)** | **M1~M5, 10/19 1차 도면 작성 때** | **각 망 장비·VM/클라우드·DHCP/NAT/VPN/라우팅·클라이언트 목록, draw.io, 막혔을 때 점검표** |
