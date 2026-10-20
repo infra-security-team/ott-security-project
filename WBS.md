@@ -2,13 +2,13 @@
 
 > **공개용:** 실제 IP와 세부 설정은 팀내 토폴로지·주소표·기술서에서 확인합니다.
 
-**개정** v0.4 · 2026.10.20 표현·최신 계획서 링크 정리 (담당·일정 유지) · **설계 기준** 토폴로지 v1.1 (구축 검증 전)
+**개정** v0.3 · 2026.10.20 표현·최신 계획서 링크 정리 (담당·일정 유지) · **설계 기준** 토폴로지 v1.1 (구축 검증 전)
 
 **기간** 2026.10.19~11.16 · **기본 작업시간** 평일 09:00~18:00(점심 1시간 제외) · **발표** 11.16
 
-[START HERE](README.md) · [계획서 v0.4](plans/project-plan-v0.4.pdf) · [계획서 원문](plans/project-plan-v0.4.md) · 토폴로지 v1.1(팀내 공유) · [Projects 업무 보드](https://github.com/orgs/infra-security-team/projects/4) · [망별 구축 가이드](design/network-guides/README.md)
+[START HERE](README.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf) · [계획서 원문](plans/project-plan-v0.3.md) · 토폴로지 v1.1(팀내 공유) · [Projects 업무 보드](https://github.com/orgs/infra-security-team/projects/4) · [망별 구축 가이드](design/network-guides/README.md)
 
-> **읽는 순서:** 계획서 v0.4 → 이 WBS → 담당 Issue → 토폴로지·Notion 기술서. 기존 상세 가이드는 이전 배치가 남아 있을 수 있으므로 최신 계획서·토폴로지와 대조합니다.
+> **읽는 순서:** 계획서 v0.3 → 이 WBS → 담당 Issue → 토폴로지·Notion 기술서. 기존 상세 가이드는 이전 배치가 남아 있을 수 있으므로 최신 계획서·토폴로지와 대조합니다.
 
 ## 1. 주요 일정 및 완료 기준
 
