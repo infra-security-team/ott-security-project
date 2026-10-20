@@ -21,7 +21,7 @@ Blocks 팀이 가상의 보안 컨설팅 회사 NetBlocks의 역할로 OTTer의 
 
 | 순서 | 작업 위치 | 실행 내용 |
 |---|---|---|
-| 1 | [GitHub Projects — 팀 업무 보드](https://github.com/orgs/infra-security-team/projects/4) | 내 담당 카드 선택 → 연결된 Issue의 작업·완료 기준 확인 |
+| 1 | [GitHub Projects — 팀 업무 보드](https://github.com/orgs/infra-security-team/projects/4/views/2) | 내 담당 카드 선택 → 연결된 Issue의 작업·완료 기준 확인 |
 | 2 | [Notion 기술서 양식](https://app.notion.com/p/3fd1b198732a81cf9c44fb58dfcb8567?pvs=204) | 개인 기술서 복제·팀 공유 → 첫 Issue에 개인 페이지 링크 등록 |
 | 3 | 해당 Issue 및 Projects | 실습 증거·Notion 링크·문제·다음 작업 댓글 → Projects 상태 갱신 |
 
