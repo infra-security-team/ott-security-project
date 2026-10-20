@@ -51,11 +51,14 @@ PM은 도면 제출/예상 변경을 취합하고, PL은 망 간 연결·가상�
 | D3 OTT 최소 기능 | 10/24·10/26–10/28 | 로그인·권한·목록·샘플 영상, React–Spring–DB 로컬 연결 | M5 코드·M3 DB/런타임 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
 | D4 게시판·OTT 배포 | 10/29–10/30 | M1/M2 게시판·M3 OTT 정상 요청 확인, 공격 시험용 앱 기준 확보 | M1/M2 게시판·M3 OTT·M5 지원 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
 | D5 Store 최소 기능·AWS | 10/29–11/06 | 10/30 상품 조회·모의 주문의 최소 구현/배포 가용성 판정, 11/06 ALB–EKS–RDS 정상 연동 목표 | M5 코드·AWS | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-| D6 CI/CD | 준비10/29–10/30, 연동11/03–11/06 | Actions 빌드/검사·이미지/배포 Git → Argo CD 배포, 버전·되돌리기 증거. S3 정적 배포 별도 | M5 workflow·M3 K8s 대상·M5 EKS 대상 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-| D7 AI 자막·웹 연동 | 11/03–11/06 | 11/04 짧은 영상 실제 음성인식·한영 SRT/VTT, 11/06 배포 웹 자막 재생·오류/비용 확인 | M5 코드·M3 실행 환경 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+| D6 CI/CD | 준비10/28–10/30, 한국11/04·Store11/05, 통합11/06 | Actions 빌드/검사·이미지/배포 Git → Argo CD 배포, 버전·되돌리기 증거. S3 정적 배포 별도 | M5 workflow·M3 K8s 대상·M5 EKS 대상 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
+| D7 AI 자막·웹 연동 | 11/02–11/04, 통합11/06 | 11/03 짧은 영상 실제 음성인식·한영 SRT/VTT, 11/04 배포 웹 자막 재생, 11/06 오류·비용 확인 | M5 코드·M3 실행 환경 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
 | D8 앱 회귀·배포 복구 | 11/09–11/10 | 보안 개선 뒤 게시판·OTT·Store·AI 정상 요청·배포 되돌리기·Store RDS 격리 복원 확인 | M5 앱 확인·각 배포 담당 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
 
 **개발 일정 점검:** M5는 지사망·코드·AI·AWS·PM을 병행하므로 위 목표를 전부 독립된 전일 작업으로 계산하지 않습니다. 10/23 최소 기능/Store 공수·예산, 10/28 로컬 기능, 10/30 기본 배포를 점검합니다. 지연 시 어떤 기능·시험이 영향을 받는지 기록하고 팀이 지원·범위·일정을 결정합니다. 실물 코드·진척 미확인 상태에서 전체 개발의 기한 달성을 보장하지 않습니다.
+
+
+**11/03–06 작업 배치:** 11/03 개선 설계·AI 파일 → 11/04 오전 M3 UTM/앱 분산, 오후 M3·M5 한국 CD/AI → 11/05 오전 M3·M4 DB 복제, M5 Store CD / 오후 M3 Nginx B·VIP → 11/06 통합·오류 보완. 설치 매체·기본 이미지와 CI 파일은 10/28–30까지 준비합니다. 실제 개선 적용은 공격 분석·설계 검토 후 진행합니다.
 
 ## 4. 담당별 업무·Issue
 
@@ -87,7 +90,7 @@ PM은 도면 제출/예상 변경을 취합하고, PL은 망 간 연결·가상�
 
 | 점검일 | 확인·기록할 결과 | 미충족 시 처리·담당 |
 |---|---|---|
-| 10/21–10/23 | GNS3 태그 전달·가상화/NIC·대표 동시 기동·설치 출구, 앱 명세·AI 짧은 개발 시험, AWS 권한/비용·API 공개 경로 | 각 담당 실측·PL 통합·PM 일정 취합. 미지원 구간의 대안/기한을 합의 |
+| 10/21–10/23 | [#6 착수 판정표](https://github.com/team-blocks-lab/otter-shield/issues/6) 기준 전체 주소·NIC 대응·라이선스·실제 자원 확인. GNS3 태그 전달·가상화/NIC·대표 동시 기동·설치 출구, 앱 명세·AI 짧은 개발 시험, AWS 권한/비용·API 공개 경로 | 각 담당 실측·PL 통합·PM 일정 취합. 미지원 구간의 대안/기한을 합의 |
 | 10/28 | 시험용 SSH·관리 API·격리 Test DB·로그·망 간 왕복 준비 | 해당 공격이 가능한지 개별 판정. 앱 미인계와 기본망 미구축을 구분 |
 | 10/30 | 게시판/OTT 배포·Store 가용성·M1/M2/M4 공격 증거 | M5/M3·각 담당이 실제 남은 작업량 제시. 11/02 시험 영향 재계획 |
 | 11/03 | 취약점별 개선 근거·TO-BE 도면/정책·롤백 | 검토된 변경만 11/04부터 구현. AS-IS 증거 보존 |
@@ -113,5 +116,6 @@ AWS 재생성·종료 확인 업무는 [#10(M4)](https://github.com/team-blocks-
 |---|---|---|---|---|---|
 | 10/20 | AS-IS 도면 A1 | 10/20 제출·연결 확인 | 10/21 오전 완료 예상 | 실제 PC·가상화·UTM·연결 조건 검토 지속. 10/21 구축 목표는 유지하고 실제 시작/진척을 당일 확인. 10/28 이후 목표 영향은 아직 미확정 | 예상 변경·팀 확인 전 |
 | 10/20 | 구축 업무·공동 책임 보완 | 단계별 일정 유지 | 기존 Issue에 필수 구축 작업·S05 적용 책임·AWS 재생성/종료 업무 명시 | 관련 담당이 실제 소요·진척을 확인하고 일정 영향 기록 | 작업 반영·수행 전 |
+| 10/20 | 11/03–06 집중 업무 분산 | AI·CI/CD·M3 개선 병행 | CI 준비 10/28 착수, AI 파일 11/03·웹 11/04, 한국 CD 11/04·Store CD 11/05, DB 협업 11/05 오전 | 최종 통합 11/06·재시험 11/09–10 유지. 실제 소요는 10/23·10/30 재판정 | 일정 개정·수행 전 |
 
 변경 사유·결정은 회의록, 업무별 실제 지연·진척은 Issue, 기술 원인·시험 증거는 Notion에 기록합니다. 합의 후 WBS를 확정 개정하고 기존 목표·변경일·이유를 남깁니다. 예정일을 조용히 덮어쓰거나 예상 완료를 실적으로 기록하지 않습니다.
