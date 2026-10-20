@@ -21,5 +21,3 @@ GitHub Actions에서 빌드·검사·이미지 저장 후 배포 설정을 갱�
 실행 코드 등록 후 실제 빌드·실행 명령, 환경변수 이름, DB 준비, 로그인·목록·영상·자막 통합 결과와 복구 절차를 기록합니다.
 
 [서비스별 코드 안내](../README.md) · [프로젝트 첫 화면](../../README.md)
-
-**S05 연계:** Nginx가 HTTPS를 종료하고 내부 HTTP API 요청을 APP Suricata 경유로 전달합니다. [시험 API·규칙·증거 계약](../../design/scenarios/s05-web-ips.md)을 먼저 확인합니다.

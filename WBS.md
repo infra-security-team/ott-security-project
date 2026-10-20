@@ -6,13 +6,13 @@
 
 > **공개용:** 실제 IP와 세부 설정은 팀내 토폴로지·주소표·기술서에서 확인합니다.
 
-**개정** v0.3 · 2026.10.20 표현·최신 계획서 링크 정리 (담당·일정 유지) · **설계 기준** 토폴로지 v1.2 (구축 검증 전)
+**개정** v0.3 · 2026.10.20 표현·최신 계획서 링크 정리 (담당·일정 유지)
 
 **기간** 2026.10.19~11.16 · **기본 작업시간** 평일 09:00~18:00(점심 1시간 제외) · **발표** 11.16
 
-[START HERE](README.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf) · 토폴로지 v1.2(팀내 공유) · [Projects 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4) · [망별 구축 가이드](design/network-guides/README.md)
+[START HERE](README.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf) · [Projects 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4)
 
-> **읽는 순서:** 계획서 v0.3 → 이 WBS → 담당 Issue → 토폴로지·Notion 기술서. 기존 상세 가이드는 이전 배치가 남아 있을 수 있으므로 최신 계획서·토폴로지와 대조합니다.
+> **읽는 순서:** 계획서 v0.3 → 이 WBS → 담당 Issue → 토폴로지·Notion 기술서. 팀원이 작성·검토한 도면과 담당 기술서를 기준으로 진행합니다.
 
 ## 1. 주요 일정 및 완료 기준
 
@@ -64,7 +64,7 @@
 |  | **개발 병행:** 로컬 로그인·권한·목록·샘플 영상 / 캐나다 VPN 검증 | **10/26~28** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) |
 |  | **개발 병행:** M3 AS-IS 최소 앱 배포·정상 기능 확인 / AWS 웹 경로 준비 | **10/29~30** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
 |  | S05 허용 OTT 웹 경로의 SQLi 패턴 전달·탐지 재현 | 11/02 | [#35](https://github.com/team-blocks-lab/otter-shield/issues/35) |
-|  | 캐나다 DB 접근 제한·VPN 정책 개선 | 11/03~06 | [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) |
+|  | S05 웹 IPS 차단·VPN 정책 검증 | 11/03~06 | [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) |
 |  | **개발·인프라 병행:** 실제 STT·한영 SRT/VTT·React 표시, AWS HTTPS/API / S05 TO-BE | **11/03~06** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) · [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) |
 |  | S05 재시험·정상 OTT/API 접근 확인 | 11/09~10 | [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) |
 |  | **검증 병행:** 캐나다 보안 재시험 + OTT/AI 정상 요청 회귀 검증 | **11/09~10** | [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) · [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
@@ -90,7 +90,7 @@
 ## 4. 선행조건 및 진행 기준
 
 - **AS-IS 공격 선행조건:** 격리 환경, 승인된 시험 범위, 정상 업무 통신·해당 서비스 동작·원본 로그 확보. 공격 재현 뒤 TO-BE 정책 적용
-- **기술 배치:** M1 GNS3 VLAN / M2 독립 UTM NIC 4개 / M3의 vSphere·Docker 이미지·Kubernetes 기본 목표(Control Plane 1+Worker 2, Spring 2개 Pod/LB), M4의 MySQL Primary→Replica·격리 복원, OTT S3·CloudFront/OAC·영상 업로드/재생·한국 API와 캐나다 Store(ALB/EKS/RDS). 상세 설치 사양은 [담당 가이드](design/network-guides/README.md) 참조
+- **기술 배치:** M1 GNS3 VLAN / M2 독립 UTM NIC 4개 / M3의 vSphere·Docker 이미지·Kubernetes 기본 목표(Control Plane 1+Worker 2, Spring 2개 Pod/LB), M4의 MySQL Primary→Replica·격리 복원, OTT S3·CloudFront/OAC·영상 업로드/재생·한국 API와 캐나다 Store(ALB/EKS/RDS). 상세 설치 사양은 담당 Notion 기술서에 기록
 - **보안 책임:** M1/M3/M4/M5 담당망 방화벽·접근통제·로그 설정 및 시험 수행 / M2 Wazuh·Suricata 중앙 관제·연동 총괄
 - **일정 위험:** M3(K8s·DB·LB·PL)와 M5(캐나다 VPN·앱·AI·PM) 업무 집중. 10/28·10/30 선행 기능 미완료 시 종속 시험 상태 `Blocked`, 범위·지원·일정 재협의
 - **개정 일정안:** AS-IS 공격은 10/29~30 M1·M2·M4, 11/02 M3·M5로 유지. v0.2의 10/30 5건 일괄 목표는 현재 일정안으로 대체하며 팀 검토가 필요함. Replica는 TO-BE 11/03~06 적용, 11/05 첫 복제·11/10 최종 검증 목표.
@@ -127,4 +127,4 @@ NIC는 네트워크 카드, VMnet은 VMware 안의 가상망입니다. VLAN은 �
 - 우선순위는 5개 보안 전후 증거·기본 OTT/CDN·실제 AI 자막·DB 복원. 추가 언어·챗봇·고급 HA는 이후.
 - 기존 Issue 번호·기한·진행 상태는 보존. 문서 갱신은 실습 완료가 아니며 Projects Status/날짜는 별도 확인 대상.
 
-**10/20 S05 변경:** M5→업무 VPN·M1→M3 Nginx TLS 종료→APP Suricata→HTTP API. AS-IS 전달·탐지 / TO-BE 동일 요청 IPS 차단·정상 요청 유지. [시험 계약](design/scenarios/s05-web-ips.md). 담당·기한은 유지하며 M3가 센서/프록시, M2가 중앙 증거를 협업합니다.
+**10/20 S05 변경:** M5→업무 VPN·M1→M3 Nginx TLS 종료→APP Suricata→HTTP API. AS-IS 전달·탐지 / TO-BE 동일 요청 IPS 차단·정상 요청 유지. 세부 시험 조건은 담당 기술서에 기록. 담당·기한은 유지하며 M3가 센서/프록시, M2가 중앙 증거를 협업합니다.
