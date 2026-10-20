@@ -13,3 +13,7 @@
 **서비스 구분:** 이 폴더는 M3 OTT 메인 서비스용입니다. 사내 게시판은 `apps/m1-intranet`, Store는 `apps/m5-store`에서 확인합니다.
 
 [OTT 구성 안내](../README.md) · [서비스별 코드 안내](../../README.md)
+
+## S05 실습 API 구현 예정
+
+[최신 S05 계약](../../../design/scenarios/s05-web-ips.md)에 따라 실습 프로필의 `GET /api/lab/search?q=...`를 추가합니다. 정상·SQLi 형태 입력 모두 실제 SQL 실행 없이 더미 HTTP200 응답·요청 ID·접근 로그를 남깁니다. AS-IS 전달과 TO-BE APP Suricata 차단을 비교할 대상이며 아직 코드 구현·시험 완료가 아닙니다. Nginx가 원래 URI/쿼리와 요청 ID를 보존하도록 M3와 합의하고 실습 후 비활성화합니다.

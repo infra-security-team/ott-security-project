@@ -63,7 +63,7 @@
 |  | **개발 병행:** ERD·Class/API·React/Spring/FastAPI 기본 골격 | **10/22~23** | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) · [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
 |  | **개발 병행:** 로컬 로그인·권한·목록·샘플 영상 / 캐나다 VPN 검증 | **10/26~28** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) |
 |  | **개발 병행:** M3 AS-IS 최소 앱 배포·정상 기능 확인 / AWS 웹 경로 준비 | **10/29~30** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-|  | S05 캐나다 직원→한국 DB 직접 접근 재현 | 11/02 | [#35](https://github.com/team-blocks-lab/otter-shield/issues/35) |
+|  | S05 허용 OTT 웹 경로의 SQLi 패턴 전달·탐지 재현 | 11/02 | [#35](https://github.com/team-blocks-lab/otter-shield/issues/35) |
 |  | 캐나다 DB 접근 제한·VPN 정책 개선 | 11/03~06 | [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) |
 |  | **개발·인프라 병행:** 실제 STT·한영 SRT/VTT·React 표시, AWS HTTPS/API / S05 TO-BE | **11/03~06** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) · [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) |
 |  | S05 재시험·정상 OTT/API 접근 확인 | 11/09~10 | [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) |
@@ -126,3 +126,5 @@ NIC는 네트워크 카드, VMnet은 VMware 안의 가상망입니다. VLAN은 �
 - 10/23 Store EKS/RDS의 비용·예상 예상 작업량를 확인하고 10/30 최소 Store(상품 조회·모의 주문) 배포 가능 여부를 판정. 불가하면 배치 단순화/지원/범위 변경안을 팀이 결정하며 임의로 완료·제외 처리하지 않음.
 - 우선순위는 5개 보안 전후 증거·기본 OTT/CDN·실제 AI 자막·DB 복원. 추가 언어·챗봇·고급 HA는 이후.
 - 기존 Issue 번호·기한·진행 상태는 보존. 문서 갱신은 실습 완료가 아니며 Projects Status/날짜는 별도 확인 대상.
+
+**10/20 S05 변경:** M5→업무 VPN·M1→M3 Nginx TLS 종료→APP Suricata→HTTP API. AS-IS 전달·탐지 / TO-BE 동일 요청 IPS 차단·정상 요청 유지. [시험 계약](design/scenarios/s05-web-ips.md). 담당·기한은 유지하며 M3가 센서/프록시, M2가 중앙 증거를 협업합니다.
