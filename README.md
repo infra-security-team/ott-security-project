@@ -1,8 +1,19 @@
-# OTT 하이브리드 인프라·보안 컨설팅 프로젝트
+# Blocks | OTTer 하이브리드 인프라·보안 컨설팅
 
-한국·캐나다 OTT 서비스를 위한 하이브리드 인프라 구축 및 모의 보안 컨설팅 프로젝트
+Blocks 팀이 가상의 보안 컨설팅 회사 NetBlocks의 역할로 OTTer의 한국·캐나다 하이브리드 인프라를 구축하고 보안 개선 효과를 검증하는 프로젝트입니다.
 
-**기간** 2026.10.19~11.16 · **인원** 5명 · **발표** 11.16 · **계획 기준** v0.2 (10/19 강사 검토 예정)
+| 구분 | 명칭 |
+|---|---|
+| 팀 | **Blocks** |
+| 보안 컨설팅 회사 | **NetBlocks** |
+| 가상 OTT 고객사 | **OTTer** |
+| 프로젝트 제목 | 한국·캐나다 OTTer 하이브리드 인프라 구축 및 보안 컨설팅 |
+
+프로젝트 고유명은 아직 미확정이며, 위 설명형 제목을 사용합니다.
+
+**기간** 2026.10.19~11.16 · **인원** 5명 · **발표** 11.16 · **계획 기준** v0.3 · **최근 안내 갱신** 2026.10.20
+
+**[최신 계획서 v0.3 PDF · 14쪽](plans/project-plan-v0.3.pdf)** · [전체 계획서 이력](plans/)
 
 ## START HERE — 팀원 작업 안내
 
@@ -18,22 +29,30 @@
 
 | 담당 | 책임 영역 | 시작 Issue |
 |---|---|---|
-| M1 유용수 | 한국 본사 네트워크·VPN 허브·방화벽 | [#1](https://github.com/infra-security-team/ott-security-project/issues/1) |
+| M1 유용수 | 한국 본사 GNS3 라우터·VLAN 스위치·UTM·VPN | [#1](https://github.com/infra-security-team/ott-security-project/issues/1) |
 | M2 윤서영 | 본사 보안·Wazuh/Suricata 중앙 관제 | [#2](https://github.com/infra-security-team/ott-security-project/issues/2) |
-| M3 홍은서 (PL) | 한국 서비스망·vSphere·Docker/K8s·DB·앱 배포 | [#3](https://github.com/infra-security-team/ott-security-project/issues/3) |
+| M3 홍은서 (PL) | 한국 서비스망·vSphere·Docker/K8s·DB·Argo CD 배포 | [#3](https://github.com/infra-security-team/ott-security-project/issues/3) |
 | M4 박진혁 | 백업·DB 복제·DR·AWS S3 원격 백업 | [#4](https://github.com/infra-security-team/ott-security-project/issues/4) |
-| M5 유은혜 (PM) | 캐나다망·VPN·React/Spring Boot/FastAPI·AI·AWS 웹 | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) |
+| M5 유은혜 (PM) | 캐나다망·VPN·React/Spring Boot/FastAPI·AI·AWS 웹·CI/CD | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) |
 
 ## 프로젝트 문서
 
 | 문서 | 바로가기 |
 |---|---|
 | 전체 업무 및 일정 | [WBS.md](WBS.md) · [Projects](https://github.com/orgs/infra-security-team/projects/4) |
-| 프로젝트 계획서 | [v0.2 PDF](plans/project-plan-v0.2.pdf) · [v0.1 PDF](plans/project-plan-v0.1.pdf) |
+| 프로젝트 계획서 | **[최신 v0.3 PDF · 14쪽](plans/project-plan-v0.3.pdf)** · [v0.2 PDF](plans/project-plan-v0.2.pdf) · [v0.1 PDF](plans/project-plan-v0.1.pdf) |
 | AS-IS/TO-BE 구성도·ERD·Class Diagram | [설계 문서](design/README.md) |
 | 망별 필요 장비·프로그램·보안 구성·구축 안내 | [M1~M5 구축 가이드](design/network-guides/README.md) |
 | 회의 및 결정사항 | [회의록](meetings/README.md) |
 | OTT 애플리케이션 코드 | [React](frontend/README.md) · [Spring Boot](backend/README.md) · [FastAPI](ai-service/README.md) |
+
+## 10/20 현재 설계·배포 방향
+
+- M1: 별도 VyOS 없이 GNS3 내부 라우터·L2 VLAN 스위치와 UTM으로 구성합니다. M2·M3의 VyOS는 유지합니다.
+- M3·M5: GitHub Actions로 빌드·검사하고, 기존 한국 Kubernetes·캐나다 EKS 내부 Argo CD로 배포합니다. 별도 CI/CD 전용 VM을 기본안에 추가하지 않습니다.
+- 최신 팀 공유 토폴로지는 기존 AS-IS/TO-BE 도면 12쪽과 CI/CD 상세도 3쪽을 포함한 15쪽입니다. [구성도 안내](design/architecture.md)에서 범위를 확인합니다.
+- 이름·CI/CD 결정은 이 안내에 반영했습니다. 저장소의 v0.3 PDF에 해당 결정이 모두 반영됐다는 의미는 아니며, PDF 내용 개정은 별도로 진행합니다.
+- 설계·도입 결정과 실제 구축·검증 완료는 구분합니다.
 
 ## 프로젝트 진행 및 기록 원칙
 
