@@ -63,36 +63,20 @@ PM은 도면 제출/예상 변경을 취합하고, PL은 망 간 연결·가상�
 
 ## 4. 담당별 업무·Issue
 
-M5는 캐나다 인프라와 앱 개발을 병행합니다. 아래 인프라 표와 이어지는 개발 일정표를 함께 확인합니다.
+인프라와 개발을 한 표에서 확인합니다. M5 유은혜는 인프라·개발 두 행을 함께 확인하며, 각 칸의 날짜는 해당 업무의 목표 기간입니다.
 
-### 망별 인프라 업무
-
-| 담당 | AS-IS 설계·구축 | 공격·분석 | TO-BE 설계·구현 | 재검증·결과 |
+| 담당·업무 | 설계·기본 구현 | 시험·연동 | 개선·통합 | 재검증·결과 |
 |---|---|---|---|---|
-| M1 유용수 | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) · [#14](https://github.com/team-blocks-lab/otter-shield/issues/14) | [#15](https://github.com/team-blocks-lab/otter-shield/issues/15) | [#16](https://github.com/team-blocks-lab/otter-shield/issues/16) | [#17](https://github.com/team-blocks-lab/otter-shield/issues/17) · [#18](https://github.com/team-blocks-lab/otter-shield/issues/18) |
-| M2 윤서영 | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) · [#19](https://github.com/team-blocks-lab/otter-shield/issues/19) | [#20](https://github.com/team-blocks-lab/otter-shield/issues/20) | [#21](https://github.com/team-blocks-lab/otter-shield/issues/21) | [#22](https://github.com/team-blocks-lab/otter-shield/issues/22) · [#23](https://github.com/team-blocks-lab/otter-shield/issues/23) |
-| M3 홍은서·PL | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) · [#24](https://github.com/team-blocks-lab/otter-shield/issues/24) | [#25](https://github.com/team-blocks-lab/otter-shield/issues/25) | [#26](https://github.com/team-blocks-lab/otter-shield/issues/26) | [#27](https://github.com/team-blocks-lab/otter-shield/issues/27) · [#28](https://github.com/team-blocks-lab/otter-shield/issues/28) |
-| M4 박진혁 | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) · [#29](https://github.com/team-blocks-lab/otter-shield/issues/29) | [#30](https://github.com/team-blocks-lab/otter-shield/issues/30) | [#31](https://github.com/team-blocks-lab/otter-shield/issues/31) | [#32](https://github.com/team-blocks-lab/otter-shield/issues/32) · [#33](https://github.com/team-blocks-lab/otter-shield/issues/33) |
-| M5 유은혜·PM (인프라) | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) · [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) | [#35](https://github.com/team-blocks-lab/otter-shield/issues/35) | [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) | [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) · [#38](https://github.com/team-blocks-lab/otter-shield/issues/38) |
+| M1 유용수 | AS-IS 설계·구축 · 10/21–28<br>[#1](https://github.com/team-blocks-lab/otter-shield/issues/1) · [#14](https://github.com/team-blocks-lab/otter-shield/issues/14) | 공격·분석 · 10/29–30<br>[#15](https://github.com/team-blocks-lab/otter-shield/issues/15) | TO-BE 설계 11/03 · 구현 11/04–05 · 통합 11/06<br>[#16](https://github.com/team-blocks-lab/otter-shield/issues/16) | 재검증 11/09–10 · 결과 정리 11/11–13<br>[#17](https://github.com/team-blocks-lab/otter-shield/issues/17) · [#18](https://github.com/team-blocks-lab/otter-shield/issues/18) |
+| M2 윤서영 | AS-IS 설계·구축 · 10/21–28<br>[#2](https://github.com/team-blocks-lab/otter-shield/issues/2) · [#19](https://github.com/team-blocks-lab/otter-shield/issues/19) | 공격·분석 · 10/29–30<br>[#20](https://github.com/team-blocks-lab/otter-shield/issues/20) | TO-BE 설계 11/03 · 구현 11/04–05 · 통합 11/06<br>[#21](https://github.com/team-blocks-lab/otter-shield/issues/21) | 재검증 11/09–10 · 결과 정리 11/11–13<br>[#22](https://github.com/team-blocks-lab/otter-shield/issues/22) · [#23](https://github.com/team-blocks-lab/otter-shield/issues/23) |
+| M3 홍은서·PL | AS-IS 설계·구축 · 10/21–28<br>[#3](https://github.com/team-blocks-lab/otter-shield/issues/3) · [#24](https://github.com/team-blocks-lab/otter-shield/issues/24) | 공격·분석 · 11/02<br>[#25](https://github.com/team-blocks-lab/otter-shield/issues/25) | TO-BE 설계 11/03 · 구현 11/04–05 · 통합 11/06<br>[#26](https://github.com/team-blocks-lab/otter-shield/issues/26) | 재검증 11/09–10 · 결과 정리 11/11–13<br>[#27](https://github.com/team-blocks-lab/otter-shield/issues/27) · [#28](https://github.com/team-blocks-lab/otter-shield/issues/28) |
+| M4 박진혁 | AS-IS 설계·구축 · 10/21–28<br>[#4](https://github.com/team-blocks-lab/otter-shield/issues/4) · [#29](https://github.com/team-blocks-lab/otter-shield/issues/29) | 공격·분석 · 10/29–30<br>[#30](https://github.com/team-blocks-lab/otter-shield/issues/30) | TO-BE 설계 11/03 · 구현 11/04–05 · 통합 11/06<br>[#31](https://github.com/team-blocks-lab/otter-shield/issues/31) | 재검증 11/09–10 · 결과 정리 11/11–13<br>[#32](https://github.com/team-blocks-lab/otter-shield/issues/32) · [#33](https://github.com/team-blocks-lab/otter-shield/issues/33) |
+| M5 유은혜·PM · 인프라 | AS-IS 설계·구축 · 10/21–28<br>[#5](https://github.com/team-blocks-lab/otter-shield/issues/5) · [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) | 공격·분석 · 11/02<br>[#35](https://github.com/team-blocks-lab/otter-shield/issues/35) | TO-BE 설계 11/03 · 구현 11/04–05 · 통합 11/06<br>[#36](https://github.com/team-blocks-lab/otter-shield/issues/36) | 재검증 11/09–10 · 결과 정리 11/11–13<br>[#37](https://github.com/team-blocks-lab/otter-shield/issues/37) · [#38](https://github.com/team-blocks-lab/otter-shield/issues/38) |
+| M5 유은혜·PM · 개발 | D1 실행 규격 10/21–23 · D2 게시판 10/22–23 · D3 OTT 10/24·26–28<br>[#8](https://github.com/team-blocks-lab/otter-shield/issues/8) | D4 게시판·OTT 배포 10/29–30 · D5 Store 개발·AWS 연동 10/29–11/06<br>[#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) | D6 CI/CD 준비 10/28–30 · 한국 적용 11/04 · Store 적용 11/05 · D7 AI 11/02–04 · 통합 11/06<br>[#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) | D8 기능 재검증·배포 복구 11/09–10<br>[#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
 
-상세 체크리스트는 Issue에 두고 여기에는 일정·담당·산출물만 연결합니다. 설계·구현을 같은 Issue 안에서 구분하며 설치를 공동/전문 작업과 중복 공수로 세지 않습니다.
+AS-IS 도면은 10/21 오전 완료 예상이며, 확인된 구간부터 구축합니다. M5 기본망 목표 10/28과 개발·배포 목표 11/06은 서로 다른 마감입니다. 개발은 인프라와 병행하며 표의 열을 반드시 차례대로 끝내는 방식은 아닙니다.
 
-### M5 개발·배포 업무 — 유은혜
-
-개발·배포는 10/21–11/06, 개선 후 기능 재검증·배포 복구는 11/09–11/10입니다. 캐나다 기본망 구축 목표인 10/28이 전체 개발 마감은 아닙니다.
-
-| 개발 항목 | 기간·목표일 | Issue |
-|---|---|---|
-| D1 실행 규격·개발 환경 | 10/21–10/23 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
-| D2 공통 게시판 | 10/22–10/23 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
-| D3 OTT 최소 기능 | 10/24·10/26–10/28 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
-| D4 게시판·OTT 배포 | 10/29–10/30 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
-| D5 Store 최소 기능·AWS | 10/29–11/06 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-| D6 CI/CD | 준비 10/28–10/30, 한국 11/04 · Store 11/05, 통합 11/06 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-| D7 AI 자막·웹 연동 | 11/02–11/04, 통합 11/06 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
-| D8 앱 회귀·배포 복구 | 11/09–11/10 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-
-코드는 M5가 개발하고, 현지 배포는 M1/M2(게시판)·M3(OTT/AI)·M5(Store)가 맡습니다. #8은 D1–D8 전체 개발·배포 업무, #12는 AWS·Store 연동, #11은 장애·복구 연계 업무입니다. 같은 업무를 별도 공수로 더하지 않습니다. 상세 산출물·인계 조건은 3번 개발·배포 일정과 각 Issue에서 확인합니다.
+코드는 M5가 개발하고, 현지 배포는 M1/M2(게시판)·M3(OTT/AI)·M5(Store)가 맡습니다. 개발 상세 산출물은 3번, 공동 작업 책임은 5번, 실제 진행 결과는 연결된 Issue에서 확인합니다. 같은 작업은 중복 공수로 세지 않습니다.
 
 ## 5. 공동·전문 작업 책임
 
