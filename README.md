@@ -44,7 +44,7 @@ Team Blocks 팀이 가상의 보안 컨설팅 회사 NetBlocks의 역할로 OTTe
 | 문서 | 바로가기 |
 |---|---|
 | 전체 업무 및 일정 | [WBS.md](WBS.md) · [Projects](https://github.com/orgs/team-blocks-lab/projects/4) |
-| 프로젝트 계획서 | **[최신 v0.3 PDF · 14쪽](plans/project-plan-v0.3.pdf)** · [v0.2 PDF](plans/project-plan-v0.2.pdf) · [v0.1 PDF](plans/project-plan-v0.1.pdf) |
+| 프로젝트 계획서 | **[최신 v0.3 PDF](plans/project-plan-v0.3.pdf)** · [v0.2 PDF](plans/project-plan-v0.2.pdf) · [v0.1 PDF](plans/project-plan-v0.1.pdf) |
 | 토폴로지 v1.2 · AS-IS/TO-BE | **[현재 설계·30쪽 구성·확인 항목](design/architecture.md)** · [설계 문서 목록](design/README.md) |
 | ERD·Class Diagram | [ERD](design/erd.md) · [Class Diagram](design/class-diagram.md) |
 | 망별 필요 장비·프로그램·보안 구성·구축 안내 | [M1~M5 구축 가이드](design/network-guides/README.md) |
