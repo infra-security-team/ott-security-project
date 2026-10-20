@@ -1,6 +1,8 @@
-# Blocks | OTTer 하이브리드 인프라·보안 컨설팅 WBS
+# OTTer Shield | WBS
 
 **팀명 Blocks · 보안 컨설팅 회사 NetBlocks · 가상 OTT 고객사 OTTer**
+
+**프로젝트명:** OTTer Shield — 한국·캐나다 OTT 하이브리드 인프라 구축 및 보안 컨설팅
 
 > **공개용:** 실제 IP와 세부 설정은 팀내 토폴로지·주소표·기술서에서 확인합니다.
 

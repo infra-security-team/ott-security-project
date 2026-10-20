@@ -1,4 +1,6 @@
-# Blocks | OTTer 하이브리드 인프라·보안 컨설팅
+# OTTer Shield
+
+한국·캐나다 OTT 하이브리드 인프라 구축 및 보안 컨설팅
 
 Blocks 팀이 가상의 보안 컨설팅 회사 NetBlocks의 역할로 OTTer의 한국·캐나다 하이브리드 인프라를 구축하고 보안 개선 효과를 검증하는 프로젝트입니다.
 
@@ -7,9 +9,9 @@ Blocks 팀이 가상의 보안 컨설팅 회사 NetBlocks의 역할로 OTTer의 
 | 팀 | **Blocks** |
 | 보안 컨설팅 회사 | **NetBlocks** |
 | 가상 OTT 고객사 | **OTTer** |
-| 프로젝트 제목 | 한국·캐나다 OTTer 하이브리드 인프라 구축 및 보안 컨설팅 |
+| 프로젝트명 | **OTTer Shield — 한국·캐나다 OTT 하이브리드 인프라 구축 및 보안 컨설팅** |
 
-프로젝트 고유명은 아직 미확정이며, 위 설명형 제목을 사용합니다.
+프로젝트명은 2026.10.20 **OTTer Shield**로 확정했습니다.
 
 **기간** 2026.10.19~11.16 · **인원** 5명 · **발표** 11.16 · **계획 기준** v0.3 · **최근 안내 갱신** 2026.10.20
 
@@ -44,7 +46,17 @@ Blocks 팀이 가상의 보안 컨설팅 회사 NetBlocks의 역할로 OTTer의 
 | AS-IS/TO-BE 구성도·ERD·Class Diagram | [설계 문서](design/README.md) |
 | 망별 필요 장비·프로그램·보안 구성·구축 안내 | [M1~M5 구축 가이드](design/network-guides/README.md) |
 | 회의 및 결정사항 | [회의록](meetings/README.md) |
-| OTT 애플리케이션 코드 | [React](frontend/README.md) · [Spring Boot](backend/README.md) · [FastAPI](ai-service/README.md) |
+| 개발 코드 · 서비스별 구분 | [전체 코드 안내](apps/README.md) · [M1 사내 게시판](apps/m1-intranet/README.md) · [M3 OTT 메인](apps/m3-ott/README.md) · [M5 Store](apps/m5-store/README.md) |
+
+## 개발 코드는 배포할 서비스별로 선택하세요
+
+| 서비스 | 배포 대상 | 코드 위치 | 코드 개발 / 배포 |
+|---|---|---|---|
+| 사내 게시판 | M1 본사 사내망 | [apps/m1-intranet](apps/m1-intranet/README.md) | M5 개발 / M1 배포 |
+| OTT 메인·AI 자막 | M3 한국 서비스·AWS 정적 웹 | [apps/m3-ott](apps/m3-ott/README.md) | M5 개발 / M3 한국 앱·DB 배포, M5 AWS 정적 웹 배포 |
+| Store | M5 캐나다 AWS | [apps/m5-store](apps/m5-store/README.md) | M5 개발·AWS 배포 |
+
+폴더의 M번호는 **배포 대상**이며 개발 담당자 번호가 아닙니다. 세 서비스 코드는 M5가 개발합니다. 현재 실행 코드 등록 전이며, 기능·실행·배포 검증은 코드 등록 후 진행합니다.
 
 ## 10/20 현재 설계·배포 방향
 
