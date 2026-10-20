@@ -1,94 +1,86 @@
 # OTTer Shield | 업무·일정 (WBS)
 
-**Team Blocks · NetBlocks → OTTer**  
-**프로젝트:** OTTer Shield — 한국·캐나다 OTT 하이브리드 인프라 구축 및 보안 컨설팅  
-**운영:** 2026.10.19~11.16 · **킥오프:** 10.16 · **기본 작업:** 평일 09:00~18:00(점심 제외) · **발표:** 11.16
+**Team Blocks · NetBlocks → OTTer / 운영 2026.10.19~11.16 / 발표 11.16**
 
-[프로젝트](README.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf) · [10/20 결정사항](meetings/2026-10-20-design-decisions.md) · [업무 보드](https://github.com/orgs/team-blocks-lab/projects/4)
+[프로젝트](README.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf) · [10/20 회의록](meetings/2026-10-20-design-decisions.md)
 
-**10/20 개정 기준:** M2는 독일 본사·GNS3·독일 전용 Wazuh로 변경. M2·M3 Suricata 제외. M1·M4·M5 구성과 M3의 나머지 서버 구성은 유지합니다. 기존 Issue 번호·담당자·목표일·실제 진행 상태는 유지하며, 아래 날짜는 완료 실적이 아닌 목표입니다.
+[팀 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2) · [토폴로지 업로드](design/토폴로지/README.md)
 
-## 1. 전체 일정과 통과 기준
+## 1. 오늘·내일 먼저 할 일
 
-| 목표일 | 작업 | 완료 기준 |
+| 언제 | 전원 할 일 | 어디에 남기나요? |
 |---|---|---|
-| 10/19~20 | 설계 검토·명칭·M2 변경 반영 | 회의 결정·역할·변경 영향 정리. 이전 중앙 관제 의존성 제거 목록 |
-| 10/21 오전 | 구축 가능한 팀 도면·환경 기준 확정 | NIC/VMnet·IP·자원·제품 버전·필요 통신·반환 경로·시험 범위·미확정 담당 확인 |
-| 10/21 오후~23 | 승인 구역 AS-IS 구축·출구 확인 | VM→UTM→상위망, DNS·시간 동기화·실제 패키지 다운로드. 한국 API 공개·AWS 비용 판정 |
-| 10/26~28 | 5개 망 정상 통신·선택 VPN·서비스 연결 | 한국–독일·본사–DR·한국–캐나다·서비스–DR VPN, 왕복 경로·NAT 예외·게시판·K8s/DB 확인 |
-| 10/29~30 | M1·M2·M4 개선 전 시험 / M3·M5 배포·시험 준비 | S01·S02·S04 증거 3건, 10/30 OTT 기본 배포·Store 최소 기능 가용성 판정 |
-| 11/02 | M3·M5 개선 전 시험·결과 취합 | S03·S05 포함 총 5건. 정상 기능·원인·미시험 범위 기록 |
-| 11/03~06 | TO-BE·독일 Wazuh·AI·클라우드·DR 통합 | 11/03 개선안 검토, 11/05 첫 DB 복제 목표, 11/06 AI 자막·배포·S3 복원 1차 |
-| 11/09~10 | 같은 조건 재시험·장애·복구·정상 업무 | 5건 전후 대조, 독일 Wazuh 경보/자동 대응, APP 장애·DB 복원 검증 |
-| 11/11~13 | 보고·발표 준비 | 11/11 증거 정리 → 11/12 발표자료 → 11/13 전원 리허설 |
-| 11/16 | 최종 발표 | 사전 환경 점검·시연·기여 설명 |
+| **10/20(화) 오늘** | 담당 망의 개선 전/후 도면을 draw.io로 만들고 원본·이미지 업로드 | **design/토폴로지** + #1~#5 댓글에 파일 링크 |
+| **10/21(수) 내일부터** | 그 도면대로 가상 장비 생성 → 연결 → OS 설치 → IP·기본 통신 확인 | #14·#19·#24·#29·#34 + Notion |
 
-## 2. 담당별 작업과 Issue
+오늘 제출할 것은 도면입니다. 내일 하루에 모든 서버를 완성하는 뜻은 아닙니다. 실제 버전·자원·남은 연결 질문은 구축하면서 10/23까지 확인하고, 막힌 구간 외 준비 가능한 작업은 진행합니다.
 
-각 행의 Issue를 순서대로 진행합니다. 상세 체크리스트·선행조건은 Issue, 설정·실험 증거는 담당 Notion 기술서에 기록합니다.
+## 2. 담당별 시작 위치
 
-| 담당 | 설계 ~10/23 | AS-IS ~10/28 | 개선 전 시험 | TO-BE ~11/06 | 재시험 ~11/10 | 결과 ~11/13 |
-|---|---|---|---|---|---|---|
-| **M1 유용수** | 한국 본사·GNS3·UTM·직원 VLAN [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) | 정상 통신·서비스 [#14](https://github.com/team-blocks-lab/otter-shield/issues/14) | 10/29~30 [#15](https://github.com/team-blocks-lab/otter-shield/issues/15) | 개선안·적용 [#16](https://github.com/team-blocks-lab/otter-shield/issues/16) | 전후·정상 업무 [#17](https://github.com/team-blocks-lab/otter-shield/issues/17) | 증거·시연 [#18](https://github.com/team-blocks-lab/otter-shield/issues/18) |
-| **M2 윤서영** | 독일 본사·GNS3·공통 게시판·독일 Wazuh [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) | 정상 통신·서비스 [#19](https://github.com/team-blocks-lab/otter-shield/issues/19) | 10/29~30 [#20](https://github.com/team-blocks-lab/otter-shield/issues/20) | 개선안·적용 [#21](https://github.com/team-blocks-lab/otter-shield/issues/21) | 전후·정상 업무 [#22](https://github.com/team-blocks-lab/otter-shield/issues/22) | 증거·시연 [#23](https://github.com/team-blocks-lab/otter-shield/issues/23) |
-| **M3 홍은서·PL** | 한국 서비스·가상화·K8s·DB·배포 [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) | 정상 통신·서비스 [#24](https://github.com/team-blocks-lab/otter-shield/issues/24) | 11/02 [#25](https://github.com/team-blocks-lab/otter-shield/issues/25) | 개선안·적용 [#26](https://github.com/team-blocks-lab/otter-shield/issues/26) | 전후·정상 업무 [#27](https://github.com/team-blocks-lab/otter-shield/issues/27) | 증거·시연 [#28](https://github.com/team-blocks-lab/otter-shield/issues/28) |
-| **M4 박진혁** | 백업·Replica·S3·격리 복원 [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) | 정상 통신·서비스 [#29](https://github.com/team-blocks-lab/otter-shield/issues/29) | 10/29~30 [#30](https://github.com/team-blocks-lab/otter-shield/issues/30) | 개선안·적용 [#31](https://github.com/team-blocks-lab/otter-shield/issues/31) | 전후·정상 업무 [#32](https://github.com/team-blocks-lab/otter-shield/issues/32) | 증거·시연 [#33](https://github.com/team-blocks-lab/otter-shield/issues/33) |
-| **M5 유은혜·PM** | 캐나다·VPN·앱/AI·Store·PM [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) | 정상 통신·서비스 [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) | 11/02 [#35](https://github.com/team-blocks-lab/otter-shield/issues/35) | 개선안·적용 [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) | 전후·정상 업무 [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) | 증거·시연 [#38](https://github.com/team-blocks-lab/otter-shield/issues/38) |
-
-| 망 | 실제 작업 범위·확인 기준 |
-|---|---|
-| M1 | GNS3 R1·L2 스위치·UTM. 업무 서버10·직원6·관리2·스위치10 보존. DMZ/서버/관리 독립 VMnet, 직원·공통만 VLAN trunk. 게시판·DNS·DHCP·공유·백업·VPN 정상 확인 |
-| M2 | M1과 같은 업무 자산·연결 구조·게시판, 독일 별도 IP/DB/계정. AS-IS 정상 업무·원본 로그 확보, TO-BE Wazuh1 추가·독일 Agent 대상18. 양국 같은 대표 자산부터 단계 기동 |
-| M3 | R3(VyOS)·UTM→DMZ/APP/DATA/MGMT VMnet 직접 연결. Nginx·ESXi·K8s CP1/Worker2·Primary/Test DB 유지. AS-IS Spring1 Pod, TO-BE 2 Pod·Nginx B/VIP. vCenter는 자원 확인 후 후속 기동 |
-| M4 | UTM·백업/복제 독립 VMnet, 백업·복제 계정·TLS·권한·읽기 감사. M3 DB dump→해시→S3→격리 EC2 복원·데이터 비교. 복제와 백업/복원은 각각 증거 확보 |
-| M5 | UTM 외부+운영+콘텐츠+관리 NIC4, VLAN 없음. 본사 VPN·게시판·DNS·AWS Store 유지. 전체 앱 코드 개발 담당. 인프라·개발·PM 결과를 별도로 검증 |
-
-## 3. 공동 업무
-
-| Issue | 작업 | 주관·협업 | 기간 |
+| 담당 | 오늘 도면 작업 | 내일부터 망 구축 | 구축할 것 |
 |---|---|---|---|
-| [#6](https://github.com/team-blocks-lab/otter-shield/issues/6) | 설계·교실망·NIC·정확 버전·자원·필요 통신·미확정 정리 | PM 취합·PL 기술 통합·전원 | 10/19~23 |
-| [#7](https://github.com/team-blocks-lab/otter-shield/issues/7) | 5개 망 라우팅·선택 VPN·DNS·정상/금지 경로 통합 | M1·각 망 담당(M2 독일 포함) | 10/26~28 |
-| [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) | M1·M2 공통 게시판 / OTT·AI / Store 코드·실행 계약·배포 | M5 개발·M1/M2 게시판 배포·M3 OTT 배포 | 10/19~11/06 |
-| [#9](https://github.com/team-blocks-lab/otter-shield/issues/9) | 독일 Wazuh·Agent·동일 조건 비교·선정 자동 대응 | M2 주관·M1 비교 조건 대조 | 10/26~11/06 |
-| [#10](https://github.com/team-blocks-lab/otter-shield/issues/10) | MySQL Replica·백업·S3·격리 복원 | M4·M3 | 10/26~11/10 |
-| [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) | Spring 2 Pod 분산·APP/Worker 장애·복구 | M3·M5 | 11/02~10 |
-| [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) | OTT S3/CloudFront·한국 API / 캐나다 Store ALB/EKS/RDS | M5·M3·M1 외부 경로 | 10/21~11/06 |
-| [#13](https://github.com/team-blocks-lab/otter-shield/issues/13) | 최종 보고·발표자료·리허설·발표 | 전원 | 11/09~16 |
+| M1 유용수 | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) | [#14](https://github.com/team-blocks-lab/otter-shield/issues/14) | 한국 본사 GNS3·UTM·업무 서버·직원/관리 PC |
+| M2 윤서영 | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) | [#19](https://github.com/team-blocks-lab/otter-shield/issues/19) | M1과 같은 독일 업무망·게시판. Wazuh는 개선 단계 추가 |
+| M3 홍은서 · PL | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) | [#24](https://github.com/team-blocks-lab/otter-shield/issues/24) | 한국 OTT 웹·가상화·Kubernetes·DB |
+| M4 박진혁 | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) | [#29](https://github.com/team-blocks-lab/otter-shield/issues/29) | 백업·복제·S3·별도 복원 환경 |
+| M5 유은혜 · PM | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) | [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) | 캐나다 UTM·직원/관리망·VPN. 앱/AI·Store 개발 병행 |
 
-## 4. 공격·개선·정상 기능 기준
+## 3. 전체 진행 순서
 
-| 번호 | 개선 전 시험 | 개선 후 검증 | 함께 유지할 정상 업무 |
-|---|---|---|---|
-| S01 M1 | 직원→본사 WAS SSH 접근 | UTM1 거부·로그 | 관리 PC SSH·게시판 |
-| S02 M2 | 독일 직원 시험 PC→독일 WAS 반복 SSH 인증 실패 | Wazuh 경보·선정 자동 대응·실제 호스트 차단·해제 | 관리자 SSH·독일 게시판 |
-| S03 M3 | M1 직원 시험 PC→K8s API 관리 포트 | UTM3 거부. 포트 도달과 인증/RBAC 결과 구분 | 승인 관리자·클러스터·Argo CD |
-| S04 M4 | 시험 계정의 가짜 백업 파일 읽기 | owner/group/mode 거부·읽기 감사 | 승인 백업·복제·복원 |
-| S05 M5 | 캐나다 직원→업무 VPN·M1→M3 격리 Test DB | UTM3 거부·로그. 운영 DB/RDS 취약화 없음 | 게시판·OTT API·Store·백업 |
-
-**한국·독일 비교 조건:** 같은 OS·앱·계정 정책·시험 횟수/간격·동시 기동 규모·UTM SSH 허용. S01 차단 상태와 분리된 스냅샷으로 S02를 비교합니다. Wazuh 설치 자체를 차단 성공으로 판단하지 않습니다.
-
-## 5. 개발·배포 병행 일정
-
-| 목표 | M5 코드·AWS | 배포·협업 |
+| 목표일 | 할 일 | 끝났는지 확인할 것 |
 |---|---|---|
-| 10/22~23 | 공통 게시판·OTT·Store의 최소 기능/API/ERD·Class·실행 골격, Store 작업량·AWS 비용 판정 | M1/M2 게시판 실행 환경, M3 앱·DB·컨테이너 실행 계약 |
-| 10/26~28 | 로컬 로그인·권한·목록·샘플 영상, 국가별 게시판 설정 분리 | 각 망 기본 연결, M3 K8s/DB·캐나다 VPN과 병행 |
-| 10/29~30 | OTT 기본 배포·샘플 영상, 최소 Store 상품 조회/모의 주문 가용성 점검 | 정상 업무 확인 후 S03·S05 준비. 미완료면 시험 의존성 차단 기록 |
-| 11/03~06 | 실제 STT·한영 SRT/VTT·React 표시, Actions→이미지/배포 Git→Argo CD | M3 OTT/AI·M5 EKS 배포, S3 정적 배포 별도. 게시판 배포 방식 확정 필요 |
-| 11/09~10 | 정상 요청·보안 재시험·배포 되돌리기 | 서비스별 결과·이미지/커밋·증거 대조 |
+| **10/20** | 각자 draw.io 도면 업로드·서로 연결 확인 | 원본·개선 전/후 이미지·질문을 본인 Issue에 연결 |
+| **10/21~23** | 가상 장비 생성·연결·OS 설치·IP 설정 | 장비 켜짐, 기본 통신·DNS·시간·설치 인터넷 확인 |
+| 10/26~28 | 업무 서버 설치·망 간 연결·VPN | 게시판·관리·DB·백업 등 필요한 정상 업무 확인 |
+| 10/29~30 | M1·M2·M4 개선 전 시험 / M3·M5 배포·준비 | 시험3건 증거, OTT 기본 배포·최소 Store 가능 여부 확인 |
+| 11/02 | M3·M5 개선 전 시험 | 시험 총5건의 실제 화면·로그·원인 기록 |
+| 11/03~06 | 보안 개선·독일 Wazuh·앱/AI·복제/복원 | 바꾼 설정과 정상 업무 확인. 11/05 첫 복제 목표 |
+| 11/09~10 | 같은 시험 다시 하기·장애/복원 확인 | 개선 전후 비교 + 정상 업무 + 실제 복원 결과 |
+| 11/11~13 | 결과·발표자료·리허설 | 11/11 증거, 11/12 발표자료, 11/13 전원 리허설 |
+| 11/16 | 최종 발표 | 사전 점검·시연·담당 기여 설명 |
 
-별도 로컬 CI VM은 추가하지 않습니다. M5 업무를 M3에게 임의 이관하지 않습니다. 10/23·10/28·10/30 점검에서 지연 시 지원·범위·일정을 팀이 재협의합니다.
+## 4. 담당별 다음 작업
 
-## 6. 구축 전 확인·변경 관리
+| 담당 | 개선 전 시험 | 보안 설정 개선 ~11/06 | 재시험 ~11/10 | 결과 정리 ~11/13 |
+|---|---|---|---|---|
+| M1 유용수 | 10/29~30 [#15](https://github.com/team-blocks-lab/otter-shield/issues/15) | [#16](https://github.com/team-blocks-lab/otter-shield/issues/16) | [#17](https://github.com/team-blocks-lab/otter-shield/issues/17) | [#18](https://github.com/team-blocks-lab/otter-shield/issues/18) |
+| M2 윤서영 | 10/29~30 [#20](https://github.com/team-blocks-lab/otter-shield/issues/20) | [#21](https://github.com/team-blocks-lab/otter-shield/issues/21) | [#22](https://github.com/team-blocks-lab/otter-shield/issues/22) | [#23](https://github.com/team-blocks-lab/otter-shield/issues/23) |
+| M3 홍은서 | 11/02 [#25](https://github.com/team-blocks-lab/otter-shield/issues/25) | [#26](https://github.com/team-blocks-lab/otter-shield/issues/26) | [#27](https://github.com/team-blocks-lab/otter-shield/issues/27) | [#28](https://github.com/team-blocks-lab/otter-shield/issues/28) |
+| M4 박진혁 | 10/29~30 [#30](https://github.com/team-blocks-lab/otter-shield/issues/30) | [#31](https://github.com/team-blocks-lab/otter-shield/issues/31) | [#32](https://github.com/team-blocks-lab/otter-shield/issues/32) | [#33](https://github.com/team-blocks-lab/otter-shield/issues/33) |
+| M5 유은혜 | 11/02 [#35](https://github.com/team-blocks-lab/otter-shield/issues/35) | [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) | [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) | [#38](https://github.com/team-blocks-lab/otter-shield/issues/38) |
 
-- **10/21 오전 / 전원·PL:** 교실 경계 IP, NIC/MAC/VMnet, 게이트웨이·정적 경로·NAT 예외, 정확 제품 버전·이미지·자원표. 서버·내부 단말의 우회 Bridged/NAT NIC 제거. VMnet 번호는 PC 내부에서만 의미가 있음.
-- **10/21 오전 / M2·전원:** 구 M2 원격 Agent·등록키·Syslog·허용 규칙·라우트·관리 중계 의존성 대조. 독일 외 망은 현지 로그 보관. 설계 수정과 실제 해제 완료를 구분.
-- **10/23 / 각 망 담당:** DNS·시간 동기화·인증서·인터넷 설치·실제 다운로드. 한국/독일 시간대와 UTC 증거 대조, 캐나다 도시/시간대·AWS 리전 확정.
-- **10/23 / M1·M3·M4:** 본사–서비스 구간 VPN 여부, 본사–DR VPN의 정확한 허용 업무·포트 확정. 기존 허용을 무조건 전체 개방으로 바꾸지 않음.
-- **10/23 / M1·M3·M5·계정 담당:** 한국 API 외부 공개를 위한 상위 NAT/DNS/TLS, AWS 예산·출구/NAT·IAM·SSM 관리·이미지 저장소 확인. API 공개 불가면 CDN과 내부 API의 검증 증거를 분리.
-- **10/28 / M1+전원:** 한국–독일·본사–DR·한국–캐나다·서비스–DR VPN의 보호 대역·인증·왕복 경로·NAT 예외 일치. 도면에는 T14 같은 약어 대신 연결 대상 이름 사용.
-- **시험 선행조건:** 승인 범위·가짜 데이터·정상 업무·원본 로그·복구 스냅샷 확보. AS-IS 증거 전에 TO-BE로 덮어쓰지 않음. 연결 실패는 라우팅 오류와 정책 차단을 구분.
-- **기록:** WBS=일정, Projects=상태, Issue=작업/결과, Notion=설정/증거. 기존 Projects 상태·날짜는 실적을 확인하여 담당자가 갱신하며 문서 개정으로 완료 처리하지 않음.
-- **공개 범위:** 비밀값·실제 내부 IP표는 비공개 기술서에서 관리. 계획서 v0.1~v0.3은 당시 기록으로 보존. 팀 작성 토폴로지만 설계 폴더에 등록.
-- **후속 업무:** M1 실장비 간소화 설계 주담당 윤서영·보조 박진혁. 본 실습의 선행조건으로 추가하지 않고 실장비 조건 확인 후 착수일 협의.
+| 망 | 시험할 문제 | 개선 후 확인 |
+|---|---|---|
+| M1 | 직원이 본사 WAS에 SSH로 관리 접속 | UTM 차단·관리자 접속 유지 |
+| M2 | 독일 직원 시험 PC의 반복 SSH 로그인 실패 | Wazuh 탐지·선정 자동 대응·차단 해제·관리자 정상 |
+| M3 | M1 직원이 K8s 관리 API에 접속 | UTM 차단·승인 관리자 정상. 접속과 인증 우회는 구분 |
+| M4 | 시험 계정이 가짜 백업 파일 읽기 | 파일 권한 거부·기록·정상 백업/복원 |
+| M5 | 캐나다 직원이 VPN·본사를 거쳐 한국 시험 DB 직접 조회 | UTM3 차단·정상 웹 유지. 운영 DB/RDS는 시험 제외 |
+
+## 5. 함께 할 일
+
+| 작업 | 담당·기간 | Issue |
+|---|---|---|
+| 전체 도면 연결 확인·내일 구축 준비 | PM 취합·PL 기술 검토·전원 / 도면 취합 10/20 / 설치 준비 확인 10/21~23 | [#6](https://github.com/team-blocks-lab/otter-shield/issues/6) |
+| 각 망 연결·VPN 통신 확인 | M1 주관·M2/M3/M4/M5 협업 / 10/26~28 | [#7](https://github.com/team-blocks-lab/otter-shield/issues/7) |
+| 게시판·OTT·Store 코드 개발·배포 | M5 코드 / M1·M2 게시판 배포 / M3 OTT 배포 / 10/21~11/06 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+| 독일 Wazuh 로그 수집·탐지·자동 대응 확인 | M2 주관·M1 비교 조건 확인 / 준비 10/26~28 / 적용 11/03~06 | [#9](https://github.com/team-blocks-lab/otter-shield/issues/9) |
+| DB 복제·백업·S3·실제 복원 | M4·M3 / 준비 10/26~30 / 적용·검증 11/03~10 | [#10](https://github.com/team-blocks-lab/otter-shield/issues/10) |
+| 앱 장애를 내고 복구되는지 확인 | M3·M5 / 11/02~10 | [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) |
+| AWS OTT 웹·한국 API·캐나다 Store 연결 | M5·M3 / M1 외부 경로 협업 / 10/21~11/06 | [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
+| 최종 보고서·리허설·발표 | 전원 / PM 취합·PL 기술 검토 / 11/09~16 | [#13](https://github.com/team-blocks-lab/otter-shield/issues/13) |
+
+앱 개발은 M5, 게시판 배포는 M1·M2, 한국 OTT 배포는 M3입니다. **10/22~23 코드 골격 → 10/28 로컬 기능 → 10/30 기본 배포 → 11/06 실제 AI 자막·CI/CD 통합**을 목표로 합니다. 지연되면 관련 시험도 미수행으로 남기고 지원·범위를 팀에서 조정합니다.
+
+## 6. 바뀌지 않는 설계·기록 원칙
+
+- M1·M2: GNS3·UTM·동일한 업무 자산. 서버10·직원6·관리2·스위치10을 보존하고 같은 대표 규모부터 기동. 서버/관리는 독립 가상망, 직원/공통만 VLAN 사용.
+- M2: 독일 별도 IP·DB·계정, Wazuh는 독일만 감시. 비교할 때 OS·앱·계정·횟수/간격·SSH 허용 조건을 한국과 맞추고 M1 차단 시험과 별도 상태 저장.
+- M3: Suricata 없이 UTM을 각 서버망에 직접 연결. 나머지 서버 구성 유지. 개선 전 Spring 앱1개, 후2개·Nginx B/VIP. vCenter는 자원 확인 후 후속 기동.
+- M4·M5: 기존 구역 유지. 별도 가상망에 불필요한 VLAN을 붙이지 않음. M5는 UTM 외부/운영/콘텐츠/관리 카드4개.
+- M2·M3 Suricata 제외, 타국의 구 M2 Agent·로그 송신·관리 경로는 각 담당이 제거 여부 확인. 설계 변경과 실제 해제 완료는 구분.
+- M3·M5는 Actions(빌드/검사)+Argo CD(배포), 기존 K8s/EKS 사용. S3 정적 배포는 별도. 새 로컬 CI VM 없음. 게시판 배포 방법은 실행 환경에 맞춰 결정.
+- 10/23까지 본사–서비스 VPN 여부, 본사–백업 허용 업무, 한국 API 외부 공개, 캐나다 시간대·리전, AWS 예산·이미지 저장소를 관련 담당이 확인. 값이 미정이면 사람·기한을 적음.
+- 정상 업무가 된 뒤 가짜 데이터로 시험. 설정·로그·스냅샷을 남기고 같은 조건으로 재시험. 32GB에서 전체 VM 동시 가동은 실제 자원 확인 후 판단.
+- WBS=일정 / 업무 보드=상태 / Issue=작업 결과 / Notion=기술 기록. 현재 상태·체크·담당자를 문서 수정으로 완료 처리하지 않음.
+- 토폴로지는 팀 작성본만 업로드. 비밀값·실제 교실 IP표는 팀 기술서에서 관리. M1 후속 실장비 간소화는 윤서영 주담당·박진혁 보조, 착수일 별도 협의.

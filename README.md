@@ -13,7 +13,7 @@
 | 자료 | 바로가기 | 확인할 내용 |
 |---|---|---|
 | 프로젝트 계획서 | [v0.3 PDF](plans/project-plan-v0.3.pdf) | 프로젝트 배경·목표·기본 범위 |
-| 업무·일정 | [WBS](WBS.md) · [팀 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4) | 담당별 작업·기한·진행 상태 |
+| 업무·일정 | [WBS](WBS.md) · [팀 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2) | 담당별 작업·기한·진행 상태 |
 | 회의·결정사항 | [회의록](meetings/README.md) · [10/20 설계 변경](meetings/2026-10-20-design-decisions.md) | M2 독일 본사 전환·보안 범위·배포 결정 |
 | 팀 설계 자료 | [토폴로지·ERD·Class Diagram](design/README.md) | 팀원이 작성·검토한 도면과 앱 설계 |
 | 개발 코드 | [사내 게시판](apps/m1-intranet/README.md) · [OTT·AI](apps/m3-ott/README.md) · [Store](apps/m5-store/README.md) | 서비스별 코드·실행·배포 안내 |
@@ -46,6 +46,11 @@
 | M5 | 업무 VPN을 통한 한국 격리 Test DB 직접 접근 제한·웹 업무 유지 |
 
 **주요 도입 기술:** GNS3, VMware/vSphere, UTM(Sophos UTM 9), VyOS(M3), Wazuh(M2 전용), Kubernetes, AWS, React, Spring Boot, FastAPI, GitHub Actions, Argo CD. 정확한 버전·실할당 자원·시험 결과는 구축 시 기술서에 기록합니다.
+
+## 오늘·내일 먼저 할 일
+
+- **10/20(화) 오늘:** 각자 담당 망의 개선 전/후 도면을 draw.io로 만들어 [design/토폴로지](design/토폴로지/README.md)에 원본·미리보기 이미지를 업로드합니다.
+- **10/21(수) 내일:** 도면을 보고 가상 장비 생성·연결·OS 설치부터 망 구축을 시작합니다.
 
 ## 팀원 작업 순서
 
