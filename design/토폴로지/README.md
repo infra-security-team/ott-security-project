@@ -8,11 +8,11 @@
 
 | 담당 | draw.io 원본 이름 | 연결된 작업 |
 |---|---|---|
-| M1 유용수 | `M1_한국 본사.drawio` | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) |
-| M2 윤서영 | `M2_독일 본사.drawio` | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) |
-| M3 홍은서 | `M3_한국 서비스망.drawio` | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) |
-| M4 박진혁 | `M4_백업·DR망.drawio` | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) |
-| M5 유은혜 | `M5_캐나다망.drawio` | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) |
+| M1 유용수 | `M1_한국 본사_AS-IS.drawio` | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) |
+| M2 윤서영 | `M2_독일 본사_AS-IS.drawio` | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) |
+| M3 홍은서 | `M3_한국 서비스망_AS-IS.drawio` | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) |
+| M4 박진혁 | `M4_백업·DR망_AS-IS.drawio` | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) |
+| M5 유은혜 | `M5_캐나다망_AS-IS.drawio` | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) |
 
 AS-IS 파일은 같은 기본 이름에 `_AS-IS.drawio`, `_AS-IS.png`를 붙입니다. 이미 올린 원본은 유지하고 필요한 이름·내용만 맞춥니다.
 
