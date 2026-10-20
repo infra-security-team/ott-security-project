@@ -1,6 +1,8 @@
 # M4 박진혁 · 백업·DR망·격리 복원·AWS S3
 
-**Issue:** [설계 #4](https://github.com/infra-security-team/ott-security-project/issues/4) · [AS-IS #29](https://github.com/infra-security-team/ott-security-project/issues/29) · [복원 통합 #10](https://github.com/infra-security-team/ott-security-project/issues/10)
+> **v1.2 우선 확인:** [최신 토폴로지·보안 연결·검증 범위](../architecture.md)를 먼저 읽으세요. 아래 상세 내용에는 이전 설계·제안이 남아 있을 수 있으며, 실제 배선·센서·관제 경로는 v1.2 및 팀 확정값과 대조합니다.
+
+**Issue:** [설계 #4](https://github.com/team-blocks-lab/otter-shield/issues/4) · [AS-IS #29](https://github.com/team-blocks-lab/otter-shield/issues/29) · [복원 통합 #10](https://github.com/team-blocks-lab/otter-shield/issues/10)
 
 ## 사용할 프로그램·서비스
 - 도면: diagrams.net / 가상화: VMware/vSphere / 운영체제: Linux

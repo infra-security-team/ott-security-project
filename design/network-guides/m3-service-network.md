@@ -1,6 +1,8 @@
 # M3 홍은서 (PL) · 한국 OTT 서비스망·DB·앱 배포
 
-**Issue:** [설계 #3](https://github.com/infra-security-team/ott-security-project/issues/3) · [AS-IS #24](https://github.com/infra-security-team/ott-security-project/issues/24) · [앱/AI 통합 #8](https://github.com/infra-security-team/ott-security-project/issues/8)
+> **v1.2 우선 확인:** [최신 토폴로지·보안 연결·검증 범위](../architecture.md)를 먼저 읽으세요. 아래 상세 내용에는 이전 설계·제안이 남아 있을 수 있으며, 실제 배선·센서·관제 경로는 v1.2 및 팀 확정값과 대조합니다.
+
+**Issue:** [설계 #3](https://github.com/team-blocks-lab/otter-shield/issues/3) · [AS-IS #24](https://github.com/team-blocks-lab/otter-shield/issues/24) · [앱/AI 통합 #8](https://github.com/team-blocks-lab/otter-shield/issues/8)
 
 **역할 경계:** M5가 React/Spring Boot/FastAPI 앱 코드를 개발·GitHub 등록. **M3는 앱 구현이 아니라 서버/DB 환경 구성·코드 수령·Docker/K8s 배포·서비스 운영·검증**을 수행합니다.
 

@@ -1,6 +1,8 @@
 # M5 유은혜(PM) · 캐나다 지사망·AWS OTT 공개 웹·앱 개발
 
-**Issue:** [설계 #5](https://github.com/infra-security-team/ott-security-project/issues/5) · [AS-IS #34](https://github.com/infra-security-team/ott-security-project/issues/34) · [통합 AWS #12](https://github.com/infra-security-team/ott-security-project/issues/12) · [OTT·AI 통합 #8](https://github.com/infra-security-team/ott-security-project/issues/8)
+> **v1.2 우선 확인:** [최신 토폴로지·보안 연결·검증 범위](../architecture.md)를 먼저 읽으세요. 아래 상세 내용에는 이전 설계·제안이 남아 있을 수 있으며, 실제 배선·센서·관제 경로는 v1.2 및 팀 확정값과 대조합니다.
+
+**Issue:** [설계 #5](https://github.com/team-blocks-lab/otter-shield/issues/5) · [AS-IS #34](https://github.com/team-blocks-lab/otter-shield/issues/34) · [통합 AWS #12](https://github.com/team-blocks-lab/otter-shield/issues/12) · [OTT·AI 통합 #8](https://github.com/team-blocks-lab/otter-shield/issues/8)
 
 **경계:** 캐나다 **논리적 지사망**을 온프레미스 실습용 VMware/VyOS로 만들고, 고객용 **공개 HTTPS 웹**은 AWS로 배치하는 방안. 캐나다라는 이름만으로 AWS 물리 Region이 캐나다가 되거나 AWS까지 자동으로 VPN이 연결되는 것은 아닙니다.
 

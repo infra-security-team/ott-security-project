@@ -1,6 +1,6 @@
 # OTTer Shield | 개발 코드 안내
 
-**팀명 Blocks · 보안 컨설팅 회사 NetBlocks · 가상 OTT 고객사 OTTer**
+**팀명 Team Blocks · 보안 컨설팅 회사 NetBlocks · 가상 OTT 고객사 OTTer**
 
 **프로젝트명:** OTTer Shield — 한국·캐나다 OTT 하이브리드 인프라 구축 및 보안 컨설팅
 
@@ -15,11 +15,11 @@
 ## 내려받은 뒤 확인할 위치
 
 1. 저장소 첫 화면의 **Code → Download ZIP**으로 전체 파일을 내려받습니다.
-2. 압축 해제 후 `apps` 폴더에서 배포할 서비스 폴더를 선택합니다.
+2. 압축 해제 후 `otter-shield-main/apps` 폴더에서 배포할 서비스 폴더를 선택합니다.
 3. 그 서비스의 README에서 필요한 구성 요소와 실행 방법을 확인합니다.
 4. 현재는 안내 문서만 있으며, 실행 코드는 아직 등록되지 않았습니다. 빈 폴더를 실행 가능한 앱으로 판단하지 않습니다.
 
-기존 최상위 `frontend/`, `backend/`, `ai-service/` 안내는 각각 `apps/m3-ott/` 아래로 이동했습니다. 이전 Issue에 예전 경로가 남아 있으면 이 서비스별 경로를 기준으로 확인합니다.
+기존 최상위 `frontend/`, `backend/`, `ai-service/` 안내는 각각 `apps/m3-ott/` 아래로 이동했습니다. Issue의 코드 안내도 이 서비스별 경로를 기준으로 확인합니다.
 
 ## 코드 등록·배포 시 기록할 내용
 

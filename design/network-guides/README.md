@@ -1,5 +1,7 @@
 # AS-IS / TO-BE 네트워크 설계·구축 가이드
 
+> **v1.2 우선 확인:** [최신 토폴로지·보안 연결·검증 범위](../architecture.md)를 먼저 읽으세요. 아래 상세 내용에는 이전 설계·제안이 남아 있을 수 있으며, 실제 배선·센서·관제 경로는 v1.2 및 팀 확정값과 대조합니다.
+
 > **현재 상태:** 설계·구축을 돕는 **제안**이며 장비 배치·주소·공격 결과가 확정/구축/검증되었다는 뜻이 아닙니다. 5개 공격 시나리오는 승인된 격리 랩에서만 시험합니다.
 
 ## 이 폴더의 목적
@@ -14,7 +16,7 @@
 4. [02 · 5인 보안 구성·중앙 관제 연동 책임표](02-security-deployment-matrix.md) — 각 망 방화벽·에이전트·로그·시험과 M2 관제 총괄의 구분
 5. **[03 · 계획서 v0.2 34쪽 ↔ 기술·일정·담당 누락 대조표](03-v02-plan-crosscheck.md)** — 기본/선택 기술, v0.2 페이지별 근거, WBS 날짜 차이 및 M3·M5 병목
 6. [막힐 때 확인하는 공통 점검·증거 템플릿](troubleshooting.md) — 필요한 로그·질문·협업 요청
-7. [팀 WBS](../../WBS.md) · [GitHub Projects](https://github.com/orgs/infra-security-team/projects/4) · [전체 설계도 합의 위치](../architecture.md)
+7. [팀 WBS](../../WBS.md) · [GitHub Projects](https://github.com/orgs/team-blocks-lab/projects/4) · [전체 설계도 합의 위치](../architecture.md)
 
 ## 운영 원칙
 - 모든 항목을 별도 VM으로 만들지 않습니다. VyOS 1대가 라우팅·DHCP·NAT·방화벽·VPN을 **함께** 수행할 수 있고, 클라우드에서는 AWS 관리형 서비스를 이용할 수 있습니다.

@@ -1,16 +1,16 @@
 # OTTer Shield | WBS
 
-**팀명 Blocks · 보안 컨설팅 회사 NetBlocks · 가상 OTT 고객사 OTTer**
+**팀명 Team Blocks · 보안 컨설팅 회사 NetBlocks · 가상 OTT 고객사 OTTer**
 
 **프로젝트명:** OTTer Shield — 한국·캐나다 OTT 하이브리드 인프라 구축 및 보안 컨설팅
 
 > **공개용:** 실제 IP와 세부 설정은 팀내 토폴로지·주소표·기술서에서 확인합니다.
 
-**개정** v0.3 · 2026.10.20 표현·최신 계획서 링크 정리 (담당·일정 유지) · **설계 기준** 토폴로지 v1.1 (구축 검증 전)
+**개정** v0.3 · 2026.10.20 표현·최신 계획서 링크 정리 (담당·일정 유지) · **설계 기준** 토폴로지 v1.2 (구축 검증 전)
 
 **기간** 2026.10.19~11.16 · **기본 작업시간** 평일 09:00~18:00(점심 1시간 제외) · **발표** 11.16
 
-[START HERE](README.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf) · 토폴로지 v1.1(팀내 공유) · [Projects 업무 보드](https://github.com/orgs/infra-security-team/projects/4) · [망별 구축 가이드](design/network-guides/README.md)
+[START HERE](README.md) · [계획서 v0.3](plans/project-plan-v0.3.pdf) · 토폴로지 v1.2(팀내 공유) · [Projects 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4) · [망별 구축 가이드](design/network-guides/README.md)
 
 > **읽는 순서:** 계획서 v0.3 → 이 WBS → 담당 Issue → 토폴로지·Notion 기술서. 기존 상세 가이드는 이전 배치가 남아 있을 수 있으므로 최신 계획서·토폴로지와 대조합니다.
 
@@ -34,54 +34,54 @@
 
 | 담당 | 업무·완료 기준 | 기간 | Issue |
 |---|---|---|---|
-| **M1 유용수** | 본사 GNS3 라우터·VLAN 스위치·UTM·기존 전체 장비·S01 설계 | 10/19~23 | [#1](https://github.com/infra-security-team/ott-security-project/issues/1) |
-|  | 본사 전용 LAN·eth3 trunk·라우팅·VPN·DNS/설치 출구 구축 | 10/21 오후~10/28 | [#14](https://github.com/infra-security-team/ott-security-project/issues/14) |
-|  | S01 직원망→관리망 비인가 접근 재현 | 10/29~30 | [#15](https://github.com/infra-security-team/ott-security-project/issues/15) |
-|  | 관리 접근·방화벽·Bastion 경로 개선 | 11/03~06 | [#16](https://github.com/infra-security-team/ott-security-project/issues/16) |
-|  | S01 동일 조건 재시험·정상 경로 확인 | 11/09~10 | [#17](https://github.com/infra-security-team/ott-security-project/issues/17) |
-|  | 네트워크 설계·보안 전후 결과·시연 | 11/11~13 | [#18](https://github.com/infra-security-team/ott-security-project/issues/18) |
-| **M2 윤서영** | 독립 VyOS/UTM·SOC/TEST/MGMT NIC 4개·S02 설계 (VLAN 없음) | 10/19~23 | [#2](https://github.com/infra-security-team/ott-security-project/issues/2) |
-|  | 독립 VMnet·Wazuh·SSH 시험 서버·센서 가시성 확인 (Bastion은 TO-BE) | 10/21 오후~10/28 | [#19](https://github.com/infra-security-team/ott-security-project/issues/19) |
-|  | S02 반복 SSH 인증 실패·탐지 로그 확보 | 10/29~30 | [#20](https://github.com/infra-security-team/ott-security-project/issues/20) |
-|  | 인증·탐지/대응 정책 개선 | 11/03~06 | [#21](https://github.com/infra-security-team/ott-security-project/issues/21) |
-|  | S02 동일 조건 재시험·중앙 로그 대조 | 11/09~10 | [#22](https://github.com/infra-security-team/ott-security-project/issues/22) |
-|  | 관제·탐지 근거·시연 | 11/11~13 | [#23](https://github.com/infra-security-team/ott-security-project/issues/23) |
-| **M3 홍은서 (PL)** | VyOS/UTM·DMZ/APP/DATA VMnet·AWS React/CDN·S03 설계 | 10/19~23 | [#3](https://github.com/infra-security-team/ott-security-project/issues/3) |
-|  | VLAN 없는 네트워크 카드(NIC)별 망 분리·vSphere·Docker/K8s·DB·Nginx 기반 구축 | 10/21 오후~10/28 | [#24](https://github.com/infra-security-team/ott-security-project/issues/24) |
-|  | S03 관리 포트 과다 노출 재현·원인 분석 | 11/02 | [#25](https://github.com/infra-security-team/ott-security-project/issues/25) |
-|  | 서비스망 관리 접근·방화벽/K8s 보안 개선 | 11/03~06 | [#26](https://github.com/infra-security-team/ott-security-project/issues/26) |
-|  | S03 재시험·APP/관리 정상 동작 검증 | 11/09~10 | [#27](https://github.com/infra-security-team/ott-security-project/issues/27) |
-|  | 서비스 배포·PL 통합 결과·시연 | 11/11~13 | [#28](https://github.com/infra-security-team/ott-security-project/issues/28) |
-| **M4 박진혁** | DR·DB 복제·S3 백업·S04 설계 | 10/19~23 | [#4](https://github.com/infra-security-team/ott-security-project/issues/4) |
-|  | UTM/독립 백업망·시험 파일·복원 구역·인터넷 출구 확인 | 10/21 오후~10/28 | [#29](https://github.com/infra-security-team/ott-security-project/issues/29) |
-|  | S04 비인가 백업 파일 접근 재현 | 10/29~30 | [#30](https://github.com/infra-security-team/ott-security-project/issues/30) |
-|  | 백업 권한·방화벽·저장소 접근 개선 | 11/03~06 | [#31](https://github.com/infra-security-team/ott-security-project/issues/31) |
-|  | S04 재시험·실제 DB 복원 결과 대조 | 11/09~10 | [#32](https://github.com/infra-security-team/ott-security-project/issues/32) |
-|  | DB 복제·백업·DR 증거·시연 | 11/11~13 | [#33](https://github.com/infra-security-team/ott-security-project/issues/33) |
-| **M5 유은혜 (PM)** | **인프라·개발 병행 설계:** 캐나다 UTM 네트워크 카드(NIC)별 망 분리/VPN·S05 / OTT API·DB·AWS 경로 | 10/19~23 | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) · [#8](https://github.com/infra-security-team/ott-security-project/issues/8) |
-|  | 캐나다 UTM 운영/콘텐츠/관리 독립 VMnet·M1–M5 VPN·인터넷 출구 구축 | 10/21 오후~10/28 | [#34](https://github.com/infra-security-team/ott-security-project/issues/34) |
-|  | **개발 병행:** ERD·Class/API·React/Spring/FastAPI 기본 골격 | **10/22~23** | [#5](https://github.com/infra-security-team/ott-security-project/issues/5) · [#8](https://github.com/infra-security-team/ott-security-project/issues/8) |
-|  | **개발 병행:** 로컬 로그인·권한·목록·샘플 영상 / 캐나다 VPN 검증 | **10/26~28** | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) · [#34](https://github.com/infra-security-team/ott-security-project/issues/34) |
-|  | **개발 병행:** M3 AS-IS 최소 앱 배포·정상 기능 확인 / AWS 웹 경로 준비 | **10/29~30** | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) · [#12](https://github.com/infra-security-team/ott-security-project/issues/12) |
-|  | S05 캐나다 직원→한국 DB 직접 접근 재현 | 11/02 | [#35](https://github.com/infra-security-team/ott-security-project/issues/35) |
-|  | 캐나다 DB 접근 제한·VPN 정책 개선 | 11/03~06 | [#36](https://github.com/infra-security-team/ott-security-project/issues/36) |
-|  | **개발·인프라 병행:** 실제 STT·한영 SRT/VTT·React 표시, AWS HTTPS/API / S05 TO-BE | **11/03~06** | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) · [#12](https://github.com/infra-security-team/ott-security-project/issues/12) · [#36](https://github.com/infra-security-team/ott-security-project/issues/36) |
-|  | S05 재시험·정상 OTT/API 접근 확인 | 11/09~10 | [#37](https://github.com/infra-security-team/ott-security-project/issues/37) |
-|  | **검증 병행:** 캐나다 보안 재시험 + OTT/AI 정상 요청 회귀 검증 | **11/09~10** | [#37](https://github.com/infra-security-team/ott-security-project/issues/37) · [#8](https://github.com/infra-security-team/ott-security-project/issues/8) |
-|  | 캐나다/앱/PM 결과 취합·시연 | 11/11~13 | [#38](https://github.com/infra-security-team/ott-security-project/issues/38) |
+| **M1 유용수** | 본사 GNS3 라우터·VLAN 스위치·UTM·기존 전체 장비·S01 설계 | 10/19~23 | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) |
+|  | 본사 전용 LAN·eth3 trunk·라우팅·VPN·DNS/설치 출구 구축 | 10/21 오후~10/28 | [#14](https://github.com/team-blocks-lab/otter-shield/issues/14) |
+|  | S01 직원망→관리망 비인가 접근 재현 | 10/29~30 | [#15](https://github.com/team-blocks-lab/otter-shield/issues/15) |
+|  | 관리 접근·방화벽·Bastion 경로 개선 | 11/03~06 | [#16](https://github.com/team-blocks-lab/otter-shield/issues/16) |
+|  | S01 동일 조건 재시험·정상 경로 확인 | 11/09~10 | [#17](https://github.com/team-blocks-lab/otter-shield/issues/17) |
+|  | 네트워크 설계·보안 전후 결과·시연 | 11/11~13 | [#18](https://github.com/team-blocks-lab/otter-shield/issues/18) |
+| **M2 윤서영** | 독립 VyOS/UTM·SOC/TEST/MGMT NIC 4개·S02 설계 (VLAN 없음) | 10/19~23 | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) |
+|  | 독립 VMnet·Wazuh·SSH 시험 서버·센서 가시성 확인 (Bastion은 TO-BE) | 10/21 오후~10/28 | [#19](https://github.com/team-blocks-lab/otter-shield/issues/19) |
+|  | S02 반복 SSH 인증 실패·탐지 로그 확보 | 10/29~30 | [#20](https://github.com/team-blocks-lab/otter-shield/issues/20) |
+|  | 인증·탐지/대응 정책 개선 | 11/03~06 | [#21](https://github.com/team-blocks-lab/otter-shield/issues/21) |
+|  | S02 동일 조건 재시험·중앙 로그 대조 | 11/09~10 | [#22](https://github.com/team-blocks-lab/otter-shield/issues/22) |
+|  | 관제·탐지 근거·시연 | 11/11~13 | [#23](https://github.com/team-blocks-lab/otter-shield/issues/23) |
+| **M3 홍은서 (PL)** | VyOS/UTM·DMZ/APP/DATA VMnet·AWS React/CDN·S03 설계 | 10/19~23 | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) |
+|  | VLAN 없는 네트워크 카드(NIC)별 망 분리·vSphere·Docker/K8s·DB·Nginx 기반 구축 | 10/21 오후~10/28 | [#24](https://github.com/team-blocks-lab/otter-shield/issues/24) |
+|  | S03 관리 포트 과다 노출 재현·원인 분석 | 11/02 | [#25](https://github.com/team-blocks-lab/otter-shield/issues/25) |
+|  | 서비스망 관리 접근·방화벽/K8s 보안 개선 | 11/03~06 | [#26](https://github.com/team-blocks-lab/otter-shield/issues/26) |
+|  | S03 재시험·APP/관리 정상 동작 검증 | 11/09~10 | [#27](https://github.com/team-blocks-lab/otter-shield/issues/27) |
+|  | 서비스 배포·PL 통합 결과·시연 | 11/11~13 | [#28](https://github.com/team-blocks-lab/otter-shield/issues/28) |
+| **M4 박진혁** | DR·DB 복제·S3 백업·S04 설계 | 10/19~23 | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) |
+|  | UTM/독립 백업망·시험 파일·복원 구역·인터넷 출구 확인 | 10/21 오후~10/28 | [#29](https://github.com/team-blocks-lab/otter-shield/issues/29) |
+|  | S04 비인가 백업 파일 접근 재현 | 10/29~30 | [#30](https://github.com/team-blocks-lab/otter-shield/issues/30) |
+|  | 백업 권한·방화벽·저장소 접근 개선 | 11/03~06 | [#31](https://github.com/team-blocks-lab/otter-shield/issues/31) |
+|  | S04 재시험·실제 DB 복원 결과 대조 | 11/09~10 | [#32](https://github.com/team-blocks-lab/otter-shield/issues/32) |
+|  | DB 복제·백업·DR 증거·시연 | 11/11~13 | [#33](https://github.com/team-blocks-lab/otter-shield/issues/33) |
+| **M5 유은혜 (PM)** | **인프라·개발 병행 설계:** 캐나다 UTM 네트워크 카드(NIC)별 망 분리/VPN·S05 / OTT API·DB·AWS 경로 | 10/19~23 | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) · [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+|  | 캐나다 UTM 운영/콘텐츠/관리 독립 VMnet·M1–M5 VPN·인터넷 출구 구축 | 10/21 오후~10/28 | [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) |
+|  | **개발 병행:** ERD·Class/API·React/Spring/FastAPI 기본 골격 | **10/22~23** | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) · [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+|  | **개발 병행:** 로컬 로그인·권한·목록·샘플 영상 / 캐나다 VPN 검증 | **10/26~28** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#34](https://github.com/team-blocks-lab/otter-shield/issues/34) |
+|  | **개발 병행:** M3 AS-IS 최소 앱 배포·정상 기능 확인 / AWS 웹 경로 준비 | **10/29~30** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
+|  | S05 캐나다 직원→한국 DB 직접 접근 재현 | 11/02 | [#35](https://github.com/team-blocks-lab/otter-shield/issues/35) |
+|  | 캐나다 DB 접근 제한·VPN 정책 개선 | 11/03~06 | [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) |
+|  | **개발·인프라 병행:** 실제 STT·한영 SRT/VTT·React 표시, AWS HTTPS/API / S05 TO-BE | **11/03~06** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) · [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) · [#36](https://github.com/team-blocks-lab/otter-shield/issues/36) |
+|  | S05 재시험·정상 OTT/API 접근 확인 | 11/09~10 | [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) |
+|  | **검증 병행:** 캐나다 보안 재시험 + OTT/AI 정상 요청 회귀 검증 | **11/09~10** | [#37](https://github.com/team-blocks-lab/otter-shield/issues/37) · [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+|  | 캐나다/앱/PM 결과 취합·시연 | 11/11~13 | [#38](https://github.com/team-blocks-lab/otter-shield/issues/38) |
 
 ## 3. 공동 통합 업무
 
 | Issue | 작업 | 주관·협업 | 기간 |
 |---|---|---|---|
-| [#6](https://github.com/infra-security-team/ott-security-project/issues/6) | 전체 설계 설계 기준·강사 피드백·5개 PC 연결·NIC/VMnet·설치 출구 기준 검토 | M5(PM)·M3(PL)·전원 | 10/19~23 |
-| [#7](https://github.com/infra-security-team/ott-security-project/issues/7) | M1 GNS3 라우터·M2·M3 VyOS 라우팅·M1–M4·M1–M5·M3–M4 VPN·정상/차단 경로 통합 | M1·각 망 담당 | 10/26~28 |
-| [#8](https://github.com/infra-security-team/ott-security-project/issues/8) | React/Spring/MySQL/FastAPI 설계·개발·배포·한영 자막 | M5 코드·M3 배포 | 10/19~11/06 |
-| [#9](https://github.com/infra-security-team/ott-security-project/issues/9) | Wazuh/Suricata 중앙 로그·각 망 수집 연동 | M2 총괄·전원 로그 제공 | 10/26~11/06 |
-| [#10](https://github.com/infra-security-team/ott-security-project/issues/10) | MySQL Replica·백업·S3·격리 복원 | M4·M3 | 10/26~11/10 |
-| [#11](https://github.com/infra-security-team/ott-security-project/issues/11) | APP 2 Pod 분산·복구/Worker 장애 검증 | M3·M5 | 11/02~10 |
-| [#12](https://github.com/infra-security-team/ott-security-project/issues/12) | OTT S3/CloudFront 영상·React·한국 API + 캐나다 Store EKS/RDS | M5·M3 | 10/21~11/06 |
-| [#13](https://github.com/infra-security-team/ott-security-project/issues/13) | 최종 보고서·발표자료·5인 리허설·발표 | 전원 | 11/09~16 |
+| [#6](https://github.com/team-blocks-lab/otter-shield/issues/6) | 전체 설계 설계 기준·강사 피드백·5개 PC 연결·NIC/VMnet·설치 출구 기준 검토 | M5(PM)·M3(PL)·전원 | 10/19~23 |
+| [#7](https://github.com/team-blocks-lab/otter-shield/issues/7) | M1 GNS3 라우터·M2·M3 VyOS 라우팅·M1–M4·M1–M5·M3–M4 VPN·정상/차단 경로 통합 | M1·각 망 담당 | 10/26~28 |
+| [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) | React/Spring/MySQL/FastAPI 설계·개발·배포·한영 자막 | M5 코드·M3 배포 | 10/19~11/06 |
+| [#9](https://github.com/team-blocks-lab/otter-shield/issues/9) | Wazuh/Suricata 중앙 로그·각 망 수집 연동 | M2 총괄·전원 로그 제공 | 10/26~11/06 |
+| [#10](https://github.com/team-blocks-lab/otter-shield/issues/10) | MySQL Replica·백업·S3·격리 복원 | M4·M3 | 10/26~11/10 |
+| [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) | APP 2 Pod 분산·복구/Worker 장애 검증 | M3·M5 | 11/02~10 |
+| [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) | OTT S3/CloudFront 영상·React·한국 API + 캐나다 Store EKS/RDS | M5·M3 | 10/21~11/06 |
+| [#13](https://github.com/team-blocks-lab/otter-shield/issues/13) | 최종 보고서·발표자료·5인 리허설·발표 | 전원 | 11/09~16 |
 
 **M5 병행 일정:** 캐나다 인프라(#5·#34~#38)와 개발(#8·#12)을 동일 기간 병행. 각 Issue는 다른 성과물 기준으로 검증하며, VPN 정상·앱 정상·AI 완료를 하나의 완료 상태로 합산하지 않음.
 
@@ -94,7 +94,7 @@
 - **보안 책임:** M1/M3/M4/M5 담당망 방화벽·접근통제·로그 설정 및 시험 수행 / M2 Wazuh·Suricata 중앙 관제·연동 총괄
 - **일정 위험:** M3(K8s·DB·LB·PL)와 M5(캐나다 VPN·앱·AI·PM) 업무 집중. 10/28·10/30 선행 기능 미완료 시 종속 시험 상태 `Blocked`, 범위·지원·일정 재협의
 - **개정 일정안:** AS-IS 공격은 10/29~30 M1·M2·M4, 11/02 M3·M5로 유지. v0.2의 10/30 5건 일괄 목표는 현재 일정안으로 대체하며 팀 검토가 필요함. Replica는 TO-BE 11/03~06 적용, 11/05 첫 복제·11/10 최종 검증 목표.
-- **업무 관리:** [Projects](https://github.com/orgs/infra-security-team/projects/4) = Status, Issue = 체크리스트·일일 결과, Notion = 명령어·설정·스크린샷·검증 증거. Projects의 날짜 필드는 WBS와 별도 관리
+- **업무 관리:** [Projects](https://github.com/orgs/team-blocks-lab/projects/4) = Status, Issue = 체크리스트·일일 결과, Notion = 명령어·설정·스크린샷·검증 증거. Projects의 날짜 필드는 WBS와 별도 관리
 - **기록·보안:** 구축 전 상태 `미수행`·미확정 결정 `미확정` 표기. 승인된 격리 환경에서만 취약점 재현, 공개 저장소의 비밀번호·API 키·VPN PSK 등록 금지
 
 ## 5. 이번 변경 기준과 초기 검증 작업

@@ -1,6 +1,8 @@
 # M2 윤서영 · 본사 보안·중앙 관제
 
-**Issue:** [설계 #2](https://github.com/infra-security-team/ott-security-project/issues/2) · [AS-IS #19](https://github.com/infra-security-team/ott-security-project/issues/19) · [중앙 로그 통합 #9](https://github.com/infra-security-team/ott-security-project/issues/9)
+> **v1.2 우선 확인:** [최신 토폴로지·보안 연결·검증 범위](../architecture.md)를 먼저 읽으세요. 아래 상세 내용에는 이전 설계·제안이 남아 있을 수 있으며, 실제 배선·센서·관제 경로는 v1.2 및 팀 확정값과 대조합니다.
+
+**Issue:** [설계 #2](https://github.com/team-blocks-lab/otter-shield/issues/2) · [AS-IS #19](https://github.com/team-blocks-lab/otter-shield/issues/19) · [중앙 로그 통합 #9](https://github.com/team-blocks-lab/otter-shield/issues/9)
 
 ## 사용할 프로그램·환경
 - **도면:** diagrams.net / **기본 서버:** Linux VM / **접근 관리:** SSH·Bastion
