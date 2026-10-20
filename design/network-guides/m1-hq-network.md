@@ -1,42 +1,40 @@
-# M1 유용수 · 본사 네트워크/4망 VPN 허브
+# M1 유용수 · 본사 네트워크
 
-**Issue:** [설계 #1](https://github.com/infra-security-team/ott-security-project/issues/1) · [AS-IS #14](https://github.com/infra-security-team/ott-security-project/issues/14) · [공동 VPN #7](https://github.com/infra-security-team/ott-security-project/issues/7)
-**망 역할:** 한국 본사의 직원·관리 VLAN을 만들고 VPN 허브로 서비스·DR·캐나다 연결을 조율. 각 망의 실제 라우터 설정은 **그 망 담당자가 수행**합니다.
+**2026.10.20 수정 · 구축 전 계획**
 
-## 사용할 프로그램·환경
-- **도면:** diagrams.net(draw.io)
-- **가상 환경:** 학원 VMware Workstation/vSphere 중 확정된 플랫폼
-- **라우터:** VyOS (버전·이미지/라이선스/가상 NIC 종류 확인)
-- **클라이언트/시험:** Ubuntu/Linux 또는 사용 가능한 Windows VM
-- **통신 확인:** ping, ip addr, ip route, traceroute/tracepath, tcpdump, ssh; VMware 가상 스위치/포트그룹 설정 확인
+[계획서 v0.3](../../plans/project-plan-v0.3.md) · [WBS](../../WBS.md) · [구성도 안내](../architecture.md)
 
-## 장비·기능 명세 (제안 / 구성 확정 전)
-| 구성 요소 | 시작 수량 | 위치/기능 | 선택 이유·조건 |
-|---|---:|---|---|
-| HQ-VyOS | 1 VM | VLAN 간 라우팅, 정책 방화벽, Site-to-Site IPsec 허브, 필요한 DHCP/NAT | 같은 VM에서 여러 기능 수행, 독립 서버 5개 아님 |
-| HQ-Employee-Client | 1 VM | 직원 VLAN DHCP 수신·업무 접근 시험 | '직원 PC 여러 대' 필요 없음, 출발지 1대로 우선 검증 |
-| HQ-Admin-Client | 1 VM | 관리 VLAN에서 승인된 Bastion 접근 | 정당한 관리자 경로 증거 확보 |
-| 본사 Bastion·SSH 대상 | M2 문서 참조 | 정상 관리/비인가 접근 대상 | M1이 중복 생성하지 않음 |
-| 가상 스위치/포트그룹 | VLAN/물리 호스트 조건으로 결정 | 직원/관리/보안/WAN 또는 transit 연결 | VMnet 구분과 802.1Q VLAN 태깅은 다름 |
-| 본사 DNS/NTP·DHCP 기능 | 서비스로 1개 이상 구성 가능 | DHCP는 직원 VLAN 중심, 시간 동기화는 전 서버 | 서버 VM 별도 강제 안 함 |
+## 이번 변경
 
-## AS-IS 기본 도면에 반드시 넣기
-- 직원 VLAN, 관리 VLAN, 보안/시험망 위치와 IP CIDR(미확정이면 TBD).
-- HQ-VyOS의 인터페이스와 외부/WAN·VPN 허브·서비스/DR/캐나다 각각의 **피어**.
-- 직원 PC, 관리 PC, M2 Bastion, SSH 시험 대상과 정상 통신 경로.
-- AS-IS S01: **격리된 직원망 → 관리 대상**의 비인가 경로가 성립할 설계 조건(실제 외부 공개 금지).
-- TO-BE 초안: 직원망 직접 관리 연결 차단, 승인된 관리자→Bastion→관리 서버 경로 유지.
-- VPN 보호 대역, 양단 라우트, 상대쪽 반환 경로, 필요한 NAT 예외 목록.
-- WAN/학원 인터넷 조건. 사설 주소망 예시는 실제 구성 확정 전에 공통 대역표에서 충돌 검사.
+M1은 별도 VyOS VM을 사용하지 않습니다. **GNS3 안의 라우터 R1**이 기존 VyOS의 상위 연결 역할을 맡습니다. M2·M3의 VyOS는 유지합니다.
 
-## 10/19~21 오전 설계 / 수 오후~금 구축 착수
-- [ ] 10/19 도면 초안 작성 → 10/20 팀 검토 → **10/21 오전** `M1-HQ-ASIS.drawio` 원본·PNG, VM/네트워크/CPU/RAM·VPN 피어·AWS/보안 로그 연계 기준선 정리.
-- [ ] M3/M4/M5의 CIDR/피어/포트/리턴 라우트 요청을 **하나의 통신표로 취합**.
-- [ ] 10/20 오전 회의에서 대역 충돌·VPN 종단/허용 정책 검토; TO-BE 설계 초안 승인 요청.
-- [ ] **10/21 오후부터** 검토된 가상 장비 생성 → NIC/VLAN 라우팅 → 직원 DHCP→기본 게이트웨이 통신 확인. 늦어도 10/22 구축 착수.
-- [ ] 10/26~28 M3/M4/M5와 실제 VPN 보호 트래픽의 허용·차단 및 반환 경로 검증.
+| 구성 요소 | 담당 역할 |
+|---|---|
+| GNS3 라우터 R1 | 교실망 연결 |
+| UTM1 | 내부망 접근 통제와 업무 VPN |
+| GNS3 L2 스위치 | 부서별 VLAN 분리 |
 
-## 성공 증거 / 막힐 때
-**증거:** 도면 버전·가상 스위치 설정, VyOS 인터페이스·라우팅/VPN 상태, 직원 DHCP 임대/IP, 정상·실패 통신 시각과 패킷/방화벽 로그. VPN 터널 'up'만으로 통합 성공 판정 금지.
+GNS3는 가상 장비를 실행·연결하는 프로그램입니다. 그 안에 라우터와 스위치를 각각 구성합니다. 내부망 통신이 보안 장비를 우회하지 않도록 검토합니다.
 
-**주요 오류:** 다른 망 중복 CIDR, 잘못된 NIC/포트그룹, DHCP 미수신, 정책/라우트 비대칭, NAT가 VPN 대상에 적용됨, VPN 피어/보호 대역 불일치. [공통 진단](troubleshooting.md)에 실패 시각·출발지·목적지·양단 설정 확인 결과 남기기.
+## 유지할 장비
+
+기존 **서버 10대·직원 PC 6대·관리 PC 2대·스위치 10대**를 유지합니다. 장비를 한두 대로 축소하지 않습니다. RAM 32GB 내에서 단계별 동시 실행량을 확인합니다. M2 관제망은 별도 PC로 유지합니다.
+
+## 작업 순서
+
+1. [설계 #1](https://github.com/infra-security-team/ott-security-project/issues/1): GNS3 라우터와 스위치, UTM의 역할을 도면에 구분합니다.
+2. [구축 #14](https://github.com/infra-security-team/ott-security-project/issues/14): 선택한 라우터 이미지·실행 환경·VMware 연동을 확인하고 기본망을 구축합니다.
+3. [연결 통합 #7](https://github.com/infra-security-team/ott-security-project/issues/7): 상대 담당과 요청·응답 및 정상 업무 통신을 확인합니다.
+4. 기존 보안 시나리오의 개선 전후 결과와 정상 업무 유지 여부를 기록합니다.
+
+**일정·담당·Issue 진행 상태는 이번 수정으로 바꾸지 않습니다.** 실제 시험 후 근거를 등록하고 검토자가 확인해야 완료입니다.
+
+## 상세 설정과 증거
+
+팀에서 공유하는 토폴로지 v1.1과 담당 Notion 기술서에서 실제 장비 배선·주소·설정·시험 조건을 확인합니다. 라우터 이미지와 UTM 제품은 확인 후 선정하며, 문서 수정만으로 설치·연결 완료를 표시하지 않습니다.
+
+GNS3 장비·연결 화면, 설정 변경, 예상/실제 결과, 오류, 검증 증거와 다음 작업을 남깁니다. 비밀번호·API 키·VPN 키는 공개 저장소에 올리지 않습니다.
+
+## 공식 참고
+
+[GNS3 VLAN 스위치](https://docs.gns3.com/docs/using-gns3/advanced/hubs-and-switches) · [외부망 연결](https://docs.gns3.com/docs/using-gns3/advanced/connect-gns3-internet) · [VMware 연동](https://docs.gns3.com/docs/emulators/adding-vmware-vms-to-gns3-topologies)

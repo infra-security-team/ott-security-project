@@ -14,11 +14,11 @@
 
 | 일정 | 작업 | 확인 기준 |
 |---|---|---|
-| **10/19 월** | 강사 피드백 반영·PC별 설계 개정 | M1~M3 각 VyOS+UTM, M1만 GNS3 VLAN, M2/M3/M5 네트워크 카드(NIC)별 망 분리. 완료가 아닌 설계 개정 |
+| **10/19 월** | 강사 피드백 반영·PC별 설계 개정 | M1 GNS3 라우터+UTM / M2·M3 VyOS+UTM, M1만 GNS3 VLAN, M2/M3/M5 네트워크 카드(NIC)별 망 분리. 완료가 아닌 설계 개정 |
 | **10/20 화** | 교실망 실측·두 PC 브리지 시험·전체 도면 검토 | 교실 게이트웨이(주소는 팀 기술서 확인), 실제 마스크·고유 IP, 두 VM 왕복 통신. 장비별 교실망 IP는 확인 후 배정 |
 | **10/21 수 오전** | IP/NIC/VMnet·시나리오 설계 기준 검토 | 32GB 자원표, 전용망·trunk, 정상/시험 경로, 미확정 담당·기한 확정 |
 | **10/21 수 오후~23 금** | 승인된 망 AS-IS 구축·설치용 인터넷·AWS 사전 조건 확인 | VM→UTM→출구→교실 GW, DNS·저장소 HTTPS·다운로드. API 외부 공개·센서 미러·Store 비용/예상 작업량 판정 |
-| **10/26~28** | 5개 담당 구역 라우팅·선택 VPN·서비스 통합 | M1~M3 교실 VyOS 라우팅, M1–M4·M1–M5·M3–M4 VPN 양단·반환 경로·NAT 예외, K8s·로컬 OTT 최소 기능 |
+| **10/26~28** | 5개 담당 구역 라우팅·선택 VPN·서비스 통합 | M1 GNS3 라우터·M2·M3 VyOS의 교실망 연결, M1–M4·M1–M5·M3–M4 VPN 양단·반환 경로·NAT 예외, K8s·로컬 OTT 최소 기능 |
 | **10/29~30** | M1·M2·M4 AS-IS 공격, M3·M5 정상 서비스 배포·시험 준비 | 격리 시험 **3건** 로그·원인, **10/30 실제 OTT 배포 환경** 정상 동작 |
 | **11/02 월** | M3·M5 AS-IS 공격·시험 결과 취합 | 격리 시험 총 **5건**·개선 대상·정상 기능 비교 기준 |
 | **11/03~06** | TO-BE 적용·AI/클라우드/DR 통합 | 11/03 개선안 확정, 11/05 Replica 초기 검증, 11/06 한영 VTT·CDN/API·S3 복원 1차 |
@@ -30,7 +30,7 @@
 
 | 담당 | 업무·완료 기준 | 기간 | Issue |
 |---|---|---|---|
-| **M1 유용수** | 본사 GNS3 VLAN·VyOS/UTM·기존 전체 장비·S01 설계 | 10/19~23 | [#1](https://github.com/infra-security-team/ott-security-project/issues/1) |
+| **M1 유용수** | 본사 GNS3 라우터·VLAN 스위치·UTM·기존 전체 장비·S01 설계 | 10/19~23 | [#1](https://github.com/infra-security-team/ott-security-project/issues/1) |
 |  | 본사 전용 LAN·eth3 trunk·라우팅·VPN·DNS/설치 출구 구축 | 10/21 오후~10/28 | [#14](https://github.com/infra-security-team/ott-security-project/issues/14) |
 |  | S01 직원망→관리망 비인가 접근 재현 | 10/29~30 | [#15](https://github.com/infra-security-team/ott-security-project/issues/15) |
 |  | 관리 접근·방화벽·Bastion 경로 개선 | 11/03~06 | [#16](https://github.com/infra-security-team/ott-security-project/issues/16) |
@@ -71,7 +71,7 @@
 | Issue | 작업 | 주관·협업 | 기간 |
 |---|---|---|---|
 | [#6](https://github.com/infra-security-team/ott-security-project/issues/6) | 전체 설계 설계 기준·강사 피드백·5개 PC 연결·NIC/VMnet·설치 출구 기준 검토 | M5(PM)·M3(PL)·전원 | 10/19~23 |
-| [#7](https://github.com/infra-security-team/ott-security-project/issues/7) | M1~M3 라우팅·M1–M4·M1–M5·M3–M4 VPN·정상/차단 경로 통합 | M1·각 망 담당 | 10/26~28 |
+| [#7](https://github.com/infra-security-team/ott-security-project/issues/7) | M1 GNS3 라우터·M2·M3 VyOS 라우팅·M1–M4·M1–M5·M3–M4 VPN·정상/차단 경로 통합 | M1·각 망 담당 | 10/26~28 |
 | [#8](https://github.com/infra-security-team/ott-security-project/issues/8) | React/Spring/MySQL/FastAPI 설계·개발·배포·한영 자막 | M5 코드·M3 배포 | 10/19~11/06 |
 | [#9](https://github.com/infra-security-team/ott-security-project/issues/9) | Wazuh/Suricata 중앙 로그·각 망 수집 연동 | M2 총괄·전원 로그 제공 | 10/26~11/06 |
 | [#10](https://github.com/infra-security-team/ott-security-project/issues/10) | MySQL Replica·백업·S3·격리 복원 | M4·M3 | 10/26~11/10 |
@@ -100,21 +100,21 @@
 | 확인 항목 / 연결 Issue | 기한 | 작업·담당 | 통과 기준 / 실패 시 처리 |
 |---|---|---|---|
 | 교실망 연결 · #6 | 10/20 | 전원 실제 IPv4·마스크·교실 추가 IP·브리지 연결 확인 / M1 취합 | 두 PC의 VM 간 왕복 TCP/패킷 확인. 실패 시 교실망/가상 NIC 조건부터 확인 |
-| 설계·자원 확인 · #1~#5·#6 | 10/21 오전 | 본인 NIC·VMnet·GNS3 포트·대역·자원표 확정 / 각 담당·PL | 각 내부망 게이트웨이와 시험 경로 명세, 32GB 내 동시 실행안. 교실망 IP와 VyOS–UTM 연결망 주소는 확인 후 확정 |
+| 설계·자원 확인 · #1~#5·#6 | 10/21 오전 | 본인 NIC·VMnet·GNS3 포트·대역·자원표 확정 / 각 담당·PL | 각 내부망 게이트웨이와 시험 경로 명세, 32GB 내 동시 실행안. 교실망 IP와 M1 R1–UTM / M2·M3 VyOS–UTM 연결망 주소는 확인 후 확정 |
 | 설치 인터넷 · #14·#19·#24·#29·#34 | 10/23 | 각 망 설치용 인터넷 / 전원 | VM→GW, DNS 조회, 저장소 HTTP(S), 실제 패키지 다운로드·시간동기화. ping만으로 완료 금지 |
 | 외부 공개·수집·비용 · #6·#9·#12 | 10/23 | API 외부 공개·미러링·AWS 예산·Store 예상 작업량 판정 / M1·M2·M3·M5·계정 담당 | 선택 방식·근거·담당·기한 기록. 불가 시 공개 CDN/내부 API 증거 분리, 미러 미확인 상태로 탐지 완료 표시 금지 |
-| 내부·VPN 연결 · #7 | 10/28 | 각 VyOS/UTM의 왕복 경로·NAT 예외·VPN / M1+전원 | 요청/응답 양방향 확인 및 정상/차단 기록. 시험 실패가 라우트 오류인지 먼저 구분 |
+| 내부·VPN 연결 · #7 | 10/28 | M1 R1·각 VyOS/UTM의 왕복 경로·NAT 예외·VPN / M1+전원 | 요청/응답 양방향 확인 및 정상/차단 기록. 시험 실패가 라우트 오류인지 먼저 구분 |
 | 서비스 배포 · #8·#12 | 10/30 → 11/06 | M5 코드·AWS/Store, M3 한국 배포 / 상호 검토 | 10/30 기본 배포·CDN MP4, 11/06 실제 AI VTT·API 통합. 조건부 외부 API는 별도 판정 |
 
 ### 담당별 연결 원칙
 
 NIC는 네트워크 카드, VMnet은 VMware 안의 가상망입니다. VLAN은 스위치에서 망을 나누는 기능입니다. AS-IS는 보안 개선 전, TO-BE는 개선 후 환경입니다. SSH는 서버 원격 관리 접속, Bastion은 승인 관리자용 중계 서버입니다.
-- M1: VyOS-1 + UTM-1, GNS3 VLAN. 서버 10·직원 PC 6·관리 PC 2·스위치 10은 설계에 보존. 동시 기동 수는 자원표로 조절.
+- M1: GNS3 라우터 R1 + UTM-1 + GNS3 L2 VLAN 스위치. 별도 VyOS VM 없음. 서버 10·직원 PC 6·관리 PC 2·스위치 10은 설계에 보존. 동시 기동 수는 자원표로 조절. R1은 상위 연결, UTM1은 VLAN 게이트웨이·방화벽·VPN 담당. L2 스위치에서 망 간 라우팅하지 않음.
 - M2: VyOS-2 + UTM-2. 외부 포함 NIC 4개, SOC/TEST/MGMT 독립 VMnet. VLAN 및 UTM 바로 아래 통합 스위치 없음.
 - M3: VyOS-3 + UTM-3. DMZ/APP/DATA는 NIC별 VMnet, TO-BE MGMT 추가 시 외부 포함 NIC 5개. React/MP4/VTT는 AWS S3+CloudFront.
 - M4: 기존 백업·DR 책임 유지. UTM4의 교실 Bridged 직결 출구는 제안, 10/23 확정. VLAN/직결 방식은 실제 가상 L2 조건과 함께 결정.
 - M5: UTM-5 외부+운영+콘텐츠+관리 NIC 4개. VLAN 미사용, M1–M5 VPN 업무 VPN. 교실 Bridged 직결 출구는 제안.
-- 교실 게이트웨이(주소는 팀 기술서 확인)을 팀 VyOS에 중복 배정하지 않음. M1~M3 각 VyOS–UTM 연결망 주소는 제안값이며 실제 배정 전 확인. 내부·VPN 트래픽은 인터넷 NAT와 구분.
+- 교실 게이트웨이 주소를 M1 R1 또는 M2·M3 VyOS에 중복 배정하지 않음. M1 R1–UTM1 및 M2·M3 VyOS–UTM 연결망 주소는 제안값이며 실제 배정 전 확인. 내부·VPN 트래픽은 인터넷 NAT와 구분.
 - 고객은 S3 업로드가 아니라 CloudFront에서 영상을 재생. 관리자가 S3에 업로드하고 DB는 제목·URL·자막 작업 메타데이터 보관.
 
 ### M5 과부하 및 변경 관리
