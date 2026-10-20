@@ -2,7 +2,7 @@
 
 **2026.10.20 수정 · 구축 전 계획**
 
-[계획서 v0.3](../../plans/project-plan-v0.3.md) · [WBS](../../WBS.md) · [구성도 안내](../architecture.md)
+[계획서 v0.3](../../plans/project-plan-v0.3.pdf) · [WBS](../../WBS.md) · [구성도 안내](../architecture.md)
 
 ## 이번 변경
 
