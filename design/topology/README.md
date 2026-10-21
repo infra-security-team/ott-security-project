@@ -1,43 +1,15 @@
-# 팀 토폴로지 업로드
+# 토폴로지
 
-| 구분 | 일정 |
-|---|---|
-| AS-IS 기존 목표 | 10/20 |
-| AS-IS 현재 완료 예상 | 10/21 오전(팀 확인 전) |
-| 구축 시작 목표 | 10/21 |
-| TO-BE 설계 | 공격 분석 후 11/03 |
+담당망별 장비·네트워크 구역과 정상 서비스, 관리·백업·보안 시험 경로를 나타냅니다.
 
-## 올릴 파일
-
-현재는 각자 AS-IS(개선 전)만 draw.io로 만듭니다. TO-BE는 실제 공격 결과를 분석한 후 AS-IS 원본을 복사해 작성합니다.
-
-| 담당 | draw.io 원본 이름 | 연결된 작업 |
+| 담당망 | 도면 | 주요 구성과 기능 |
 |---|---|---|
-| M1 유용수 | `M1_한국 본사_AS-IS.drawio` | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) |
-| M2 윤서영 | `M2_독일 본사_AS-IS.drawio` | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) |
-| M3 홍은서 | `M3_한국 서비스망_AS-IS.drawio` | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) |
-| M4 박진혁 | `M4_백업·DR망_AS-IS.drawio` | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) |
-| M5 유은혜 | `M5_캐나다망_AS-IS.drawio` | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) |
+| M1 한국 본사 | [AS-IS 도면](M1_%ED%95%9C%EA%B5%AD%20%EB%B3%B8%EC%82%AC_AS-IS.drawio.png) | 부서 VLAN·공통 업무 서버·UTM·VPN 연결 |
+| M2 독일 본사 | [AS-IS 도면](M2_%EB%8F%85%EC%9D%BC%20%EB%B3%B8%EC%82%AC_AS-IS.drawio.png) | 독립 본사 업무망·게시판·독일 Wazuh 개선 계획 |
+| M3 한국 OTT 서비스망 | [AS-IS 도면](M3_%ED%95%9C%EA%B5%AD%20%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A7%9D_AS-IS.drawio.png) | ESXi·Kubernetes·OTT/AI 배포·DB·서비스 진입 |
+| M4 백업·DR망 | [AS-IS 도면](M4_%EB%B0%B1%EC%97%85%C2%B7DR%EB%A7%9D_AS-IS.drawio%20%281%29.png) | DB 백업·복제·S3 사본 보관·별도 복원 |
+| M5 캐나다·AWS Store | [AS-IS 도면](M5_%EC%BA%90%EB%82%98%EB%8B%A4%EB%A7%9D_AS-IS.drawio.png) | 캐나다 직원망·한국 VPN·AWS Store 공개 서비스 |
 
-AS-IS 파일은 같은 기본 이름에 `_AS-IS.drawio`, `_AS-IS.png`를 붙입니다. 이미 올린 원본은 유지하고 필요한 이름·내용만 맞춥니다.
+TO-BE 도면은 공격 분석 후 개선한 접근 정책과 추가 구성을 반영합니다.
 
-11/03: 공격 결과를 반영한 `_TO-BE.drawio`, `_TO-BE.png`와 변경표를 추가합니다. AS-IS 파일을 덮어쓰지 않습니다. 검토 후 11/04–05 기존 환경을 수정하고 11/06 실제 설정과 도면을 대조합니다.
-
-## 업로드 순서
-
-1. draw.io에서 원본을 저장하고 각 페이지를 PNG로 내보냅니다.
-2. GitHub의 이 폴더에서 Add file → Upload files를 누릅니다.
-3. 본인 원본과 이미지 파일을 올리고 Commit changes로 저장합니다.
-4. 본인 Issue에 업로드한 파일 링크·남은 질문을 적고 팀 검토를 요청합니다.
-
-## 도면에 보여야 하는 것
-
-- 장비 이름·역할과 어느 망에 있는지
-- 장비끼리 연결선과 다른 망으로 나가는 길
-- 직원/고객의 정상 업무와 관리자 접속 경로
-- 예정된 공격 시험 경로와 관찰할 로그 위치. 개선안 확정은 공격 결과 분석 후 진행
-- 미정인 값과 다른 담당에게 확인할 질문
-
-실제 교실 IP·비밀번호·개인키 등 비공개 값은 팀 기술서에서 관리합니다. 팀 작성본을 올리며, 업로드 자체가 실제 구축 완료를 뜻하지 않습니다.
-
-[설계 자료](../README.md) · [WBS](../../WBS.md)
+[설계 자료](../README.md)

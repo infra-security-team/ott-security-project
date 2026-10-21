@@ -1,14 +1,8 @@
-# 미승인 클래스 설계 제안
+# 추가 설계 참고자료
 
-**상태:** AI 제안 · M5 최종 확인 전
+인증·게시글·사진 처리와 요청·응답 구조를 확장한 클래스 제안입니다.
 
-이 자료는 M5와 클래스 구성을 충분히 검토하기 전에 전체 설계 v1.0으로 등록했던 제안입니다. 최종본 표기를 철회하고 이 폴더로 이동했습니다.
+- [Mermaid 코드](intranet-class-proposal-20261021.mmd)
+- [draw.io 파일](intranet-class-proposal-20261021.drawio)
 
-- [Mermaid 제안 코드](intranet-class-proposal-20261021.mmd)
-- [draw.io 제안 파일](intranet-class-proposal-20261021.drawio)
-
-세션 기반 인증, PostCategory enum, 로컬 사진 저장소, 파일 크기와 클래스 수 등은 확정된 팀 구현 규격으로 취급하지 않습니다. 기존 도면 안의 v1.0 표기는 이전 제안의 표기이며 승인 상태가 아닙니다.
-
-최종 설계는 최신 요구사항을 M5와 검토하고 M5가 draw.io에서 만든 파일을 확인한 후 등록합니다.
-
-[게시판 클래스 작성본](../README.md)
+[게시판 클래스 다이어그램](../README.md)
