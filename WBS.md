@@ -4,6 +4,8 @@ Team Blocks · 2026.10.19–11.16 · 최종 발표 11/16
 
 [업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2) · [팀 기술서](README.md#팀원별-기술서) · [댓글 작성 방법](README.md#issue-진행-댓글-작성) · [Topology](design/토폴로지/README.md)
 
+칠판 게시용 인쇄본: [A3 가로 2장 엑셀 WBS](plans/wbs/otter-shield-wbs-print-a3-2pages.xlsx) · 수행한 작업의 날짜 칸을 색칠해 진행 상황을 표시합니다.
+
 담당 업무의 날짜를 확인한 뒤 Issue에서 세부 작업·완료 기준을 확인합니다. 아래 일정은 목표이며, 실제 진행 상태는 업무 보드와 Issue에서 관리합니다.
 
 ## 1. 주요 일정·마감
