@@ -23,3 +23,7 @@ GitHub Actions에서 빌드·검사·이미지 저장 후 배포 설정을 갱�
 실행 코드 등록 후 실제 빌드·실행 명령, 환경변수 이름, DB 준비, 로그인·목록·영상·자막 통합 결과와 복구 절차를 기록합니다.
 
 [서비스별 코드 안내](../README.md) · [프로젝트 첫 화면](../../README.md)
+
+## 설계 자료
+
+[OTT 메인 ERD](../../design/erd/ott/README.md) · [OTT 메인 클래스 다이어그램](../../design/classdiagram/ott/README.md)

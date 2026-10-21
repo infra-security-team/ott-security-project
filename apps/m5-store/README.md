@@ -22,3 +22,7 @@ GitHub Actions에서 빌드·검사·이미지 저장 후 배포 설정을 갱�
 [AWS 연결 #12](https://github.com/team-blocks-lab/otter-shield/issues/12)에서 11/09–11/10 RDS 백업/스냅샷을 별도 DB로 복원하고 데이터를 확인합니다. 임시 복원 리소스의 비용·정리도 기록합니다. S05는 한국 격리 Test DB 접근 시험이며 Store RDS와 구분합니다.
 
 [서비스별 코드 안내](../README.md) · [프로젝트 첫 화면](../../README.md)
+
+## 설계 자료
+
+[Store ERD](../../design/erd/store/README.md) · [Store 클래스 다이어그램](../../design/classdiagram/store/README.md)

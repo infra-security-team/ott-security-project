@@ -22,3 +22,7 @@
 비밀번호·API 키·개인키는 등록하지 않습니다. 배포 방식과 연결값은 구축 후 검증 결과로 기록합니다.
 
 [서비스별 코드 안내](../README.md) · [프로젝트 첫 화면](../../README.md)
+
+## 설계 자료
+
+[사내 게시판 ERD](../../design/erd/intranet/README.md) · [사내 게시판 클래스 다이어그램](../../design/classdiagram/intranet/README.md)
