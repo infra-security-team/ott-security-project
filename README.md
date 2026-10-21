@@ -12,7 +12,7 @@ Team Blocks가 보안 컨설팅 회사 NetBlocks의 역할로 가상 OTT 고객�
 
 - 업무·일정: [WBS](WBS.md) · [팀 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2)
 - 계획 이력: [기존 계획서 v0.3 PDF](plans/project-plan-v0.3.pdf)
-- 회의·결정사항: [회의록](meetings/README.md) · [10/20 설계 변경](meetings/2026-10-20-design-decisions.md)
+- 회의·결정사항: [회의록](meetings/README.md) 
 - 팀 설계 자료: [Topology · ERD · Class Diagram](design/README.md)
 - 개발 코드: [Intranet](apps/m1-intranet/README.md) · [OTT & AI](apps/m3-ott/README.md) · [Store](apps/m5-store/README.md)
 - 구축·검증 기록: [팀원별 Notion 기술서](#팀원별-기술서)
