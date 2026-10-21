@@ -58,11 +58,11 @@ AS-IS 설계 → 구축·정상 업무 확인 → 공격·원인 분석 → TO-B
 
 | 담당 | 작성 공간 |
 |---|---|
-| M1 유용수 | 공유된 주소 원문 확인 후 연결 |
+| M1 유용수 | [한국 본사 기술서](https://app.notion.com/p/3fdddb1a63778183b7a1e9a9f0ed714e?source=copy_link) |
 | M2 윤서영 | [독일 본사 기술서](https://www.notion.so/2-3ff432be815b8078bc0ad65469c0bcdf?source=copy_link) |
 | M3 홍은서 | [서비스망 기술서](https://app.notion.com/p/M3-3feaf3d0fc69814dbacbfc2f49641045?source=copy_link) |
 | M4 박진혁 | [백업·DR 기술서](https://app.notion.com/p/OTT-3fe63051315180188c80d52d09aa7bed?source=copy_link) |
-| M5 유은혜 | 개인 기술서 링크 등록 예정 |
+| M5 유은혜 | [캐나다 지사 기술서](https://app.notion.com/p/05-Project-OTTer-Shield-M5-3ff1b198732a81c19379cd1f5730afbe?source=copy_link) |
 
 새 문서가 필요한 경우 [공통 작성 양식](https://app.notion.com/p/3fd1b198732a81cf9c44fb58dfcb8567?pvs=204)을 복제합니다. 양식과 실제 작성 문서를 구분합니다.
 
