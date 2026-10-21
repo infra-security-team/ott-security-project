@@ -11,6 +11,7 @@ Team Blocks가 보안 컨설팅 회사 NetBlocks의 역할로 가상 OTT 고객�
 ## 프로젝트 자료
 
 - 업무·일정: [WBS](WBS.md) · [팀 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2)
+- 최종 계획서: [프로젝트 수행 계획서 v1.0 PDF](plans/project-plan-v1.0.pdf)
 - 계획 이력: [기존 계획서 v0.3 PDF](plans/project-plan-v0.3.pdf)
 - 회의·결정사항: [회의록](meetings/README.md) 
 - 팀 설계 자료: [Topology · ERD · Class Diagram](design/README.md)
