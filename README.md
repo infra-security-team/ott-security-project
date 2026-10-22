@@ -10,7 +10,7 @@ Team Blocks가 보안 컨설팅 회사 NetBlocks의 역할로 가상 OTT 고객�
 
 ## 프로젝트 자료
 
-- 업무·일정: [WBS](WBS.md) · [팀 업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2)
+- 업무·일정: [WBS](WBS.md) · [최종 엑셀 다운로드](https://raw.githubusercontent.com/team-blocks-lab/otter-shield/main/plans/wbs/otter-shield-wbs-final.xlsx) · [업무 보드](https://github.com/orgs/team-blocks-lab/projects/4/views/2)
 - 최종 계획서: [프로젝트 수행 계획서 v1.0 PDF](plans/project-plan-v1.0.pdf)
 - 계획 이력: [기존 계획서 v0.3 PDF](plans/project-plan-v0.3.pdf)
 - 회의·결정사항: [회의록](meetings/README.md) 
@@ -48,12 +48,9 @@ AS-IS 설계 → 구축·정상 업무 확인 → 공격·원인 분석 → TO-B
 
 주요 도입 기술: GNS3, VMware/vSphere, UTM(Sophos UTM 9), VyOS(M3), Wazuh(M2 전용), Kubernetes, AWS, React, Spring Boot, FastAPI, GitHub Actions, Argo CD. 정확한 버전·실할당 자원·시험 결과는 구축 시 기술서에 기록합니다.
 
-## 진행 기준 · 10/22 갱신
+## 현재 진행
 
-- AS-IS 토폴로지는 #1~#5 등록·Issue 종료를 확인했습니다. M2는 IP 변경 가능 메모가 남아 있어 등록과 기술 검토를 구분합니다.
-- 10/21 IP 배정·M1–M3 일반 라우팅 결정 및 WBS·계획서 제출을 완료했습니다. PL 전체 망 기술 검토 결과는 #6에서 확인합니다.
-- 각 망 IP/NIC·자원이 확인된 구간부터 AS-IS 구축을 진행합니다. 실제 구축·통신 성공은 각 Issue의 증거로 확인합니다.
-- [WBS](WBS.md)의 10/23·10/28·10/30 인계·공수 점검 기준과 관리용/게시용 Excel을 함께 사용합니다.
+10/21 IP 배정·M1–M3 일반 라우팅 결정·WBS/계획서 제출을 완료했습니다. 현재 AS-IS 구축을 진행하며, 전체 망 기술 검토와 일정 조정은 [#6](https://github.com/team-blocks-lab/otter-shield/issues/6)에서 관리합니다.
 
 ## 팀원별 기술서
 
