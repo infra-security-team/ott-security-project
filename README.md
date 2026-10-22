@@ -27,7 +27,7 @@ Intranet은 한국·독일 사내 게시판, OTT & AI는 OTT 서비스·AI 자�
 | 구역 | 담당 | 책임 영역 | 시작 Issue |
 |---|---|---|---|
 | M1 한국 본사 | 유용수 | GNS3·UTM·부서망·게시판 배포·VPN | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) |
-| M2 독일 본사 | 윤서영 | M1과 같은 업무망·게시판 배포·독일 전용 Wazuh | [#2]([https://github.com/team-blocks-lab/otter-shield/issues/2](https://www.notion.so/2-401432be815b8078abb2c707a8949dbd?source=copy_link)) |
+| M2 독일 본사 | 윤서영 | M1과 같은 업무망·게시판 배포·독일 전용 Wazuh | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) |
 | M3 한국 서비스 | 홍은서 · PL | 가상화·Kubernetes·DB·OTT/AI 배포·인프라 통합 검토 | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) |
 | M4 백업·DR | 박진혁 | DB 복제·백업·S3·격리 복원 | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) |
 | M5 캐나다 | 유은혜 · PM | 지사망·VPN·전체 앱 코드·AI·AWS Store·프로젝트 관리 | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) |
@@ -59,7 +59,7 @@ AS-IS 설계 → 구축·정상 업무 확인 → 공격·원인 분석 → TO-B
 | 담당 | 작성 공간 |
 |---|---|
 | M1 유용수 | [한국 본사 기술서](https://app.notion.com/p/3fdddb1a63778183b7a1e9a9f0ed714e?source=copy_link) |
-| M2 윤서영 | [독일 본사 기술서](https://www.notion.so/2-3ff432be815b8078bc0ad65469c0bcdf?source=copy_link) |
+| M2 윤서영 | [독일 본사 기술서](https://www.notion.so/2-401432be815b8078abb2c707a8949dbd?source=copy_link) |
 | M3 홍은서 | [서비스망 기술서](https://app.notion.com/p/M3-3feaf3d0fc69814dbacbfc2f49641045?source=copy_link) |
 | M4 박진혁 | [백업·DR 기술서](https://app.notion.com/p/OTT-3fe63051315180188c80d52d09aa7bed?source=copy_link) |
 | M5 유은혜 | [캐나다 지사 기술서](https://app.notion.com/p/05-Project-OTTer-Shield-M5-3ff1b198732a81c19379cd1f5730afbe?source=copy_link) |
