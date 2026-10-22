@@ -42,9 +42,9 @@ Team Blocks · 2026.10.19–11.16 · 최종 발표 11/16
 
 | 작업 | 담당 | Issue |
 |---|---|---|
-| 기술 검토·일정 조정 | PM·PL·각 망 담당 | [#6](https://github.com/team-blocks-lab/otter-shield/issues/6) |
+| 인프라 기술 검토·일정 조정 | PM·PL·각 망 담당 | [#6](https://github.com/team-blocks-lab/otter-shield/issues/6) |
 | 망 간 라우팅·VPN | M1 주관·전원 | [#7](https://github.com/team-blocks-lab/otter-shield/issues/7) |
-| 게시판·OTT·AI·CI/CD | M5 개발, M1/M2 게시판·M3 OTT/AI·M5 Store 배포 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+| 게시판·OTT·AI·CI/CD | M5 단독 설계·개발·자체 검증. M1/M2 게시판·M3 OTT/AI·M5 Store 배포 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
 | 독일 Wazuh | M2 | [#9](https://github.com/team-blocks-lab/otter-shield/issues/9) |
 | DB 복제·백업·S3 복원 | M4·M3 | [#10](https://github.com/team-blocks-lab/otter-shield/issues/10) |
 | 앱·노드·VIP 장애 복구 | M3·M5 | [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) |

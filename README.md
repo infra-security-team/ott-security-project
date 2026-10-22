@@ -28,11 +28,11 @@ Intranet은 한국·독일 사내 게시판, OTT & AI는 OTT 서비스·AI 자�
 |---|---|---|---|
 | M1 한국 본사 | 유용수 | GNS3·UTM·부서망·게시판 배포·VPN | [#1](https://github.com/team-blocks-lab/otter-shield/issues/1) |
 | M2 독일 본사 | 윤서영 | M1과 같은 업무망·게시판 배포·독일 전용 Wazuh | [#2](https://github.com/team-blocks-lab/otter-shield/issues/2) |
-| M3 한국 서비스 | 홍은서 · PL | 가상화·Kubernetes·DB·OTT/AI 배포·통합 검토 | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) |
+| M3 한국 서비스 | 홍은서 · PL | 가상화·Kubernetes·DB·OTT/AI 배포·인프라 통합 검토 | [#3](https://github.com/team-blocks-lab/otter-shield/issues/3) |
 | M4 백업·DR | 박진혁 | DB 복제·백업·S3·격리 복원 | [#4](https://github.com/team-blocks-lab/otter-shield/issues/4) |
 | M5 캐나다 | 유은혜 · PM | 지사망·VPN·전체 앱 코드·AI·AWS Store·프로젝트 관리 | [#5](https://github.com/team-blocks-lab/otter-shield/issues/5) |
 
-앱 코드는 M5가 개발합니다. M1·M2는 같은 게시판 코드를 사용하되 DB·계정·환경설정은 분리합니다. M1 후속 실장비 간소화 설계는 주담당 윤서영 / 보조 박진혁입니다.
+개발 설계(ERD·클래스·API)·코드 구현·자체 검증은 PM(M5) 유은혜가 단독으로 진행합니다. PL은 개발 검토를 담당하지 않으며, 각 서버 담당은 배포·DB 운영·인프라 연결을 확인합니다. M1·M2는 같은 게시판 코드를 사용하되 DB·계정·환경설정은 분리합니다. M1 후속 실장비 간소화 설계는 주담당 윤서영 / 보조 박진혁입니다.
 
 ## 구현·검증 방향
 
