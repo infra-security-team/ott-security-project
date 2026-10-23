@@ -40,15 +40,17 @@ Team Blocks · 2026.10.19–11.16 · 최종 발표 11/16
 
 ## 개발·공동 작업
 
-| 작업 | 담당 | Issue |
-|---|---|---|
-| 인프라 기술 검토·일정 조정 | PM·PL·각 망 담당 | [#6](https://github.com/team-blocks-lab/otter-shield/issues/6) |
-| 망 간 라우팅·VPN | M1 주관·전원 | [#7](https://github.com/team-blocks-lab/otter-shield/issues/7) |
-| 게시판·OTT·AI·CI/CD | M5 단독 설계·개발·자체 검증. M1/M2 게시판·M3 OTT/AI·M5 Store 배포 | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
-| 독일 Wazuh | M2 | [#9](https://github.com/team-blocks-lab/otter-shield/issues/9) |
-| DB 복제·백업·S3 복원 | M4·M3 | [#10](https://github.com/team-blocks-lab/otter-shield/issues/10) |
-| 앱·노드·VIP 장애 복구 | M3·M5 | [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) |
-| AWS·Store·RDS 복원 | M5 주관·M3/M1 협업 | [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
-| 최종 보고·발표 | 전원, PM 취합·PL 검토 | [#13](https://github.com/team-blocks-lab/otter-shield/issues/13) |
+아래 날짜는 계획 일정입니다. **굵은 날짜는 주요 확인·마감일**이며, 실제 완료 여부와 인계 조건은 각 Issue에서 확인합니다.
+
+| 작업 | 담당 | 일정·주요 기한 | Issue |
+|---|---|---|---|
+| 인프라 기술 검토·일정 조정 | PM·PL·각 망 담당 | 10/21–10/23<br>**10/23 자원·권한·남은 공수 확인** | [#6](https://github.com/team-blocks-lab/otter-shield/issues/6) |
+| 망 간 라우팅·VPN | M1 주관·전원 | 10/22–23 대표 경로<br>**10/28 전체 연결·서비스 왕복 확인** | [#7](https://github.com/team-blocks-lab/otter-shield/issues/7) |
+| 게시판·OTT·AI·CI/CD | M5 단독 설계·개발·자체 검증<br>배포: M1/M2 게시판·M3 OTT/AI·M5 Store | 10/21–11/06 개발·배포<br>**10/23 게시판 · 10/28 OTT · 10/30 Store 최소 기능**<br>10/29–30 게시판·OTT 배포 · 10/31 Store 최초 연동<br>11/03 AI 자막 · 11/04 한국 CD·AI 배포 · 11/05 Store CD<br>**11/06 통합 · 11/09–10 회귀·롤백** | [#8](https://github.com/team-blocks-lab/otter-shield/issues/8) |
+| 독일 Wazuh | M2 | 10/26–28 준비 · 11/03 설계<br>11/04–05 구성·검증 · **11/06 통합 확인** | [#9](https://github.com/team-blocks-lab/otter-shield/issues/9) |
+| DB 복제·백업·S3 복원 | M4·M3 | **10/23 복구 목표 합의** · 10/26–30 준비<br>11/03 설계 · 11/04 첫 격리 복원 · 11/05 초기 복제<br>11/06 S3 복원 · **11/09–10 복제·복구 검증** | [#10](https://github.com/team-blocks-lab/otter-shield/issues/10) |
+| 앱·노드·VIP 장애 복구 | M3·M5 | 11/02–03 시험 준비<br>**11/06·11/09–10 장애·복구 시험** | [#11](https://github.com/team-blocks-lab/otter-shield/issues/11) |
+| AWS·Store·RDS 복원 | M5 주관·M3/M1 협업 | **10/23 권한·예산·API 경로 · 10/30 AWS 준비**<br>10/31 Store 최초 연동 · 11/05 Store CD · 11/06 통합<br>**11/09–10 RDS 격리 복원** | [#12](https://github.com/team-blocks-lab/otter-shield/issues/12) |
+| 최종 보고·발표 | 전원, PM 취합·PL 검토 | 11/09–16<br>**11/11 증거 취합 · 11/12 발표자료 · 11/13 리허설**<br>11/14 파일·링크 점검 · **11/16 발표·자원 정리** | [#13](https://github.com/team-blocks-lab/otter-shield/issues/13) |
 
 세부 인계 조건은 각 Issue에 기록합니다. 지연이 예상되면 영향·예상 완료일을 남기고 PM·PL과 조정한 뒤 엑셀과 WBS를 함께 갱신합니다. 실제 설정·로그·시험 증거는 Notion 기술서에 남깁니다.
