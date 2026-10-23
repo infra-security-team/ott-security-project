@@ -41,12 +41,12 @@ AS-IS 설계 → 구축·정상 업무 확인 → 공격·원인 분석 → TO-B
 | 구역 | 검증 주제 |
 |---|---|
 | M1 | 직원의 서버 관리 접근을 UTM으로 제한 |
-| M2 | 반복 SSH 인증 실패를 Wazuh로 탐지하고 선정한 자동 대응 검증 |
+| M2 | 반복 SSH 인증 실패를 Wazuh로 탐지하고 검토 후 선택한 자동 대응 방식 검증 |
 | M3 | Kubernetes 관리 API 노출 제한·승인 관리자 접근 유지 |
 | M4 | 백업 파일 접근 권한 개선·실제 DB 복원 |
 | M5 | 업무 VPN을 통한 한국 격리 Test DB 직접 접근 제한·웹 업무 유지 |
 
-주요 도입 기술: GNS3, VMware/vSphere, UTM(Sophos UTM 9), VyOS(M3), Wazuh(M2 전용), Kubernetes, AWS, React, Spring Boot, FastAPI, GitHub Actions, Argo CD. 정확한 버전·실할당 자원·시험 결과는 구축 시 기술서에 기록합니다.
+주요 도입 기술: GNS3, VMware/vSphere, UTM(Sophos UTM 9), VyOS(M3), Wazuh(M2 전용), Kubernetes, AWS, React, Spring Boot, FastAPI, GitHub Actions, Argo CD. 정확한 버전·실제 할당 자원·시험 결과는 구축 시 기술서에 기록합니다.
 
 ## 현재 진행
 
